@@ -1,0 +1,1659 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class CFBinaryPropertyList</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class CFBinaryPropertyList</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+							<a href="#sec-descendents">Descendents</a>
+			|											<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Facility for reading and writing binary PropertyLists. Ported from <a href="http://www.opensource.apple.com/source/CF/CF-476.15/CFBinaryPList.c">CFBinaryPList.c</a>.</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Christian Kruse &lt;<a href="mailto:cjk@wwwtech.de">cjk@wwwtech.de</a>&gt;</li>
+				<li><span class="field">author:</span> Rodney Rehm &lt;<a href="mailto:rodney.rehm@medialize.de">rodney.rehm@medialize.de</a>&gt;</li>
+				<li><span class="field">abstract:</span> </li>
+				<li><span class="field">example:</span> <a href="../__examplesource/exsource_ckruse_cfpropertylist_examples_example-read-02.php_d393d89dfe4fd6b813bc8b74c9c896e4.html">Read a Binary PropertyList</a></li>
+				<li><span class="field">example:</span> <a href="../__examplesource/exsource_ckruse_cfpropertylist_examples_example-read-03.php_554e87d0886e6e15c1893067e340debe.html">Read a PropertyList without knowing the type</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_CFBinaryPropertyList.php.html">/CFBinaryPropertyList.php</a> (line <span class="field">19</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+	<a name="sec-descendents"></a>
+	<div class="info-box">
+		<div class="info-box-title">Direct descendents</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+			<span class="disabled">Descendents</span>
+			|												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+								|															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<table cellpadding="2" cellspacing="0" class="class-table">
+				<tr>
+					<th class="class-table-header">Class</th>
+					<th class="class-table-header">Description</th>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../plist/CFPropertyList.html">CFPropertyList</a></td>
+					<td>
+											Property List  Interface for handling reading, editing and saving Property Lists as defined by Apple.
+										</td>
+				</tr>
+							</table>
+		</div>
+	</div>
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																																																																																<div class="var-title">
+					<span class="var-type">integer</span>
+					<a href="#$countObjects" title="details" class="var-name">$countObjects</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">integer</span>
+					<a href="#$intSize" title="details" class="var-name">$intSize</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">integer</span>
+					<a href="#$miscSize" title="details" class="var-name">$miscSize</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">integer</span>
+					<a href="#$objectRefs" title="details" class="var-name">$objectRefs</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$objectRefSize" title="details" class="var-name">$objectRefSize</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$objectTable" title="details" class="var-name">$objectTable</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$offsets" title="details" class="var-name">$offsets</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">integer</span>
+					<a href="#$stringSize" title="details" class="var-name">$stringSize</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">array</span>
+					<a href="#$uniqueTable" title="details" class="var-name">$uniqueTable</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">integer</span>
+					<a href="#$writtenObjectCount" title="details" class="var-name">$writtenObjectCount</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																				<div class="method-definition">
+					static 						<span class="method-result">integer</span>
+										<a href="#binaryStrlen" title="details" class="method-name">binaryStrlen</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$val</span>)
+									</div>
+																								<div class="method-definition">
+					static 						<span class="method-result">integer</span>
+										<a href="#bytesInt" title="details" class="method-name">bytesInt</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$int</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">integer</span>
+										<a href="#bytesNeeded" title="details" class="method-name">bytesNeeded</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$count_objects</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">integer</span>
+										<a href="#bytesSizeInt" title="details" class="method-name">bytesSizeInt</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$int</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">integer</span>
+										<a href="#charsetStrlen" title="details" class="method-name">charsetStrlen</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$string</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$charset</span> = <span class="var-default">&quot;UTF-8&quot;</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">string</span>
+										<a href="#convertCharset" title="details" class="method-name">convertCharset</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$string</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$fromCharset</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$toCharset</span> = <span class="var-default">'UTF-8'</span>])
+									</div>
+																																								<div class="method-definition">
+					static 						<span class="method-result">string</span>
+										<a href="#intBytes" title="details" class="method-name">intBytes</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$int</span>)
+									</div>
+																								<div class="method-definition">
+					static 						<span class="method-result">mixed</span>
+										<a href="#make64Int" title="details" class="method-name">make64Int</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$hi</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$lo</span>)
+									</div>
+																								<div class="method-definition">
+					static 						<span class="method-result">string</span>
+										<a href="#packItWithSize" title="details" class="method-name">packItWithSize</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$nbytes</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$int</span>)
+									</div>
+																																																																																																																																								<div class="method-definition">
+					static 						<span class="method-result">string</span>
+										<a href="#typeBytes" title="details" class="method-name">typeBytes</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$type</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$type_len</span>)
+									</div>
+																
+												<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#arrayToBinary" title="details" class="method-name">arrayToBinary</a>
+											(<span class="var-type"><a href="../plist/plist-types/CFArray.html">CFArray</a></span>&nbsp;<span class="var-name">$val</span>)
+									</div>
+																								<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#boolToBinary" title="details" class="method-name">boolToBinary</a>
+											(<span class="var-type">bool</span>&nbsp;<span class="var-name">$val</span>)
+									</div>
+																																																								<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#dataToBinary" title="details" class="method-name">dataToBinary</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$val</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#dateToBinary" title="details" class="method-name">dateToBinary</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$val</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#dictToBinary" title="details" class="method-name">dictToBinary</a>
+											(<span class="var-type"><a href="../plist/plist-types/CFDictionary.html">CFDictionary</a></span>&nbsp;<span class="var-name">$val</span>)
+									</div>
+																								<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#intToBinary" title="details" class="method-name">intToBinary</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																								<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#numToBinary" title="details" class="method-name">numToBinary</a>
+											(<span class="var-type">numeric</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																								<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#readBinary" title="details" class="method-name">readBinary</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$file</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../plist/plist-types/CFArray.html">CFArray</a></span>
+										<a href="#readBinaryArray" title="details" class="method-name">readBinaryArray</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$fname</span>, <span class="var-type">ressource</span>&nbsp;<span class="var-name">$fd</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$length</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../plist/plist-types/CFData.html">CFData</a></span>
+										<a href="#readBinaryData" title="details" class="method-name">readBinaryData</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$fname</span>, <span class="var-type">ressource</span>&nbsp;<span class="var-name">$fd</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$length</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../plist/plist-types/CFDate.html">CFDate</a></span>
+										<a href="#readBinaryDate" title="details" class="method-name">readBinaryDate</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$fname</span>, <span class="var-type">ressource</span>&nbsp;<span class="var-name">$fd</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$length</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../plist/plist-types/CFDictionary.html">CFDictionary</a></span>
+										<a href="#readBinaryDict" title="details" class="method-name">readBinaryDict</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$fname</span>, <span class="var-type">ressource</span>&nbsp;<span class="var-name">$fd</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$length</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../plist/plist-types/CFNumber.html">CFNumber</a></span>
+										<a href="#readBinaryInt" title="details" class="method-name">readBinaryInt</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$fname</span>, <span class="var-type">ressource</span>&nbsp;<span class="var-name">$fd</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$length</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">the</span>
+										<a href="#readBinaryNullType" title="details" class="method-name">readBinaryNullType</a>
+											(<span class="var-type">$length</span>&nbsp;<span class="var-name">$length</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">mixed</span>
+										<a href="#readBinaryObject" title="details" class="method-name">readBinaryObject</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$fname</span>, <span class="var-type">ressource</span>&nbsp;<span class="var-name">$fd</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">mixed</span>
+										<a href="#readBinaryObjectAt" title="details" class="method-name">readBinaryObjectAt</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$fname</span>, <span class="var-type">ressource</span>&nbsp;<span class="var-name">$fd</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$pos</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../plist/plist-types/CFNumber.html">CFNumber</a></span>
+										<a href="#readBinaryReal" title="details" class="method-name">readBinaryReal</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$fname</span>, <span class="var-type">ressource</span>&nbsp;<span class="var-name">$fd</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$length</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../plist/plist-types/CFString.html">CFString</a></span>
+										<a href="#readBinaryString" title="details" class="method-name">readBinaryString</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$fname</span>, <span class="var-type">ressource</span>&nbsp;<span class="var-name">$fd</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$length</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../plist/plist-types/CFString.html">CFString</a></span>
+										<a href="#readBinaryUnicodeString" title="details" class="method-name">readBinaryUnicodeString</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$fname</span>, <span class="var-type">ressource</span>&nbsp;<span class="var-name">$fd</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$length</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#realToBinary" title="details" class="method-name">realToBinary</a>
+											(<span class="var-type">float</span>&nbsp;<span class="var-name">$val</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#stringToBinary" title="details" class="method-name">stringToBinary</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$val</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#toBinary" title="details" class="method-name">toBinary</a>
+										()
+									</div>
+																								<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#uniqueAndCountValues" title="details" class="method-name">uniqueAndCountValues</a>
+											(<span class="var-type">$value</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="var$countObjects" id="$countObjects"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">integer</span>
+			<span class="var-name">$countObjects</span>
+			 = <span class="var-default"> 0</span>			(line <span class="line-number">30</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Number of objects in file</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$intSize" id="$intSize"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">integer</span>
+			<span class="var-name">$intSize</span>
+			 = <span class="var-default"> 0</span>			(line <span class="line-number">42</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The length of all ints in file (byte length)</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$miscSize" id="$miscSize"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">integer</span>
+			<span class="var-name">$miscSize</span>
+			 = <span class="var-default"> 0</span>			(line <span class="line-number">48</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The length of misc objects (i.e. not integer and not string) in file</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$objectRefs" id="$objectRefs"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">integer</span>
+			<span class="var-name">$objectRefs</span>
+			 = <span class="var-default"> 0</span>			(line <span class="line-number">54</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Number of object references in file (needed to calculate reference byte length)</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$objectRefSize" id="$objectRefSize"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$objectRefSize</span>
+			 = <span class="var-default"> 0</span>			(line <span class="line-number">70</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The size of object references</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$objectTable" id="$objectTable"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$objectTable</span>
+			 = <span class="var-default">array()</span>			(line <span class="line-number">65</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Table containing all objects in the file</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$offsets" id="$offsets"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$offsets</span>
+			 = <span class="var-default">array()</span>			(line <span class="line-number">75</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The „offsets” (i.e. the different entries) in the file</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$stringSize" id="$stringSize"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">integer</span>
+			<span class="var-name">$stringSize</span>
+			 = <span class="var-default"> 0</span>			(line <span class="line-number">36</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The length of all strings in the file (byte length, not character length)</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$uniqueTable" id="$uniqueTable"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$uniqueTable</span>
+			 = <span class="var-default">array()</span>			(line <span class="line-number">24</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Table containing uniqued objects</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$writtenObjectCount" id="$writtenObjectCount"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">integer</span>
+			<span class="var-name">$writtenObjectCount</span>
+			 = <span class="var-default"> 0</span>			(line <span class="line-number">60</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Number of objects written during save phase; needed to calculate the size of the object table</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodbinaryStrlen" id="binaryStrlen"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method binaryStrlen</span> (line <span class="line-number">718</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Counts the number of bytes the string will have when coded; utf-16be if non-ascii characters are present.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The length of the coded string in bytes</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			binaryStrlen
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$val</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$val</span><span class="var-description">: The string value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodbytesInt" id="bytesInt"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method bytesInt</span> (line <span class="line-number">506</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Calculate the byte needed for a „normal” integer value</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The number of bytes needed + 1 (because of the „marker byte”)</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			bytesInt
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$int</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$int</span><span class="var-description">: The integer value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodbytesNeeded" id="bytesNeeded"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method bytesNeeded</span> (line <span class="line-number">537</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Calculate the bytes needed to save the number of objects</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The number of bytes</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			bytesNeeded
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$count_objects</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$count_objects</span><span class="var-description">: The number of objects</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodbytesSizeInt" id="bytesSizeInt"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method bytesSizeInt</span> (line <span class="line-number">491</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">calculate the bytes needed for a size integer value</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The number of bytes needed</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			bytesSizeInt
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$int</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$int</span><span class="var-description">: The integer value to calculate</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcharsetStrlen" id="charsetStrlen"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method charsetStrlen</span> (line <span class="line-number">285</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Count characters considering character set  Trying to use MBString, Iconv - in that particular order.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The number of characters in that string</li>
+				<li><span class="field">throws:</span> PListException on neither MBString, Iconv being available</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			charsetStrlen
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$string</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$charset</span> = <span class="var-default">&quot;UTF-8&quot;</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$string</span><span class="var-description">: the string to convert</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$charset</span><span class="var-description">: the charset the given string is currently encoded in</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodconvertCharset" id="convertCharset"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method convertCharset</span> (line <span class="line-number">269</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Convert the given string from one charset to another.</p>
+<p class="description"><p>Trying to use MBString, Iconv, Recode - in that particular order.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> the converted string</li>
+				<li><span class="field">throws:</span> PListException on neither MBString, Iconv, Recode being available</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">string</span>
+		<span class="method-name">
+			convertCharset
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$string</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$fromCharset</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$toCharset</span> = <span class="var-default">'UTF-8'</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$string</span><span class="var-description">: the string to convert</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$fromCharset</span><span class="var-description">: the charset the given string is currently encoded in</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$toCharset</span><span class="var-description">: the charset to convert to, defaults to UTF-8</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodintBytes" id="intBytes"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method intBytes</span> (line <span class="line-number">553</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Code an integer to byte representation</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The packed byte value</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">string</span>
+		<span class="method-name">
+			intBytes
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$int</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$int</span><span class="var-description">: The integer value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodmake64Int" id="make64Int"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method make64Int</span> (line <span class="line-number">101</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Create an 64 bit integer using bcmath or gmp</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The integer (as int if possible, as string if not possible)</li>
+				<li><span class="field">throws:</span> PListException if neither gmp nor bc available</li>
+				<li><span class="field">access:</span> protected</li>
+				<li><span class="field">usedby:</span> <a href="../plist/CFBinaryPropertyList.html#methodreadBinaryInt">CFBinaryPropertyList::readBinaryInt()</a> - to overcome PHP's big integer problems</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			make64Int
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$hi</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$lo</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$hi</span><span class="var-description">: The higher word</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$lo</span><span class="var-description">: The lower word</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodpackItWithSize" id="packItWithSize"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method packItWithSize</span> (line <span class="line-number">523</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">„pack” a value (i.e. write the binary representation as big endian to a string) with the specified size</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The packed value as string</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">string</span>
+		<span class="method-name">
+			packItWithSize
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$nbytes</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$int</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$nbytes</span><span class="var-description">: The number of bytes to pack</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$int</span><span class="var-description">: the integer value to pack</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodtypeBytes" id="typeBytes"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method typeBytes</span> (line <span class="line-number">569</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Code an type byte, consisting of the type marker and the length of the type</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The packed type byte value</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">string</span>
+		<span class="method-name">
+			typeBytes
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$type</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$type_len</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$type</span><span class="var-description">: The type byte value (i.e. &quot;d&quot; for dictionaries)</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$type_len</span><span class="var-description">: The length of the type</span>			</li>
+				</ul>
+		
+			
+	</div>
+
+<a name="methodarrayToBinary" id="arrayToBinary"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">arrayToBinary</span> (line <span class="line-number">884</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Convert array to binary format and add it to the object table</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The position in the object table</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			arrayToBinary
+		</span>
+					(<span class="var-type"><a href="../plist/plist-types/CFArray.html">CFArray</a></span>&nbsp;<span class="var-name">$val</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../plist/plist-types/CFArray.html">CFArray</a></span>
+				<span class="var-name">$val</span><span class="var-description">: The array to convert</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodboolToBinary" id="boolToBinary"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">boolToBinary</span> (line <span class="line-number">859</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Convert a bool value to binary and add it to the object table</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The position in the object table</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			boolToBinary
+		</span>
+					(<span class="var-type">bool</span>&nbsp;<span class="var-name">$val</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$val</span><span class="var-description">: The boolean value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddataToBinary" id="dataToBinary"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">dataToBinary</span> (line <span class="line-number">870</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Convert data value to binary format and add it to the object table</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The position in the object table</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			dataToBinary
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$val</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$val</span><span class="var-description">: The data value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddateToBinary" id="dateToBinary"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">dateToBinary</span> (line <span class="line-number">836</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Convert date value (apple format) to binary and adds it to the object table</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The position of the coded value in the object table</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			dateToBinary
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$val</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$value</span><span class="var-description">: The date value</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$val</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddictToBinary" id="dictToBinary"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">dictToBinary</span> (line <span class="line-number">903</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Convert dictionary to binary format and add it to the object table</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The position in the object table</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			dictToBinary
+		</span>
+					(<span class="var-type"><a href="../plist/plist-types/CFDictionary.html">CFDictionary</a></span>&nbsp;<span class="var-name">$val</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../plist/plist-types/CFDictionary.html">CFDictionary</a></span>
+				<span class="var-name">$val</span><span class="var-description">: The dict to convert</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodintToBinary" id="intToBinary"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">intToBinary</span> (line <span class="line-number">769</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Codes an integer to binary format</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> the coded integer</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			intToBinary
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$value</span><span class="var-description">: The integer value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodnumToBinary" id="numToBinary"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">numToBinary</span> (line <span class="line-number">820</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Converts a numeric value to binary and adds it to the object table</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The position in the object table</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			numToBinary
+		</span>
+					(<span class="var-type">numeric</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">numeric</span>
+				<span class="var-name">$value</span><span class="var-description">: The numeric value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodreadBinary" id="readBinary"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">readBinary</span> (line <span class="line-number">442</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Read a binary plist file</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> IOException if read error occurs</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			readBinary
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$file</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$file</span><span class="var-description">: The file to read</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodreadBinaryArray" id="readBinaryArray"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">readBinaryArray</span> (line <span class="line-number">318</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Read an array value, including contained objects</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The array value, including the objects</li>
+				<li><span class="field">throws:</span> IOException if read error occurs</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../plist/plist-types/CFArray.html">CFArray</a></span>
+		<span class="method-name">
+			readBinaryArray
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$fname</span>, <span class="var-type">ressource</span>&nbsp;<span class="var-name">$fd</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$length</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$fname</span><span class="var-description">: The filename of the file we're reading from</span>			</li>
+					<li>
+				<span class="var-type">ressource</span>
+				<span class="var-name">$fd</span><span class="var-description">: The file descriptor we're reading from</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$length</span><span class="var-description">: The number of contained objects</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodreadBinaryData" id="readBinaryData"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">readBinaryData</span> (line <span class="line-number">233</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Read a data value</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The data value</li>
+				<li><span class="field">throws:</span> IOException if read error occurs</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../plist/plist-types/CFData.html">CFData</a></span>
+		<span class="method-name">
+			readBinaryData
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$fname</span>, <span class="var-type">ressource</span>&nbsp;<span class="var-name">$fd</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$length</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$fname</span><span class="var-description">: The filename of the file we're reading from</span>			</li>
+					<li>
+				<span class="var-type">ressource</span>
+				<span class="var-name">$fd</span><span class="var-description">: The file descriptor we're reading from</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$length</span><span class="var-description">: The length (in bytes) of the integer value, coded as „set bit $length to 1”</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodreadBinaryDate" id="readBinaryDate"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">readBinaryDate</span> (line <span class="line-number">199</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Read a date value</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The date value</li>
+				<li><span class="field">throws:</span> IOException if read error occurs</li>
+				<li><span class="field">throws:</span> PListException if date val is invalid</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../plist/plist-types/CFDate.html">CFDate</a></span>
+		<span class="method-name">
+			readBinaryDate
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$fname</span>, <span class="var-type">ressource</span>&nbsp;<span class="var-name">$fd</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$length</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$fname</span><span class="var-description">: The filename of the file we're reading from</span>			</li>
+					<li>
+				<span class="var-type">ressource</span>
+				<span class="var-name">$fd</span><span class="var-description">: The file descriptor we're reading from</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$length</span><span class="var-description">: The length (in bytes) of the integer value, coded as „set bit $length to 1”</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodreadBinaryDict" id="readBinaryDict"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">readBinaryDict</span> (line <span class="line-number">344</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Read a dictionary value, including contained objects</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The dictionary value, including the objects</li>
+				<li><span class="field">throws:</span> IOException if read error occurs</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../plist/plist-types/CFDictionary.html">CFDictionary</a></span>
+		<span class="method-name">
+			readBinaryDict
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$fname</span>, <span class="var-type">ressource</span>&nbsp;<span class="var-name">$fd</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$length</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$fname</span><span class="var-description">: The filename of the file we're reading from</span>			</li>
+					<li>
+				<span class="var-type">ressource</span>
+				<span class="var-name">$fd</span><span class="var-description">: The file descriptor we're reading from</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$length</span><span class="var-description">: The number of contained objects</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodreadBinaryInt" id="readBinaryInt"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">readBinaryInt</span> (line <span class="line-number">126</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Read an integer value</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The integer value</li>
+				<li><span class="field">throws:</span> IOException if read error occurs</li>
+				<li><span class="field">throws:</span> PListException if integer val is invalid</li>
+				<li><span class="field">access:</span> protected</li>
+				<li><span class="field">uses:</span> <a href="../plist/CFBinaryPropertyList.html#methodmake64Int">CFBinaryPropertyList::make64Int()</a> - to overcome PHP's big integer problems</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../plist/plist-types/CFNumber.html">CFNumber</a></span>
+		<span class="method-name">
+			readBinaryInt
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$fname</span>, <span class="var-type">ressource</span>&nbsp;<span class="var-name">$fd</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$length</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$fname</span><span class="var-description">: The filename of the file we're reading from</span>			</li>
+					<li>
+				<span class="var-type">ressource</span>
+				<span class="var-name">$fd</span><span class="var-description">: The file descriptor we're reading from</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$length</span><span class="var-description">: The length (in bytes) of the integer value, coded as „set bit $length to 1”</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodreadBinaryNullType" id="readBinaryNullType"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">readBinaryNullType</span> (line <span class="line-number">83</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Read a „null type” (filler byte, true, false, 0 byte)</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> byte value (e.g. CFBoolean(true), CFBoolean(false), 0 or 15)</li>
+				<li><span class="field">throws:</span> PListException on encountering an unknown null type</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">the</span>
+		<span class="method-name">
+			readBinaryNullType
+		</span>
+					(<span class="var-type">$length</span>&nbsp;<span class="var-name">$length</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">$length</span>
+				<span class="var-name">$length</span><span class="var-description">: The byte itself</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodreadBinaryObject" id="readBinaryObject"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">readBinaryObject</span> (line <span class="line-number">374</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Read an object type byte, decode it and delegate to the correct reader function</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The value of the delegate reader, so any of the CFType subclasses</li>
+				<li><span class="field">throws:</span> IOException if read error occurs</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			readBinaryObject
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$fname</span>, <span class="var-type">ressource</span>&nbsp;<span class="var-name">$fd</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$fname</span><span class="var-description">: The filename of the file we're reading from</span>			</li>
+					<li>
+				<span class="var-type">ressource</span>
+				<span class="var-name">$fd</span><span class="var-description">: The file descriptor we're reading from</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodreadBinaryObjectAt" id="readBinaryObjectAt"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">readBinaryObjectAt</span> (line <span class="line-number">430</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Read an object type byte at position $pos, decode it and delegate to the correct reader function</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The value of the delegate reader, so any of the CFType subclasses</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			readBinaryObjectAt
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$fname</span>, <span class="var-type">ressource</span>&nbsp;<span class="var-name">$fd</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$pos</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$fname</span><span class="var-description">: The filename of the file we're reading from</span>			</li>
+					<li>
+				<span class="var-type">ressource</span>
+				<span class="var-name">$fd</span><span class="var-description">: The file descriptor we're reading from</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$pos</span><span class="var-description">: The table position in the offsets table</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodreadBinaryReal" id="readBinaryReal"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">readBinaryReal</span> (line <span class="line-number">165</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Read a real value</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The real value</li>
+				<li><span class="field">throws:</span> IOException if read error occurs</li>
+				<li><span class="field">throws:</span> PListException if real val is invalid</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../plist/plist-types/CFNumber.html">CFNumber</a></span>
+		<span class="method-name">
+			readBinaryReal
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$fname</span>, <span class="var-type">ressource</span>&nbsp;<span class="var-name">$fd</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$length</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$fname</span><span class="var-description">: The filename of the file we're reading from</span>			</li>
+					<li>
+				<span class="var-type">ressource</span>
+				<span class="var-name">$fd</span><span class="var-description">: The file descriptor we're reading from</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$length</span><span class="var-description">: The length (in bytes) of the integer value, coded as „set bit $length to 1”</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodreadBinaryString" id="readBinaryString"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">readBinaryString</span> (line <span class="line-number">250</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Read a string value, usually coded as utf8</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The string value, utf8 encoded</li>
+				<li><span class="field">throws:</span> IOException if read error occurs</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../plist/plist-types/CFString.html">CFString</a></span>
+		<span class="method-name">
+			readBinaryString
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$fname</span>, <span class="var-type">ressource</span>&nbsp;<span class="var-name">$fd</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$length</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$fname</span><span class="var-description">: The filename of the file we're reading from</span>			</li>
+					<li>
+				<span class="var-type">ressource</span>
+				<span class="var-name">$fd</span><span class="var-description">: The file descriptor we're reading from</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$length</span><span class="var-description">: The length (in bytes) of the string value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodreadBinaryUnicodeString" id="readBinaryUnicodeString"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">readBinaryUnicodeString</span> (line <span class="line-number">300</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Read a unicode string value, coded as UTF-16BE</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The string value, utf8 encoded</li>
+				<li><span class="field">throws:</span> IOException if read error occurs</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../plist/plist-types/CFString.html">CFString</a></span>
+		<span class="method-name">
+			readBinaryUnicodeString
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$fname</span>, <span class="var-type">ressource</span>&nbsp;<span class="var-name">$fd</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$length</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$fname</span><span class="var-description">: The filename of the file we're reading from</span>			</li>
+					<li>
+				<span class="var-type">ressource</span>
+				<span class="var-name">$fd</span><span class="var-description">: The file descriptor we're reading from</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$length</span><span class="var-description">: The length (in bytes) of the string value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodrealToBinary" id="realToBinary"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">realToBinary</span> (line <span class="line-number">810</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Codes a real value to binary format</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The coded real</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			realToBinary
+		</span>
+					(<span class="var-type">float</span>&nbsp;<span class="var-name">$val</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$val</span><span class="var-description">: The real value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodstringToBinary" id="stringToBinary"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">stringToBinary</span> (line <span class="line-number">734</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Uniques and transforms a string value to binary format and adds it to the object table</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The position in the object table</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			stringToBinary
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$val</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$val</span><span class="var-description">: The string value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodtoBinary" id="toBinary"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">toBinary</span> (line <span class="line-number">662</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Convert CFPropertyList to binary format; since we have to count our objects we simply unique CFDictionary and CFArray</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The binary plist content</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			toBinary
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methoduniqueAndCountValues" id="uniqueAndCountValues"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">uniqueAndCountValues</span> (line <span class="line-number">586</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Count number of objects and create a unique table for strings</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			uniqueAndCountValues
+		</span>
+					(<span class="var-type">$value</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">$value</span>
+				<span class="var-name">$value</span><span class="var-description">: The value to count and unique</span>			</li>
+				</ul>
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 01 Jan 2010 21:33:32 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</p>
+	</div></body>
+</html>

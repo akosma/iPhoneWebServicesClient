@@ -1,0 +1,68 @@
+h1. iPhone Web Services Consumption Comparison
+
+This project showcases different transport formats and libraries to consume web services from an iPhone application. It features a server application, a command-line script that saves the output of the server application in different formats, and an iPhone client application (compatible with iPhone OS 3.0 and higher).
+
+The server application (written in PHP) reads a MySQL database (Server/data/schema.sql) and outputs data in the following formats:
+
+* HTML
+* JSON
+* YAML
+* XML (arbitrary format)
+* SOAP
+* Binary property list
+* XML property list
+
+For each output format, there is a single "Formatter" subclass in the Server/formatters folder. A static method in the FormatterFactory class returns the formatter that corresponds to the requested output format.
+
+h2. Libraries Used
+
+The project uses several different libraries:
+
+For the server:
+
+* "cfpropertylist":http://code.google.com/p/cfpropertylist/ - A PHP Implementation Of Apple's plist (PropertyList)
+* "NuSOAP":http://sourceforge.net/projects/nusoap/ - SOAP Toolkit for PHP
+* "spyc":http://code.google.com/p/spyc/ - A simple YAML loader/dumper class for PHP
+
+For the iPhone client:
+
+* "ASIHTTPRequest":http://allseeing-i.com/ASIHTTPRequest - wrapper around the CFNetwork API
+* "json-framework":http://code.google.com/p/json-framework/ - A strict JSON parser/generator for Objective-C
+* "touchcode":http://code.google.com/p/touchcode/ - Repository of iPhone and iPod Touch source code.
+
+h3. YAML in Cocoa
+
+For parsing YAML in Cocoa, the code in "this page":http://will.thimbleby.net/yaml.html was adapted, removing dependencies on the Cocoa AppKit framework (not available on the iPhone). This code also requires to have the YAML::Syck library installed:
+
+# Install Fink on Mac OS X 10.6 from source "following these instructions":http://www.finkproject.org/download/srcdist.php (there is no binary installer available for Snow Leopard at the time of this writing).
+# Type "/sw/bin/fink install syck" to install syck.
+# The Xcode project should now compile without problems.
+
+h3. SOAP in Cocoa
+
+The "wsdl2objc":http://code.google.com/p/wsdl2objc/ tool was used to generate Objective-C (Cocoa) code from the server's WSDL. This code was later adapted to parse the array returned by the server.
+
+h2. Sample Data
+
+The sample data generated in this example comes from "http://www.generatedata.com/":http://www.generatedata.com/.
+
+h2. Other Links
+
+Some other interesting links for those working in other technologies, organized by platform or programming language.
+
+h3. Ruby
+
+* "cfpropertylist in Ruby":http://rubyforge.org/projects/cfpropertylist/ - Read, manipulate and write both binary and XML property lists as defined by Apple.
+
+h3. Python
+
+* "PyYAML":http://pyyaml.org/ - PyYAML.org - the home of various YAML implementations for Python
+* "plistlib":http://docs.python.org/dev/library/plistlib.html - Generate and parse Mac OS X .plist files
+
+h3. Tools
+
+* "soapUI":http://www.soapui.org/ - Cross-platform tool for testing SOAP web services
+
+h2. License
+
+This project is released with a liberal BSD license. See the LICENSE file for details.

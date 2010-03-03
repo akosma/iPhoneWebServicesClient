@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<definitions xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="urn:datawsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:datawsdl">
+<types>
+<xsd:schema targetNamespace="urn:datawsdl"
+>
+ <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+ <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+</xsd:schema>
+</types>
+<message name="lookupRequest">
+  <part name="limit" type="xsd:integer" /></message>
+<message name="lookupResponse">
+  <part name="return" type="SOAP-ENC:Array" /></message>
+<portType name="datawsdlPortType">
+  <operation name="lookup">
+    <documentation>Returns a dataset</documentation>
+    <input message="tns:lookupRequest"/>
+    <output message="tns:lookupResponse"/>
+  </operation>
+</portType>
+<binding name="datawsdlBinding" type="tns:datawsdlPortType">
+  <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <operation name="lookup">
+    <soap:operation soapAction="urn:datawsdl#lookup" style="soap"/>
+    <input><soap:body use="encoded" namespace="urn:datawsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:datawsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+</binding>
+<service name="datawsdl">
+  <port name="datawsdlPort" binding="tns:datawsdlBinding">
+    <soap:address location="http://localhost:8888/soap/server.php"/>
+  </port>
+</service>
+</definitions>

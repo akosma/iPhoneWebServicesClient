@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Using</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+						<h1>Using</h1>
+<div class="listing">
+<div class="src-code"><ol><li><div class="src-line"><span class="src-php">&lt;?php</span></div></li>
+<li><div class="src-line"><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><span class="src-doc">&nbsp;*&nbsp;Examples&nbsp;for&nbsp;how&nbsp;to&nbsp;use&nbsp;CFPropertyList</span></div></li>
+<li><div class="src-line"><span class="src-doc">&nbsp;*&nbsp;Create&nbsp;the&nbsp;PropertyList&nbsp;sample.xml.plist&nbsp;by&nbsp;using&nbsp;</span><span class="src-doc-inlinetag">{@link&nbsp;CFTypeDetector}</span><span class="src-doc">.</span></div></li>
+<li><div class="src-line"><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@package</span><span class="src-doc">&nbsp;plist</span></div></li>
+<li><div class="src-line"><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@subpackage</span><span class="src-doc">&nbsp;plist.examples</span></div></li>
+<li><div class="src-line"><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line"><span class="src-comm">//&nbsp;just&nbsp;in&nbsp;case...</span></div></li>
+<li><div class="src-line"><a href="http://www.php.net/error_reporting">error_reporting</a><span class="src-sym">(&nbsp;</span><span class="src-id">E_ALL&nbsp;</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a href="http://www.php.net/ini_set">ini_set</a><span class="src-sym">(&nbsp;</span><span class="src-str">'display_errors'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'on'&nbsp;</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line"><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><span class="src-doc">&nbsp;*&nbsp;Require&nbsp;CFPropertyList</span></div></li>
+<li><div class="src-line"><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><span class="src-inc">require_once</span><span class="src-sym">(</span><span class="src-id">dirname</span><span class="src-sym">(</span>__FILE__<span class="src-sym">)</span>.<span class="src-str">'/../CFPropertyList.php'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line"><span class="src-comm">/*</span></div></li>
+<li><div class="src-line"><span class="src-comm">&nbsp;*&nbsp;create&nbsp;a&nbsp;new&nbsp;CFPropertyList&nbsp;instance&nbsp;without&nbsp;loading&nbsp;any&nbsp;content</span></div></li>
+<li><div class="src-line"><span class="src-comm">&nbsp;*/</span></div></li>
+<li><div class="src-line"><span class="src-var">$plist&nbsp;</span>=&nbsp;<span class="src-key">new&nbsp;</span><span class="src-id"><a href="../plist/CFPropertyList.html">CFPropertyList</a></span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line"><span class="src-comm">/*</span></div></li>
+<li><div class="src-line"><span class="src-comm">&nbsp;*&nbsp;import&nbsp;the&nbsp;array&nbsp;structure&nbsp;to&nbsp;create&nbsp;the&nbsp;sample.xml.plist</span></div></li>
+<li><div class="src-line"><span class="src-comm">&nbsp;*&nbsp;We&nbsp;make&nbsp;use&nbsp;of&nbsp;CFTypeDetector,&nbsp;which&nbsp;truly&nbsp;is&nbsp;not&nbsp;almighty!</span></div></li>
+<li><div class="src-line"><span class="src-comm">&nbsp;*/</span></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line"><span class="src-var">$structure&nbsp;</span>=&nbsp;<span class="src-key">array</span><span class="src-sym">(</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;<span class="src-str">'Year&nbsp;Of&nbsp;Birth'&nbsp;</span>=&gt;&nbsp;<span class="src-num">1965</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;<span class="src-comm">//&nbsp;Note:&nbsp;dates&nbsp;cannot&nbsp;be&nbsp;guessed,&nbsp;so&nbsp;this&nbsp;will&nbsp;become&nbsp;a&nbsp;CFNumber&nbsp;and&nbsp;be&nbsp;treated&nbsp;as&nbsp;an&nbsp;integer</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;<span class="src-comm">//&nbsp;See&nbsp;example-04.php&nbsp;for&nbsp;a&nbsp;possible&nbsp;workaround</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;<span class="src-str">'Date&nbsp;Of&nbsp;Graduation'&nbsp;</span>=&gt;&nbsp;<a href="http://www.php.net/gmmktime">gmmktime</a><span class="src-sym">(&nbsp;</span><span class="src-num">19</span><span class="src-sym">,&nbsp;</span><span class="src-num">23</span><span class="src-sym">,&nbsp;</span><span class="src-num">43</span><span class="src-sym">,&nbsp;</span><span class="src-num">06</span><span class="src-sym">,&nbsp;</span><span class="src-num">22</span><span class="src-sym">,&nbsp;</span><span class="src-num">2004&nbsp;</span><span class="src-sym">)</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;<span class="src-str">'Pets&nbsp;Names'&nbsp;</span>=&gt;&nbsp;<span class="src-key">array</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;<span class="src-comm">//&nbsp;Note:&nbsp;data&nbsp;cannot&nbsp;be&nbsp;guessed,&nbsp;so&nbsp;this&nbsp;will&nbsp;become&nbsp;a&nbsp;CFString</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;<span class="src-comm">//&nbsp;See&nbsp;example-03.php&nbsp;for&nbsp;a&nbsp;possible&nbsp;workaround</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;<span class="src-str">'Picture'&nbsp;</span>=&gt;&nbsp;<span class="src-str">'PEKBpYGlmYFCPA=='</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;<span class="src-str">'City&nbsp;Of&nbsp;Birth'&nbsp;</span>=&gt;&nbsp;<span class="src-str">'Springfield'</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;<span class="src-str">'Name'&nbsp;</span>=&gt;&nbsp;<span class="src-str">'John&nbsp;Doe'</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;<span class="src-str">'Kids&nbsp;Names'&nbsp;</span>=&gt;&nbsp;<span class="src-key">array</span><span class="src-sym">(&nbsp;</span><span class="src-str">'John'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'Kyra'&nbsp;</span><span class="src-sym">)</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line"><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line"><span class="src-var">$td&nbsp;</span>=&nbsp;<span class="src-key">new&nbsp;</span><span class="src-id"><a href="../plist/plist-types/CFTypeDetector.html">CFTypeDetector</a></span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;&nbsp;&nbsp;</span></div></li>
+<li><div class="src-line"><span class="src-var">$guessedStructure&nbsp;</span>=&nbsp;<span class="src-var">$td</span><span class="src-sym">-&gt;</span><a href="../plist/plist-types/CFTypeDetector.html#methodtoCFType">toCFType</a><span class="src-sym">(&nbsp;</span><span class="src-var">$structure&nbsp;</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><span class="src-var">$plist</span><span class="src-sym">-&gt;</span><span class="src-id">add</span><span class="src-sym">(&nbsp;</span><span class="src-var">$guessedStructure&nbsp;</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line"><span class="src-comm">/*</span></div></li>
+<li><div class="src-line"><span class="src-comm">&nbsp;*&nbsp;Save&nbsp;PList&nbsp;as&nbsp;XML</span></div></li>
+<li><div class="src-line"><span class="src-comm">&nbsp;*/</span></div></li>
+<li><div class="src-line"><span class="src-var">$plist</span><span class="src-sym">-&gt;</span><span class="src-id">saveXML</span><span class="src-sym">(&nbsp;</span><a href="http://www.php.net/dirname">dirname</a><span class="src-sym">(</span>__FILE__<span class="src-sym">)</span>.<span class="src-str">'/example-create-02.xml.plist'&nbsp;</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line"><span class="src-comm">/*</span></div></li>
+<li><div class="src-line"><span class="src-comm">&nbsp;*&nbsp;Save&nbsp;PList&nbsp;as&nbsp;Binary</span></div></li>
+<li><div class="src-line"><span class="src-comm">&nbsp;*/</span></div></li>
+<li><div class="src-line"><span class="src-var">$plist</span><span class="src-sym">-&gt;</span><span class="src-id">saveBinary</span><span class="src-sym">(&nbsp;</span><a href="http://www.php.net/dirname">dirname</a><span class="src-sym">(</span>__FILE__<span class="src-sym">)</span>.<span class="src-str">'/example-create-02.binary.plist'&nbsp;</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line"><span class="src-php">?&gt;</span></div></li>
+</ol></div>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 01 Jan 2010 21:33:34 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</p>
+	</body>
+</html>

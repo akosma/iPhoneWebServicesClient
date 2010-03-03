@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class CFTypeDetector</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class CFTypeDetector</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">CFTypeDetector  Interface for converting native PHP data structures to CFPropertyList objects.</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Christian Kruse &lt;<a href="mailto:cjk@wwwtech.de">cjk@wwwtech.de</a>&gt;</li>
+				<li><span class="field">author:</span> Rodney Rehm &lt;<a href="mailto:rodney.rehm@medialize.de">rodney.rehm@medialize.de</a>&gt;</li>
+				<li><span class="field">usedby:</span> <a href="../../plist/CFPropertyList.html#methodguess">CFPropertyList::guess()</a> - for actual type detection</li>
+				<li><span class="field">example:</span> <a href="../../__examplesource/exsource_ruse_cfpropertylist_examples_example-create-04.php_74cd82c290a88bf355f1ce76613af409.html">Using and extended</a></li>
+				<li><span class="field">example:</span> <a href="../../__examplesource/exsource_ruse_cfpropertylist_examples_example-create-02.php_bb3b64080407fc9bbe155653d3d6af03.html">Using</a></li>
+				<li><span class="field">example:</span> <a href="../../__examplesource/exsource_ruse_cfpropertylist_examples_example-create-03.php_89bde81d386cd26bc3efe953dc356b67.html">Using  with  and</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_CFTypeDetector.php.html">/CFTypeDetector.php</a> (line <span class="field">14</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																<div class="var-title">
+					<span class="var-type">boolean</span>
+					<a href="#$autoDictionary" title="details" class="var-name">$autoDictionary</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">boolean</span>
+					<a href="#$suppressExceptions" title="details" class="var-name">$suppressExceptions</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																				
+												<div class="method-definition">
+											<span class="method-result">CFTypeDetector</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$autoDicitionary</span> = <span class="var-default">false</span>], [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$suppressExceptions</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../plist/plist-types/CFType.html">CFType</a></span>
+										<a href="#defaultValue" title="details" class="method-name">defaultValue</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#isAssociativeArray" title="details" class="method-name">isAssociativeArray</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../plist/plist-types/CFType.html">CFType</a></span>
+										<a href="#toCFType" title="details" class="method-name">toCFType</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$value</span>, <span class="var-type">boolean</span>&nbsp;<span class="var-name">$autoDictionary</span>)
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="var$autoDictionary" id="$autoDictionary"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">boolean</span>
+			<span class="var-name">$autoDictionary</span>
+			 = <span class="var-default"> false</span>			(line <span class="line-number">20</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">flag stating if all arrays should automatically be converted to <a href="../../plist/plist-types/CFDictionary.html">CFDictionary</a></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$suppressExceptions" id="$suppressExceptions"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">boolean</span>
+			<span class="var-name">$suppressExceptions</span>
+			 = <span class="var-default"> false</span>			(line <span class="line-number">26</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">flag stating if exceptions should be suppressed or thrown</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">33</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Create new CFTypeDetector</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">CFTypeDetector</span>
+		<span class="method-name">
+			__construct
+		</span>
+					([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$autoDicitionary</span> = <span class="var-default">false</span>], [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$suppressExceptions</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$autoDicitionary</span><span class="var-description">: if set to true all arrays will be converted to <a href="../../plist/plist-types/CFDictionary.html">CFDictionary</a></span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$suppressExceptions</span><span class="var-description">: if set to true toCFType() will not throw any exceptions</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddefaultValue" id="defaultValue"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">defaultValue</span> (line <span class="line-number">62</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the default value</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> the default value to return if no suitable type could be determined</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../plist/plist-types/CFType.html">CFType</a></span>
+		<span class="method-name">
+			defaultValue
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodisAssociativeArray" id="isAssociativeArray"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">isAssociativeArray</span> (line <span class="line-number">44</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Determine if an array is associative or numerical.</p>
+<p class="description"><p>Numerical Arrays have incrementing index-numbers that don't contain gaps.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> true if array is associative, false if array has numeric indexes</li>
+				<li><span class="field">access:</span> protected</li>
+				<li><span class="field">usedby:</span> <a href="../../plist/plist-types/CFTypeDetector.html#methodtoCFType">CFTypeDetector::toCFType()</a> - to check if an array only has numeric indexes</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			isAssociativeArray
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$value</span><span class="var-description">: Array to check indexes of</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodtoCFType" id="toCFType"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">toCFType</span> (line <span class="line-number">84</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Create CFType-structure by guessing the data-types.</p>
+<p class="description"><p><a href="../../plist/plist-types/CFArray.html">CFArray</a>, <a href="../../plist/plist-types/CFDictionary.html">CFDictionary</a>, <a href="../../plist/plist-types/CFBoolean.html">CFBoolean</a>, <a href="../../plist/plist-types/CFNumber.html">CFNumber</a> and <a href="../../plist/plist-types/CFString.html">CFString</a> can be created, <a href="../../plist/plist-types/CFDate.html">CFDate</a> and <a href="../../plist/plist-types/CFData.html">CFData</a> cannot.  <br /><strong>Note:</strong>Distinguishing between <a href="../../plist/plist-types/CFArray.html">CFArray</a> and <a href="../../plist/plist-types/CFDictionary.html">CFDictionary</a> is done by examining the keys.  Keys must be strictly incrementing integers to evaluate to a <a href="../../plist/plist-types/CFArray.html">CFArray</a>.  Since PHP does not offer a function to test for associative arrays,  this test causes the input array to be walked twice and thus work rather slow on large collections.  If you work with large arrays and can live with all arrays evaluating to <a href="../../plist/plist-types/CFDictionary.html">CFDictionary</a>,  feel free to set the appropriate flag.  <br /><strong>Note:</strong> If $value is an instance of CFType it is simply returned.  <br /><strong>Note:</strong> If $value is neither a CFType, array, numeric, boolean nor string, it is omitted.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> CFType based on guessed type</li>
+				<li><span class="field">access:</span> public</li>
+				<li><span class="field">uses:</span> <a href="../../plist/plist-types/CFTypeDetector.html#methodisAssociativeArray">CFTypeDetector::isAssociativeArray()</a> - to check if an array only has numeric indexes</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../plist/plist-types/CFType.html">CFType</a></span>
+		<span class="method-name">
+			toCFType
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$value</span>, <span class="var-type">boolean</span>&nbsp;<span class="var-name">$autoDictionary</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$value</span><span class="var-description">: Value to convert to CFType</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$autoDictionary</span><span class="var-description">: if true <a href="../../plist/plist-types/CFArray.html">CFArray</a>-detection is bypassed and arrays will be returned as <a href="../../plist/plist-types/CFDictionary.html">CFDictionary</a>.</span>			</li>
+				</ul>
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 01 Jan 2010 21:33:34 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</p>
+	</div></body>
+</html>

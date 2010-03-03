@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class CFDate</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class CFDate</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-vars">Vars</a>
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Date Type of CFPropertyList</p>
+<p class="description"><p>Note: CFDate uses Unix timestamp (epoch) to store dates internally</p></p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Christian Kruse &lt;<a href="mailto:cjk@wwwtech.de">cjk@wwwtech.de</a>&gt;</li>
+				<li><span class="field">author:</span> Rodney Rehm &lt;<a href="mailto:rodney.rehm@medialize.de">rodney.rehm@medialize.de</a>&gt;</li>
+				<li><span class="field">version:</span> $Id$</li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_CFType.php.html">/CFType.php</a> (line <span class="field">164</span>)
+		</p>
+		
+				
+		<pre><a href="../../plist/plist-types/CFType.html">CFType</a>
+   |
+   --CFDate</pre>
+	
+			</div>
+</div>
+
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+												<a href="#sec-vars">Vars</a>
+				 
+				|
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#DATE_DIFF_APPLE_UNIX" title="details" class="const-name">DATE_DIFF_APPLE_UNIX</a> = 					<span class="var-type"> 978307200</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#TIMESTAMP_APPLE" title="details" class="const-name">TIMESTAMP_APPLE</a> = 					<span class="var-type"> 0</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#TIMESTAMP_UNIX" title="details" class="const-name">TIMESTAMP_UNIX</a> = 					<span class="var-type"> 1</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+															<a href="#sec-vars">Vars</a>
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																				<div class="method-definition">
+					static 						<span class="method-result">integer</span>
+										<a href="#dateValue" title="details" class="method-name">dateValue</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$val</span>)
+									</div>
+																																								
+												<div class="method-definition">
+											<span class="method-result">CFDate</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$value</span>, [<span class="var-type">integer</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">CFDate::TIMESTAMP_UNIX</span>])
+									</div>
+																								<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#getValue" title="details" class="method-name">getValue</a>
+											([<span class="var-type">integer</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">CFDate::TIMESTAMP_UNIX</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setValue" title="details" class="method-name">setValue</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$value</span>, [<span class="var-type">integer</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">CFDate::TIMESTAMP_UNIX</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">The</span>
+										<a href="#toBinary" title="details" class="method-name">toBinary</a>
+											(<span class="var-type"><a href="../../plist/CFBinaryPropertyList.html">CFBinaryPropertyList</a></span>&nbsp;<span class="var-name">&$bplist</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">DOMNode</span>
+										<a href="#toXML" title="details" class="method-name">toXML</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$doc</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$nodeName</span> = <span class="var-default">&quot;&quot;</span>])
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+										<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../plist/plist-types/CFType.html">CFType</a></span></p>
+					<blockquote>
+													<span class="var-title">
+								<span class="var-name"><a href="../../plist/plist-types/CFType.html#var$value">CFType::$value</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-vars">Vars</a>
+																			<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methoddateValue" id="dateValue"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method dateValue</span> (line <span class="line-number">234</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Create a UNIX timestamp from a PList date string</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The UNIX timestamp</li>
+				<li><span class="field">throws:</span> PListException when encountering an unknown date string format</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			dateValue
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$val</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$val</span><span class="var-description">: The date string (e.g. &quot;2009-05-13T20:23:43Z&quot;)</span>			</li>
+				</ul>
+		
+			
+	</div>
+
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">175</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Create new Date CFType.</p>
+	<ul class="tags">
+				<li><span class="field">uses:</span> <a href="../../plist/plist-types/CFDate.html#methodsetValue">CFDate::setValue()</a> - to convert the timestamp</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">CFDate</span>
+		<span class="method-name">
+			__construct
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$value</span>, [<span class="var-type">integer</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">CFDate::TIMESTAMP_UNIX</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$value</span><span class="var-description">: timestamp to set</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$format</span><span class="var-description">: format the timestamp is specified in, use <a href="../../plist/plist-types/CFDate.html#constTIMESTAMP_APPLE">TIMESTAMP_APPLE</a> or <a href="../../plist/plist-types/CFDate.html#constTIMESTAMP_UNIX">TIMESTAMP_UNIX</a>, defaults to <a href="../../plist/plist-types/CFDate.html#constTIMESTAMP_APPLE">TIMESTAMP_APPLE</a></span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../plist/plist-types/CFType.html#method__construct">CFType::__construct()</a></dt>
+						<dd>Create new CFType.</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetValue" id="getValue"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getValue</span> (line <span class="line-number">201</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the Date CFType's value.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Unix timestamp</li>
+				<li><span class="field">uses:</span> <a href="../../plist/plist-types/CFDate.html#constTIMESTAMP_UNIX">CFDate::TIMESTAMP_UNIX</a> - to determine timestamp type</li>
+				<li><span class="field">uses:</span> <a href="../../plist/plist-types/CFDate.html#constTIMESTAMP_APPLE">CFDate::TIMESTAMP_APPLE</a> - to determine timestamp type</li>
+				<li><span class="field">uses:</span> <a href="../../plist/plist-types/CFDate.html#constDATE_DIFF_APPLE_UNIX">CFDate::DATE_DIFF_APPLE_UNIX</a> - to convert Unix-timestamp to Apple-timestamp</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			getValue
+		</span>
+					([<span class="var-type">integer</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">CFDate::TIMESTAMP_UNIX</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$format</span><span class="var-description">: format the timestamp is specified in, use <a href="../../plist/plist-types/CFDate.html#constTIMESTAMP_APPLE">TIMESTAMP_APPLE</a> or <a href="../../plist/plist-types/CFDate.html#constTIMESTAMP_UNIX">TIMESTAMP_UNIX</a>, defaults to <a href="../../plist/plist-types/CFDate.html#constTIMESTAMP_UNIX">TIMESTAMP_UNIX</a></span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../plist/plist-types/CFType.html#methodgetValue">CFType::getValue()</a></dt>
+						<dd>Get the CFType's value</dd>
+					</dl>
+			
+	</div>
+<a name="methodsetValue" id="setValue"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setValue</span> (line <span class="line-number">188</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the Date CFType's value.</p>
+	<ul class="tags">
+				<li><span class="field">usedby:</span> <a href="../../plist/plist-types/CFDate.html#method__construct">CFDate::__construct()</a> - to convert the timestamp</li>
+				<li><span class="field">uses:</span> <a href="../../plist/plist-types/CFDate.html#constTIMESTAMP_UNIX">CFDate::TIMESTAMP_UNIX</a> - to determine timestamp type</li>
+				<li><span class="field">uses:</span> <a href="../../plist/plist-types/CFDate.html#constTIMESTAMP_APPLE">CFDate::TIMESTAMP_APPLE</a> - to determine timestamp type</li>
+				<li><span class="field">uses:</span> <a href="../../plist/plist-types/CFDate.html#constDATE_DIFF_APPLE_UNIX">CFDate::DATE_DIFF_APPLE_UNIX</a> - to convert Apple-timestamp to Unix-timestamp</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setValue
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$value</span>, [<span class="var-type">integer</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">CFDate::TIMESTAMP_UNIX</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$value</span><span class="var-description">: timestamp to set</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$format</span><span class="var-description">: format the timestamp is specified in, use <a href="../../plist/plist-types/CFDate.html#constTIMESTAMP_APPLE">TIMESTAMP_APPLE</a> or <a href="../../plist/plist-types/CFDate.html#constTIMESTAMP_UNIX">TIMESTAMP_UNIX</a>, defaults to <a href="../../plist/plist-types/CFDate.html#constTIMESTAMP_UNIX">TIMESTAMP_UNIX</a></span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../plist/plist-types/CFType.html#methodsetValue">CFType::setValue()</a></dt>
+						<dd>Set the CFType's value</dd>
+					</dl>
+			
+	</div>
+<a name="methodtoBinary" id="toBinary"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">toBinary</span> (line <span class="line-number">224</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">convert value to binary representation</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> offset in the object table</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">The</span>
+		<span class="method-name">
+			toBinary
+		</span>
+					(<span class="var-type"><a href="../../plist/CFBinaryPropertyList.html">CFBinaryPropertyList</a></span>&nbsp;<span class="var-name">&$bplist</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../plist/CFBinaryPropertyList.html">CFBinaryPropertyList</a></span>
+				<span class="var-name">&$bplist</span><span class="var-description">: The binary property list object</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../plist/plist-types/CFType.html#methodtoBinary">CFType::toBinary()</a></dt>
+						<dd>convert value to binary representation</dd>
+					</dl>
+			
+	</div>
+<a name="methodtoXML" id="toXML"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">toXML</span> (line <span class="line-number">212</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get XML-Node.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> &amp;lt;date&amp;gt;-Element</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">DOMNode</span>
+		<span class="method-name">
+			toXML
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$doc</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$nodeName</span> = <span class="var-default">&quot;&quot;</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">DOMDocument</span>
+				<span class="var-name">$doc</span><span class="var-description">: DOMDocument to create DOMNode in</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$nodeName</span><span class="var-description">: For compatibility reasons; just ignore it</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../plist/plist-types/CFType.html#methodtoXML">CFType::toXML()</a></dt>
+						<dd>Get XML-Node.</dd>
+					</dl>
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../plist/plist-types/CFType.html">CFType</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../../plist/plist-types/CFType.html#method__construct">CFType::__construct()</a></span><br>
+													<span class="method-name"><a href="../../plist/plist-types/CFType.html#methodgetValue">CFType::getValue()</a></span><br>
+													<span class="method-name"><a href="../../plist/plist-types/CFType.html#methodsetValue">CFType::setValue()</a></span><br>
+													<span class="method-name"><a href="../../plist/plist-types/CFType.html#methodtoArray">CFType::toArray()</a></span><br>
+													<span class="method-name"><a href="../../plist/plist-types/CFType.html#methodtoBinary">CFType::toBinary()</a></span><br>
+													<span class="method-name"><a href="../../plist/plist-types/CFType.html#methodtoXML">CFType::toXML()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-vars">Vars</a>
+														| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constDATE_DIFF_APPLE_UNIX" id="DATE_DIFF_APPLE_UNIX"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">DATE_DIFF_APPLE_UNIX</span>
+			 = <span class="const-default"> 978307200</span>
+			(line <span class="line-number">167</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">usedby:</span> <a href="../../plist/plist-types/CFDate.html#methodgetValue">CFDate::getValue()</a> - to convert Unix-timestamp to Apple-timestamp</li>
+				<li><span class="field">usedby:</span> <a href="../../plist/plist-types/CFDate.html#methodsetValue">CFDate::setValue()</a> - to convert Apple-timestamp to Unix-timestamp</li>
+			</ul>
+	
+	
+</div>
+<a name="constTIMESTAMP_APPLE" id="TIMESTAMP_APPLE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TIMESTAMP_APPLE</span>
+			 = <span class="const-default"> 0</span>
+			(line <span class="line-number">165</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">usedby:</span> <a href="../../plist/plist-types/CFDate.html#methodgetValue">CFDate::getValue()</a> - to determine timestamp type</li>
+				<li><span class="field">usedby:</span> <a href="../../plist/plist-types/CFDate.html#methodsetValue">CFDate::setValue()</a> - to determine timestamp type</li>
+			</ul>
+	
+	
+</div>
+<a name="constTIMESTAMP_UNIX" id="TIMESTAMP_UNIX"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TIMESTAMP_UNIX</span>
+			 = <span class="const-default"> 1</span>
+			(line <span class="line-number">166</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">usedby:</span> <a href="../../plist/plist-types/CFDate.html#methodgetValue">CFDate::getValue()</a> - to determine timestamp type</li>
+				<li><span class="field">usedby:</span> <a href="../../plist/plist-types/CFDate.html#methodsetValue">CFDate::setValue()</a> - to determine timestamp type</li>
+			</ul>
+	
+	
+</div>
+						
+		</div>
+	</div>
+
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 01 Jan 2010 21:33:34 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</p>
+	</div></body>
+</html>
