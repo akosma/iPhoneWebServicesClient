@@ -34,8 +34,8 @@
 
 #import "RootViewController.h"
 #import "BaseDataLoader.h"
-#import "DeserializerType.h"
 #import "BaseDeserializer.h"
+#import "BenchmarkController.h"
 
 @interface RootViewController ()
 @property (nonatomic, retain) BaseDataLoader *dataLoader;
@@ -114,6 +114,14 @@
     [self.dataLoader loadData];
 
     [self updateTitle];
+}
+
+- (IBAction)showBenchmark:(id)sender
+{
+    BenchmarkController *benchmark = [[BenchmarkController alloc] init];
+    [self.navigationController presentModalViewController:benchmark.navigationController 
+                                                 animated:YES];
+    [benchmark release];
 }
 
 #pragma mark -

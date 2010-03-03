@@ -3,6 +3,9 @@
 #if TARGET_OS_IPHONE
 #import <CFNetwork/CFNetwork.h>
 #endif
+
+#import "Definitions.h"
+
 @implementation datawsdl
 + (void)initialize
 {
@@ -13,7 +16,8 @@
 }
 + (datawsdlBinding *)datawsdlBinding
 {
-	return [[[datawsdlBinding alloc] initWithAddress:@"http://localhost:8888/soap/server.php"] autorelease];
+    NSString *address = [NSString stringWithFormat:@"%@/soap/server.php", BASE_URL];
+	return [[[datawsdlBinding alloc] initWithAddress:address] autorelease];
 }
 @end
 @implementation datawsdlBinding

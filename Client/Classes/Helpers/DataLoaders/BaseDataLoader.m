@@ -36,6 +36,7 @@
 #import "ASIHTTPRequestDataLoader.h"
 #import "NSURLConnectionDataLoader.h"
 #import "SOAPDataLoader.h"
+#import "Definitions.h"
 
 @implementation BaseDataLoader
 
@@ -87,7 +88,7 @@
     if (self = [super init])
     {
         self.limit = 300;
-        self.baseURLString = @"http://localhost:8888/index.php";
+        self.baseURLString = [NSString stringWithFormat:@"%@/index.php", BASE_URL];
     }
     return self;
 }

@@ -1,8 +1,8 @@
 //
-//  DataLoader.h
+//  BenchmarkController.h
 //  Client
 //
-//  Created by Adrian on 3/2/10.
+//  Created by Adrian on 3/3/10.
 //  Copyright (c) 2010, akosma software / Adrian Kosmaczewski
 //  All rights reserved.
 //
@@ -32,21 +32,25 @@
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import "DataLoaderDelegate.h"
 
-@protocol DataLoaderDelegate;
-@protocol DeserializerDelegate;
-@protocol Deserializer;
+@interface BenchmarkController : UIViewController <DataLoaderDelegate>
+{
+@private
+    IBOutlet UIBarButtonItem *_doneButton;
+    IBOutlet UIBarButtonItem *_startButton;
+    IBOutlet UITableView *_tableView;
+    NSMutableArray *_tries;
+    NSMutableArray *_loaders;
+    NSInteger _currentLimit;
+    NSInteger _currentLoaderIndex;
+    UINavigationController *_navigationController;
+}
 
-@protocol DataLoader <DeserializerDelegate>
+@property (nonatomic, readonly) UINavigationController *navigationController;
 
-@required
-
-@property (nonatomic) NSInteger limit;
-@property (nonatomic, copy) NSString *baseURLString;
-@property (nonatomic, assign) id<DataLoaderDelegate> delegate;
-@property (nonatomic, retain) id<Deserializer> deserializer;
-
-- (void)loadData;
+- (IBAction)done:(id)sender;
+- (IBAction)start:(id)sender;
 
 @end

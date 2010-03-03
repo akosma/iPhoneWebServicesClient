@@ -29,6 +29,8 @@
 		3A50C58011204B560027974D /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A50C57E11204B560027974D /* MainWindow.xib */; };
 		3A50C58111204B560027974D /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A50C57F11204B560027974D /* RootViewController.xib */; };
 		3A50C58411204B6C0027974D /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A50C58311204B6C0027974D /* Entitlements.plist */; };
+		3A72D690113E9C2C0055AF36 /* BenchmarkController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A72D68E113E9C2C0055AF36 /* BenchmarkController.m */; };
+		3A72D693113E9C740055AF36 /* BenchmarkController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A72D692113E9C740055AF36 /* BenchmarkController.xib */; };
 		3A9A0847113BB756003E62D4 /* datawsdl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9A083A113BB756003E62D4 /* datawsdl.m */; };
 		3A9A0848113BB756003E62D4 /* ns1.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9A083C113BB756003E62D4 /* ns1.m */; };
 		3A9A0849113BB756003E62D4 /* NSDate+ISO8601Parsing.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9A083E113BB756003E62D4 /* NSDate+ISO8601Parsing.m */; };
@@ -123,6 +125,10 @@
 		3A50C57E11204B560027974D /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		3A50C57F11204B560027974D /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		3A50C58311204B6C0027974D /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
+		3A72D68D113E9C2C0055AF36 /* BenchmarkController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BenchmarkController.h; sourceTree = "<group>"; };
+		3A72D68E113E9C2C0055AF36 /* BenchmarkController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BenchmarkController.m; sourceTree = "<group>"; };
+		3A72D692113E9C740055AF36 /* BenchmarkController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BenchmarkController.xib; sourceTree = "<group>"; };
+		3A72D718113EA2D40055AF36 /* Definitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Definitions.h; sourceTree = "<group>"; };
 		3A9A0839113BB756003E62D4 /* datawsdl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = datawsdl.h; sourceTree = "<group>"; };
 		3A9A083A113BB756003E62D4 /* datawsdl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = datawsdl.m; sourceTree = "<group>"; };
 		3A9A083B113BB756003E62D4 /* ns1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ns1.h; sourceTree = "<group>"; };
@@ -280,6 +286,7 @@
 			children = (
 				28A0AAE50D9B0CCF005BE974 /* Client_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
+				3A72D718113EA2D40055AF36 /* Definitions.h */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -338,6 +345,8 @@
 			children = (
 				3A50C57711204B4A0027974D /* RootViewController.h */,
 				3A50C57811204B4A0027974D /* RootViewController.m */,
+				3A72D68D113E9C2C0055AF36 /* BenchmarkController.h */,
+				3A72D68E113E9C2C0055AF36 /* BenchmarkController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -369,6 +378,7 @@
 			children = (
 				3A50C57E11204B560027974D /* MainWindow.xib */,
 				3A50C57F11204B560027974D /* RootViewController.xib */,
+				3A72D692113E9C740055AF36 /* BenchmarkController.xib */,
 			);
 			path = NIBs;
 			sourceTree = "<group>";
@@ -650,6 +660,7 @@
 				3A50C58011204B560027974D /* MainWindow.xib in Resources */,
 				3A50C58111204B560027974D /* RootViewController.xib in Resources */,
 				3A50C58411204B6C0027974D /* Entitlements.plist in Resources */,
+				3A72D693113E9C740055AF36 /* BenchmarkController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -724,6 +735,7 @@
 				3AD27296113D7CE2004B310D /* CXMLNode_XPathExtensions.m in Sources */,
 				3AD27297113D7CE2004B310D /* CTidy.m in Sources */,
 				3AD272A0113D7D07004B310D /* LibXMLDeserializer.m in Sources */,
+				3A72D690113E9C2C0055AF36 /* BenchmarkController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

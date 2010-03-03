@@ -53,5 +53,6 @@
 - (IBAction)sliderChanged:(id)sender;
 - (IBAction)formatChanged:(id)sender;
 - (IBAction)refresh:(id)sender;
+- (IBAction)showBenchmark:(id)sender;
 
 @end

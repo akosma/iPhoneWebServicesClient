@@ -55,7 +55,6 @@
 @property (nonatomic, retain) id data;
 @property (nonatomic, retain) NSURL *url;
 @property (nonatomic, retain) NSError *error;
-@property (nonatomic, retain) id<Deserializer> deserializer;
 @property (nonatomic) NSTimeInterval interval;
 
 + (id<DataLoader>)loaderWithMechanism:(LoaderMechanism)mechanism;
