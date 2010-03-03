@@ -32,10 +32,12 @@
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
+#import <AddressBookUI/AddressBookUI.h>
 #import "RootViewController.h"
 #import "BaseDataLoader.h"
 #import "BaseDeserializer.h"
 #import "BenchmarkController.h"
+#import "NSDictionary+Extensions.h"
 
 @interface RootViewController ()
 @property (nonatomic, retain) BaseDataLoader *dataLoader;
@@ -179,6 +181,7 @@
     {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
                                        reuseIdentifier:CellIdentifier] autorelease];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
     NSDictionary *dict = [self.data objectAtIndex:indexPath.row];
@@ -190,6 +193,17 @@
     cell.detailTextLabel.text = email;
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSDictionary *dict = [self.data objectAtIndex:indexPath.row];
+    ABPersonViewController *personController = [[ABPersonViewController alloc] init];
+    ABRecordRef person = dict.person;
+    personController.displayedPerson = person;
+    [self.navigationController pushViewController:personController animated:YES];
+    [personController release];
+    
 }
 
 #pragma mark -

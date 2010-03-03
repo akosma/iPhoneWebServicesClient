@@ -67,6 +67,9 @@
 		3AA35CA8113CF25C00A89E31 /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AA35CA7113CF25C00A89E31 /* libz.1.2.3.dylib */; };
 		3AA35CBA113CF27400A89E31 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA35CB9113CF27400A89E31 /* Reachability.m */; };
 		3AA35D56113CFDEA00A89E31 /* SBJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA35D55113CFDEA00A89E31 /* SBJSONDeserializer.m */; };
+		3AB15C5E113ECCF800B132E6 /* NSDictionary+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB15C5D113ECCF800B132E6 /* NSDictionary+Extensions.m */; };
+		3AB15C65113ECDC000B132E6 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB15C64113ECDC000B132E6 /* AddressBook.framework */; };
+		3AB15C67113ECDC000B132E6 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB15C66113ECDC000B132E6 /* AddressBookUI.framework */; };
 		3ABF6E2F113C4CFE00EEE0D4 /* BaseDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ABF6E2E113C4CFE00EEE0D4 /* BaseDeserializer.m */; };
 		3ABF6E89113C534700EEE0D4 /* BaseDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ABF6E88113C534700EEE0D4 /* BaseDataLoader.m */; };
 		3AD27253113D7BCB004B310D /* NSXMLParserDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD27252113D7BCB004B310D /* NSXMLParserDeserializer.m */; };
@@ -202,6 +205,10 @@
 		3AA35CB9113CF27400A89E31 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		3AA35D54113CFDEA00A89E31 /* SBJSONDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSONDeserializer.h; sourceTree = "<group>"; };
 		3AA35D55113CFDEA00A89E31 /* SBJSONDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSONDeserializer.m; sourceTree = "<group>"; };
+		3AB15C5C113ECCF800B132E6 /* NSDictionary+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Extensions.h"; sourceTree = "<group>"; };
+		3AB15C5D113ECCF800B132E6 /* NSDictionary+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Extensions.m"; sourceTree = "<group>"; };
+		3AB15C64113ECDC000B132E6 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		3AB15C66113ECDC000B132E6 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		3ABF6E2C113C4C5600EEE0D4 /* Deserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deserializer.h; sourceTree = "<group>"; };
 		3ABF6E2D113C4CFE00EEE0D4 /* BaseDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDeserializer.h; sourceTree = "<group>"; };
 		3ABF6E2E113C4CFE00EEE0D4 /* BaseDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseDeserializer.m; sourceTree = "<group>"; };
@@ -254,6 +261,8 @@
 				3AA35CA6113CF25C00A89E31 /* SystemConfiguration.framework in Frameworks */,
 				3AA35CA8113CF25C00A89E31 /* libz.1.2.3.dylib in Frameworks */,
 				3A0A8216113D1B1F00E23EDC /* libsyck.a in Frameworks */,
+				3AB15C65113ECDC000B132E6 /* AddressBook.framework in Frameworks */,
+				3AB15C67113ECDC000B132E6 /* AddressBookUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +303,8 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3AB15C64113ECDC000B132E6 /* AddressBook.framework */,
+				3AB15C66113ECDC000B132E6 /* AddressBookUI.framework */,
 				3A9A084E113BB75F003E62D4 /* CFNetwork.framework */,
 				3AA35CA5113CF25C00A89E31 /* SystemConfiguration.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
@@ -356,6 +367,7 @@
 			children = (
 				3ABF6EDC113C581900EEE0D4 /* LoaderMechanism.h */,
 				3ABF6E71113C51A500EEE0D4 /* DeserializerType.h */,
+				3AB15C5A113ECCEB00B132E6 /* Categories */,
 				3ABF6E08113C4A5600EEE0D4 /* Deserializers */,
 				3ABF6E6E113C513A00EEE0D4 /* DataLoaders */,
 				3A9A0838113BB756003E62D4 /* SOAP */,
@@ -507,6 +519,15 @@
 				3AA35CB9113CF27400A89E31 /* Reachability.m */,
 			);
 			path = Reachability2.0;
+			sourceTree = "<group>";
+		};
+		3AB15C5A113ECCEB00B132E6 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				3AB15C5C113ECCF800B132E6 /* NSDictionary+Extensions.h */,
+				3AB15C5D113ECCF800B132E6 /* NSDictionary+Extensions.m */,
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 		3ABF6E08113C4A5600EEE0D4 /* Deserializers */ = {
@@ -736,6 +757,7 @@
 				3AD27297113D7CE2004B310D /* CTidy.m in Sources */,
 				3AD272A0113D7D07004B310D /* LibXMLDeserializer.m in Sources */,
 				3A72D690113E9C2C0055AF36 /* BenchmarkController.m in Sources */,
+				3AB15C5E113ECCF800B132E6 /* NSDictionary+Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
