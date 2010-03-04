@@ -35,15 +35,24 @@
 #import "ClientAppDelegate.h"
 #import "RootViewController.h"
 
+@interface ClientAppDelegate ()
+@property (nonatomic, retain) UIWindow *window;
+@property (nonatomic, retain) UINavigationController *navigationController;
+@end
+
+
 @implementation ClientAppDelegate
+
+@synthesize window = _window;
+@synthesize navigationController = _navigationController;
 
 #pragma mark -
 #pragma mark Application lifecycle
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application 
 {
-	[_window addSubview:[_navigationController view]];
-    [_window makeKeyAndVisible];
+	[self.window addSubview:[self.navigationController view]];
+    [self.window makeKeyAndVisible];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application 
@@ -55,11 +64,7 @@
 
 - (void)dealloc 
 {
-	[_navigationController release];
-	[_window release];
 	[super dealloc];
 }
 
-
 @end
-

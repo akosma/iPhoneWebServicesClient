@@ -40,6 +40,14 @@
 #import "NSDictionary+Extensions.h"
 
 @interface RootViewController ()
+
+@property (nonatomic, retain) UIView *headerView;
+@property (nonatomic, retain) UISlider *slider;
+@property (nonatomic, retain) UILabel *sliderLabel;
+@property (nonatomic, retain) UISegmentedControl *formatControl;
+@property (nonatomic, retain) UIActivityIndicatorView *spinningWheel;
+
+@property (nonatomic) DeserializerType currentDataFormat;
 @property (nonatomic, retain) BaseDataLoader *dataLoader;
 @property (nonatomic, retain) NSArray *data;
 - (void)updateTitle;
@@ -50,6 +58,12 @@
 
 @synthesize dataLoader = _dataLoader;
 @synthesize data = _data;
+@synthesize currentDataFormat = _currentDataFormat;
+@synthesize spinningWheel = _spinningWheel;
+@synthesize formatControl = _formatControl;
+@synthesize sliderLabel = _sliderLabel;
+@synthesize slider = _slider;
+@synthesize headerView = _headerView;
 
 - (void)dealloc
 {
@@ -64,35 +78,35 @@
 - (IBAction)sliderChanged:(id)sender
 {
     NSInteger limit = (NSInteger)_slider.value;
-    _sliderLabel.text = [NSString stringWithFormat:@"%d", limit];
+    self.sliderLabel.text = [NSString stringWithFormat:@"%d", limit];
 }
 
 - (IBAction)formatChanged:(id)sender
 {
-    switch (_formatControl.selectedSegmentIndex) 
+    switch (self.formatControl.selectedSegmentIndex) 
     {
         case 0:
-            _currentDataFormat = DeserializerTypeTouchJSON;
+            self.currentDataFormat = DeserializerTypeTouchJSON;
             break;
             
         case 1:
-            _currentDataFormat = DeserializerTypeNSXMLParser;
+            self.currentDataFormat = DeserializerTypeNSXMLParser;
             break;
             
         case 2:
-            _currentDataFormat = DeserializerTypeSOAP;
+            self.currentDataFormat = DeserializerTypeSOAP;
             break;
             
         case 3:
-            _currentDataFormat = DeserializerTypeBinaryPlist;
+            self.currentDataFormat = DeserializerTypeBinaryPlist;
             break;
             
         case 4:
-            _currentDataFormat = DeserializerTypeYAML;
+            self.currentDataFormat = DeserializerTypeYAML;
             break;
             
         case 5:
-            _currentDataFormat = DeserializerTypeCSV;
+            self.currentDataFormat = DeserializerTypeCSV;
             break;
             
         default:
@@ -104,9 +118,9 @@
 {
     self.data = nil;
     [self.tableView reloadData];
-    [_spinningWheel startAnimating];
+    [self.spinningWheel startAnimating];
 
-    if (_currentDataFormat == DeserializerTypeSOAP)
+    if (self.currentDataFormat == DeserializerTypeSOAP)
     {
         self.dataLoader = [BaseDataLoader loaderWithMechanism:LoaderMechanismSOAP];
     }
@@ -115,7 +129,7 @@
         self.dataLoader = [BaseDataLoader loaderWithMechanism:LoaderMechanismASIHTTPRequest];
     }
     self.dataLoader.delegate = self;
-    self.dataLoader.deserializer = [BaseDeserializer deserializerForFormat:_currentDataFormat];
+    self.dataLoader.deserializer = [BaseDeserializer deserializerForFormat:self.currentDataFormat];
     self.dataLoader.limit = (NSInteger)_slider.value;
     [self.dataLoader loadData];
 
@@ -136,15 +150,15 @@
 - (void)viewDidLoad 
 {
     [super viewDidLoad];
-    self.tableView.tableHeaderView = _headerView;
-    NSInteger limit = (NSInteger)_slider.value;
-    _sliderLabel.text = [NSString stringWithFormat:@"%d", limit];
+    self.tableView.tableHeaderView = self.headerView;
+    NSInteger limit = (NSInteger)self.slider.value;
+    self.sliderLabel.text = [NSString stringWithFormat:@"%d", limit];
 
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:_spinningWheel];
     self.navigationItem.rightBarButtonItem = item;
     [item release];
 
-    _currentDataFormat = DeserializerTypeTouchJSON;
+    self.currentDataFormat = DeserializerTypeTouchJSON;
     [self refresh:nil];
 }
 
@@ -158,7 +172,7 @@
 
 - (void)dataLoader:(BaseDataLoader *)loader didLoadData:(NSArray *)data
 {
-    [_spinningWheel stopAnimating];
+    [self.spinningWheel stopAnimating];
     self.data = data;
     [self.tableView reloadData];
 }
@@ -215,7 +229,7 @@
 
 - (void)updateTitle
 {
-    NSInteger limit = (NSInteger)_slider.value;
+    NSInteger limit = (NSInteger)self.slider.value;
     self.title = [NSString stringWithFormat:@"%d + %@", limit, [self.dataLoader.deserializer formatIdentifier]];
 }
 
