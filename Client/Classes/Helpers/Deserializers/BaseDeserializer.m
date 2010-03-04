@@ -43,6 +43,7 @@
 #import "NSXMLParserDeserializer.h"
 #import "TouchXMLDeserializer.h"
 #import "LibXMLDeserializer.h"
+#import "CSVDeserializer.h"
 
 @implementation BaseDeserializer
 
@@ -112,6 +113,12 @@
         case DeserializerTypeLibXML:
         {
             deserializer = [LibXMLDeserializer deserializer];
+            break;
+        }
+            
+        case DeserializerTypeCSV:
+        {
+            deserializer = [CSVDeserializer deserializer];
             break;
         }
 

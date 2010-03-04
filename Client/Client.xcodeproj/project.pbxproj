@@ -31,6 +31,8 @@
 		3A50C58411204B6C0027974D /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A50C58311204B6C0027974D /* Entitlements.plist */; };
 		3A72D690113E9C2C0055AF36 /* BenchmarkController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A72D68E113E9C2C0055AF36 /* BenchmarkController.m */; };
 		3A72D693113E9C740055AF36 /* BenchmarkController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A72D692113E9C740055AF36 /* BenchmarkController.xib */; };
+		3A976C56113FD1E700D200EE /* parseCSV.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A976C55113FD1E700D200EE /* parseCSV.m */; };
+		3A976C65113FD26B00D200EE /* CSVDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A976C64113FD26B00D200EE /* CSVDeserializer.m */; };
 		3A9A0847113BB756003E62D4 /* datawsdl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9A083A113BB756003E62D4 /* datawsdl.m */; };
 		3A9A0848113BB756003E62D4 /* ns1.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9A083C113BB756003E62D4 /* ns1.m */; };
 		3A9A0849113BB756003E62D4 /* NSDate+ISO8601Parsing.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9A083E113BB756003E62D4 /* NSDate+ISO8601Parsing.m */; };
@@ -132,6 +134,10 @@
 		3A72D68E113E9C2C0055AF36 /* BenchmarkController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BenchmarkController.m; sourceTree = "<group>"; };
 		3A72D692113E9C740055AF36 /* BenchmarkController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BenchmarkController.xib; sourceTree = "<group>"; };
 		3A72D718113EA2D40055AF36 /* Definitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Definitions.h; sourceTree = "<group>"; };
+		3A976C54113FD1E700D200EE /* parseCSV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = parseCSV.h; sourceTree = "<group>"; };
+		3A976C55113FD1E700D200EE /* parseCSV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = parseCSV.m; sourceTree = "<group>"; };
+		3A976C63113FD26B00D200EE /* CSVDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSVDeserializer.h; sourceTree = "<group>"; };
+		3A976C64113FD26B00D200EE /* CSVDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSVDeserializer.m; sourceTree = "<group>"; };
 		3A9A0839113BB756003E62D4 /* datawsdl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = datawsdl.h; sourceTree = "<group>"; };
 		3A9A083A113BB756003E62D4 /* datawsdl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = datawsdl.m; sourceTree = "<group>"; };
 		3A9A083B113BB756003E62D4 /* ns1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ns1.h; sourceTree = "<group>"; };
@@ -395,6 +401,15 @@
 			path = NIBs;
 			sourceTree = "<group>";
 		};
+		3A976C53113FD1E700D200EE /* cCSVParse */ = {
+			isa = PBXGroup;
+			children = (
+				3A976C54113FD1E700D200EE /* parseCSV.h */,
+				3A976C55113FD1E700D200EE /* parseCSV.m */,
+			);
+			path = cCSVParse;
+			sourceTree = "<group>";
+		};
 		3A9A0838113BB756003E62D4 /* SOAP */ = {
 			isa = PBXGroup;
 			children = (
@@ -419,6 +434,7 @@
 		3AA35BB9113CEEB300A89E31 /* Externals */ = {
 			isa = PBXGroup;
 			children = (
+				3A976C53113FD1E700D200EE /* cCSVParse */,
 				3AA35C8D113CF24C00A89E31 /* ASIHTTPRequest */,
 				3AA35C4F113CEF0500A89E31 /* JSON */,
 				3AA35CB7113CF27400A89E31 /* Reachability2.0 */,
@@ -559,6 +575,8 @@
 				3AD2726B113D7C29004B310D /* TouchXMLDeserializer.m */,
 				3AD2729E113D7D07004B310D /* LibXMLDeserializer.h */,
 				3AD2729F113D7D07004B310D /* LibXMLDeserializer.m */,
+				3A976C63113FD26B00D200EE /* CSVDeserializer.h */,
+				3A976C64113FD26B00D200EE /* CSVDeserializer.m */,
 			);
 			path = Deserializers;
 			sourceTree = "<group>";
@@ -758,6 +776,8 @@
 				3AD272A0113D7D07004B310D /* LibXMLDeserializer.m in Sources */,
 				3A72D690113E9C2C0055AF36 /* BenchmarkController.m in Sources */,
 				3AB15C5E113ECCF800B132E6 /* NSDictionary+Extensions.m in Sources */,
+				3A976C56113FD1E700D200EE /* parseCSV.m in Sources */,
+				3A976C65113FD26B00D200EE /* CSVDeserializer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

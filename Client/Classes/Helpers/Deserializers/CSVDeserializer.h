@@ -1,8 +1,8 @@
 //
-//  DataFormat.h
+//  CSVDeserializer.h
 //  Client
 //
-//  Created by Adrian on 3/1/10.
+//  Created by Adrian on 3/4/10.
 //  Copyright (c) 2010, akosma software / Adrian Kosmaczewski
 //  All rights reserved.
 //
@@ -33,18 +33,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BaseDeserializer.h"
 
-typedef enum {
-    DeserializerTypeNone = 0,
-    DeserializerTypeTouchJSON = 1,
-    DeserializerTypeSBJSON = 2,
-    DeserializerTypeYAML = 3,
-    DeserializerTypeBinaryPlist = 4,
-    DeserializerTypeXMLPlist = 5,
-    DeserializerTypeXMLFormattedPlist = 6,
-    DeserializerTypeNSXMLParser = 7,
-    DeserializerTypeTouchXML = 8,
-    DeserializerTypeLibXML = 9,
-    DeserializerTypeCSV = 10,
-    DeserializerTypeSOAP = 11
-} DeserializerType;
+@interface CSVDeserializer : BaseDeserializer
+
+@end

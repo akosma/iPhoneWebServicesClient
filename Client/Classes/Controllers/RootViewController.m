@@ -80,7 +80,7 @@
             break;
             
         case 2:
-            _currentDataFormat = DeserializerTypeXMLFormattedPlist;
+            _currentDataFormat = DeserializerTypeSOAP;
             break;
             
         case 3:
@@ -89,6 +89,10 @@
             
         case 4:
             _currentDataFormat = DeserializerTypeYAML;
+            break;
+            
+        case 5:
+            _currentDataFormat = DeserializerTypeCSV;
             break;
             
         default:
