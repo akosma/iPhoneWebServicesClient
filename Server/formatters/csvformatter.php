@@ -29,77 +29,29 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-require_once('htmlformatter.php');
-require_once('jsonformatter.php');
-require_once('yamlformatter.php');
-require_once('xmlformatter.php');
-require_once('binaryplistformatter.php');
-require_once('xmlplistformatter.php');
-require_once('soapformatter.php');
-require_once('csvformatter.php');
+require_once('formatter.php');
 
-class FormatterFactory
+class CSVFormatter extends Formatter
 {
-    static public function createFormatter($type)
+    public function formatData()
     {
-        $formatter = null;
-        switch($type)
+        $array = Formatter::generateArrayFromData($this->getData());
+
+        // CSV generation code adapted from
+        // http://www.php.net/manual/en/function.fputcsv.php#74118
+        $csv = fopen('php://temp/maxmemory:'. (5*1024*1024), 'r+');
+        foreach ($array as $item) 
         {
-            case "xmlplist":
-            {
-                $formatter = new XMLPlistFormatter;
-                break;
-            }
-    
-            case "xmlplistformatted":
-            {
-                $formatter = new XMLPlistFormatter(true);
-                break;
-            }
-    
-            case "binplist":
-            {
-                $formatter = new BinaryPlistFormatter;
-                break;
-            }
-        
-            case "json":
-            {
-                $formatter = new JSONFormatter;
-                break;
-            }
-        
-            case "soap":
-            {
-                $formatter = new SOAPFormatter;
-                break;
-            }
-
-            case "xml":
-            {
-                $formatter = new XMLFormatter;
-                break;
-            }
-        
-            case "yaml":
-            {
-                $formatter = new YAMLFormatter;
-                break;
-            }
-            
-            case "csv":
-            {
-                $formatter = new CSVFormatter;
-                break;
-            }
-
-            default:
-            {
-                $formatter = new HTMLFormatter;
-                break;
-            }
+            fputcsv($csv, $item);
         }
-        return $formatter;
+        rewind($csv);
+        $output = stream_get_contents($csv);
+        return $output;
+    }
+    
+    public function getContentType()
+    {
+        return "text/csv";
     }
 }
 ?>
