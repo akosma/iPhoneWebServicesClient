@@ -36,12 +36,22 @@
 #import "BaseDataLoader.h"
 #import "BaseDeserializer.h"
 
+#define MAXIMUM_LIMIT 500
+#define INCREMENT 50
+
 @interface BenchmarkController ()
 @property (nonatomic, readonly) UITableView *tableView;
 @property (nonatomic, retain) NSMutableArray *loaders;
 @property (nonatomic, retain) NSMutableArray *tries;
 @property (nonatomic) NSInteger currentLimit;
 @property (nonatomic) NSInteger currentLoaderIndex;
+@property (nonatomic) BOOL benchmarkFinished;
+@property (nonatomic) BOOL running;
+@property (nonatomic, readonly) UIBarButtonItem *mailButton;
+@property (nonatomic, readonly) UIBarButtonItem *startButton;
+@property (nonatomic, readonly) UIBarButtonItem *doneButton;
+
+- (void)performNextBenchmark;
 @end
 
 
@@ -53,13 +63,21 @@
 @synthesize tries = _tries;
 @synthesize currentLimit = _currentLimit;
 @synthesize currentLoaderIndex = _currentLoaderIndex;
+@synthesize benchmarkFinished = _benchmarkFinished;
+@synthesize running = _running;
+@synthesize mailButton = _mailButton;
+@synthesize startButton = _startButton;
+@synthesize doneButton = _doneButton;
 
 - (id)init
 {
     if (self = [super initWithNibName:@"BenchmarkController" bundle:nil])
     {
         _navigationController = [[UINavigationController alloc] initWithRootViewController:self];
+        self.navigationController.toolbarHidden = NO;
         self.currentLimit = 0;
+        self.benchmarkFinished = NO;
+        self.running = NO;
         self.currentLoaderIndex = 0;
         self.tries = [NSMutableArray arrayWithCapacity:100];
         self.loaders = [NSMutableArray arrayWithCapacity:21];
@@ -87,15 +105,17 @@
 {
     self.loaders = nil;
     self.tries = nil;
-    [_navigationController release];
+    self.navigationController = nil;
     [super dealloc];
 }
 
 - (void)viewDidLoad 
 {
     [super viewDidLoad];
-    self.navigationItem.rightBarButtonItem = _startButton;
-    self.navigationItem.leftBarButtonItem = _doneButton;
+    self.navigationItem.rightBarButtonItem = self.startButton;
+    self.navigationItem.leftBarButtonItem = self.doneButton;
+    self.mailButton.enabled = NO;
+    self.toolbarItems = [NSArray arrayWithObject:self.mailButton];
     self.title = @"Benchmark";
 }
 
@@ -109,24 +129,70 @@
 
 - (IBAction)done:(id)sender
 {
+    self.running = NO;
+    self.startButton.title = @"Start";
     [self dismissModalViewControllerAnimated:YES];
 }
 
 - (IBAction)start:(id)sender
 {
-    self.currentLimit += 500;
-    if (self.currentLimit > 5000)
+    if (self.running)
     {
-        self.currentLoaderIndex += 1;
-        self.currentLimit = 500;
+        self.running = NO;
     }
-    
-    if (self.currentLoaderIndex < [self.loaders count])
+    else 
     {
-        id<DataLoader> loader = [self.loaders objectAtIndex:self.currentLoaderIndex];
-        loader.limit = self.currentLimit;
-        [loader loadData];
+        [self.tries removeAllObjects];
+        [self.tableView reloadData];
+        self.currentLimit = 0;
+        self.currentLoaderIndex = 0;
+        self.benchmarkFinished = NO;
+        self.running = YES;
+        self.startButton.title = @"Stop";
+        self.doneButton.enabled = NO;
+        self.mailButton.enabled = NO;
+        [self performNextBenchmark];
     }
+}
+
+- (IBAction)sendResultsViaEmail:(id)sender
+{
+    if (self.benchmarkFinished)
+    {
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
+        NSString *fileName = [basePath stringByAppendingPathComponent:@"lastRun"];
+        [self.tries writeToFile:fileName atomically:YES];
+
+        MFMailComposeViewController *composer = [[MFMailComposeViewController alloc] init];
+        composer.mailComposeDelegate = self;
+        
+        NSString *body = @"";
+        [composer setMessageBody:body
+                          isHTML:NO];
+        
+        NSString *errorDescription = nil;
+        NSData *data = [NSPropertyListSerialization dataFromPropertyList:self.tries
+                                                                  format:NSPropertyListXMLFormat_v1_0 
+                                                        errorDescription:&errorDescription];
+        [composer addAttachmentData:data 
+                           mimeType:@"application/plist" 
+                           fileName:@"results.plist"];
+        
+        [self.navigationController presentModalViewController:composer 
+                                                     animated:YES];
+        [composer release];
+    }
+}
+
+#pragma mark -
+#pragma mark MFMailComposeViewControllerDelegate methods
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller 
+          didFinishWithResult:(MFMailComposeResult)result 
+                        error:(NSError*)err
+{
+    [controller dismissModalViewControllerAnimated:YES];
 }
 
 #pragma mark -
@@ -145,8 +211,9 @@
     [dict setObject:[NSNumber numberWithDouble:loader.interval] forKey:@"loaderTime"];
     [dict setObject:[NSNumber numberWithDouble:loader.deserializer.interval] forKey:@"deserializerTime"];
     [self.tries addObject:dict];
+    loader.data = nil;
     [self.tableView reloadData];
-    [self start:nil];
+    [self performNextBenchmark];
 }
 
 #pragma mark -
@@ -157,9 +224,28 @@
     return 1;
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    NSString *headerTitle = @"";
+    if (self.running)
+    {
+        headerTitle = [NSString stringWithFormat:@"Running... finished %d of %d tests", 
+                       self.currentLoaderIndex, [self.loaders count]];
+    }
+    else if (self.benchmarkFinished)
+    {
+        headerTitle = @"Finished!";
+    }
+    else
+    {
+        headerTitle = @"Tap the 'Start' button to begin";
+    }
+    return headerTitle;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section 
 {
-    return [_tries count];
+    return [self.tries count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath 
@@ -186,6 +272,43 @@
                                  count, loadInterval, deserializerInterval];
     
     return cell;
+}
+
+#pragma mark -
+#pragma mark Private methods
+
+- (void)performNextBenchmark
+{
+    self.currentLimit += INCREMENT;
+    if (self.currentLimit > MAXIMUM_LIMIT)
+    {
+        self.currentLoaderIndex += 1;
+        self.currentLimit = INCREMENT;
+    }
+    
+    if (self.running)
+    {
+        if (self.currentLoaderIndex < [self.loaders count])
+        {
+            id<DataLoader> loader = [self.loaders objectAtIndex:self.currentLoaderIndex];
+            loader.limit = self.currentLimit;
+            [loader loadData];
+        }
+        else
+        {
+            self.running = NO;
+            self.startButton.title = @"Start";
+            self.doneButton.enabled = YES;
+
+            self.benchmarkFinished = YES;
+            self.mailButton.enabled = YES;
+        }
+    }
+    else
+    {
+        self.startButton.title = @"Start";
+        self.doneButton.enabled = YES;
+    }
 }
 
 @end

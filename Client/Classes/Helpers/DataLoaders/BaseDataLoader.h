@@ -52,7 +52,6 @@
     id<DataLoaderDelegate> _delegate;
 }
 
-@property (nonatomic, retain) id data;
 @property (nonatomic, retain) NSURL *url;
 @property (nonatomic, retain) NSError *error;
 @property (nonatomic) NSTimeInterval interval;

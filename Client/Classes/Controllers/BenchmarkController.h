@@ -34,23 +34,29 @@
 
 #import <UIKit/UIKit.h>
 #import "DataLoaderDelegate.h"
+#import <MessageUI/MFMailComposeViewController.h>
 
-@interface BenchmarkController : UIViewController <DataLoaderDelegate>
+@interface BenchmarkController : UIViewController <DataLoaderDelegate,
+                                                   MFMailComposeViewControllerDelegate>
 {
 @private
     IBOutlet UIBarButtonItem *_doneButton;
     IBOutlet UIBarButtonItem *_startButton;
+    IBOutlet UIBarButtonItem *_mailButton;
     IBOutlet UITableView *_tableView;
     NSMutableArray *_tries;
     NSMutableArray *_loaders;
     NSInteger _currentLimit;
     NSInteger _currentLoaderIndex;
     UINavigationController *_navigationController;
+    BOOL _benchmarkFinished;
+    BOOL _running;
 }
 
-@property (nonatomic, readonly) UINavigationController *navigationController;
+@property (nonatomic, retain) UINavigationController *navigationController;
 
 - (IBAction)done:(id)sender;
 - (IBAction)start:(id)sender;
+- (IBAction)sendResultsViaEmail:(id)sender;
 
 @end
