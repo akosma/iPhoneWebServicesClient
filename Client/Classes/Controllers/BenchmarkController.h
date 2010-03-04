@@ -44,7 +44,7 @@
     IBOutlet UIBarButtonItem *_startButton;
     IBOutlet UIBarButtonItem *_mailButton;
     IBOutlet UITableView *_tableView;
-    NSMutableArray *_tries;
+    NSMutableArray *_testResults;
     NSMutableArray *_loaders;
     NSInteger _currentLimit;
     NSInteger _currentLoaderIndex;

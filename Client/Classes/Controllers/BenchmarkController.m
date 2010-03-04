@@ -38,13 +38,20 @@
 #import "Definitions.h"
 #import "Reachability.h"
 
-#define MAXIMUM_LIMIT 100
-#define INCREMENT 50
+#define MAXIMUM_LIMIT 500
+#define INCREMENT 100
+
+#define KEY_DATA_LOADER @"dataLoader"
+#define KEY_DESERIALIZER @"deserializer"
+#define KEY_LIMIT @"limit"
+#define KEY_LOADER_TIME @"loaderTime"
+#define KEY_DESERIALIZER_TIME @"deserializerTime"
+#define KEY_DATA_LENGTH @"dataLength"
 
 @interface BenchmarkController ()
 @property (nonatomic, readonly) UITableView *tableView;
 @property (nonatomic, retain) NSMutableArray *loaders;
-@property (nonatomic, retain) NSMutableArray *tries;
+@property (nonatomic, retain) NSMutableArray *testResults;
 @property (nonatomic) NSInteger currentLimit;
 @property (nonatomic) NSInteger currentLoaderIndex;
 @property (nonatomic) BOOL benchmarkFinished;
@@ -62,7 +69,7 @@
 @synthesize navigationController = _navigationController;
 @synthesize tableView = _tableView;
 @synthesize loaders = _loaders;
-@synthesize tries = _tries;
+@synthesize testResults = _testResults;
 @synthesize currentLimit = _currentLimit;
 @synthesize currentLoaderIndex = _currentLoaderIndex;
 @synthesize benchmarkFinished = _benchmarkFinished;
@@ -81,7 +88,7 @@
         self.benchmarkFinished = NO;
         self.running = NO;
         self.currentLoaderIndex = 0;
-        self.tries = [NSMutableArray arrayWithCapacity:100];
+        self.testResults = [NSMutableArray arrayWithCapacity:100];
         self.loaders = [NSMutableArray arrayWithCapacity:21];
 
         id<DataLoader> loader = nil;
@@ -106,7 +113,7 @@
 - (void)dealloc 
 {
     self.loaders = nil;
-    self.tries = nil;
+    self.testResults = nil;
     self.navigationController = nil;
     [super dealloc];
 }
@@ -144,7 +151,7 @@
     }
     else 
     {
-        [self.tries removeAllObjects];
+        [self.testResults removeAllObjects];
         [self.tableView reloadData];
         self.currentLimit = 0;
         self.currentLoaderIndex = 0;
@@ -164,7 +171,7 @@
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
         NSString *fileName = [basePath stringByAppendingPathComponent:@"lastRun"];
-        [self.tries writeToFile:fileName atomically:YES];
+        [self.testResults writeToFile:fileName atomically:YES];
 
         MFMailComposeViewController *composer = [[MFMailComposeViewController alloc] init];
         composer.mailComposeDelegate = self;
@@ -196,7 +203,7 @@
         
         [composer setSubject:@"iPhone Web Service Benchmark Results"];
         NSString *errorDescription = nil;
-        NSData *data = [NSPropertyListSerialization dataFromPropertyList:self.tries
+        NSData *data = [NSPropertyListSerialization dataFromPropertyList:self.testResults
                                                                   format:NSPropertyListXMLFormat_v1_0 
                                                         errorDescription:&errorDescription];
         [composer addAttachmentData:data 
@@ -224,24 +231,24 @@
 
 - (void)dataLoader:(BaseDataLoader *)loader didLoadData:(NSArray *)data
 {
-    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithCapacity:5];
+    NSMutableDictionary *statistics = [NSMutableDictionary dictionaryWithCapacity:6];
     NSString *loaderClassName = [NSStringFromClass([loader class]) stringByReplacingOccurrencesOfString:@"DataLoader" 
                                                                                              withString:@""];
     NSString *deserializerClassName = [NSStringFromClass([loader.deserializer class]) stringByReplacingOccurrencesOfString:@"Deserializer"
                                                                                                                 withString:@""];
-    [dict setObject:loaderClassName forKey:@"dataLoader"];
-    [dict setObject:deserializerClassName forKey:@"deserializer"];
-    [dict setObject:[NSNumber numberWithInt:loader.limit] forKey:@"limit"];
-    [dict setObject:[NSNumber numberWithDouble:loader.interval] forKey:@"loaderTime"];
-    [dict setObject:[NSNumber numberWithDouble:loader.deserializer.interval] forKey:@"deserializerTime"];
+    [statistics setObject:loaderClassName forKey:KEY_DATA_LOADER];
+    [statistics setObject:deserializerClassName forKey:KEY_DESERIALIZER];
+    [statistics setObject:[NSNumber numberWithInt:loader.limit] forKey:KEY_LIMIT];
+    [statistics setObject:[NSNumber numberWithDouble:loader.interval] forKey:KEY_LOADER_TIME];
+    [statistics setObject:[NSNumber numberWithDouble:loader.deserializer.interval] forKey:KEY_DESERIALIZER_TIME];
     
     NSUInteger size = 0;
     if ([loader.data isKindOfClass:[NSData class]])
     {
         size = [loader.data length];
     }
-    [dict setObject:[NSNumber numberWithUnsignedInt:size] forKey:@"dataLength"];
-    [self.tries addObject:dict];
+    [statistics setObject:[NSNumber numberWithUnsignedInt:size] forKey:KEY_DATA_LENGTH];
+    [self.testResults addObject:statistics];
     loader.data = nil;
     [self.tableView reloadData];
     [self performNextBenchmark];
@@ -276,7 +283,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section 
 {
-    return [self.tries count];
+    return [self.testResults count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath 
@@ -291,13 +298,13 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
-    NSDictionary *dict = [self.tries objectAtIndex:indexPath.row];
-    NSString *dataLoaderClass = [dict objectForKey:@"dataLoader"];
-    NSString *deserializerClass = [dict objectForKey:@"deserializer"];
-    NSInteger count = [[dict objectForKey:@"limit"] intValue];
-    NSTimeInterval loadInterval = [[dict objectForKey:@"loaderTime"] doubleValue];
-    NSTimeInterval deserializerInterval = [[dict objectForKey:@"deserializerTime"] doubleValue];
-    float size = [[dict objectForKey:@"dataLength"] unsignedIntValue] / 1024.0;
+    NSDictionary *item = [self.testResults objectAtIndex:indexPath.row];
+    NSString *dataLoaderClass = [item objectForKey:KEY_DATA_LOADER];
+    NSString *deserializerClass = [item objectForKey:KEY_DESERIALIZER];
+    NSInteger count = [[item objectForKey:KEY_LIMIT] intValue];
+    NSTimeInterval loadInterval = [[item objectForKey:KEY_LOADER_TIME] doubleValue];
+    NSTimeInterval deserializerInterval = [[item objectForKey:KEY_DESERIALIZER_TIME] doubleValue];
+    float size = [[item objectForKey:KEY_DATA_LENGTH] unsignedIntValue] / 1024.0;
 
     cell.textLabel.text = [NSString stringWithFormat:@"%@ / %@", dataLoaderClass, deserializerClass];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%d items (%1.0f KB): %1.3f sec / %1.3f sec", 
