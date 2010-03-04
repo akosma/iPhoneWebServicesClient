@@ -35,8 +35,10 @@
 #import "BenchmarkController.h"
 #import "BaseDataLoader.h"
 #import "BaseDeserializer.h"
+#import "Definitions.h"
+#import "Reachability.h"
 
-#define MAXIMUM_LIMIT 500
+#define MAXIMUM_LIMIT 100
 #define INCREMENT 50
 
 @interface BenchmarkController ()
@@ -167,10 +169,32 @@
         MFMailComposeViewController *composer = [[MFMailComposeViewController alloc] init];
         composer.mailComposeDelegate = self;
         
-        NSString *body = @"";
+        NSURL *url = [NSURL URLWithString:BASE_URL];
+        Reachability *reachability = [Reachability reachabilityWithHostName:url.host];
+        NSString *connection = nil;
+        switch ([reachability currentReachabilityStatus]) 
+        {
+            case ReachableViaWiFi:
+                connection = @"wifi";
+                break;
+                
+            case NotReachable:
+                connection = @"(none!)";
+                break;
+                
+            case ReachableViaWWAN:
+                connection = @"telephony";
+                break;
+
+            default:
+                connection = @"(unknown)";
+                break;
+        }
+        NSString *body = [NSString stringWithFormat:@"Results after connecting to %@ using a %@ connection.", BASE_URL, connection];
         [composer setMessageBody:body
                           isHTML:NO];
         
+        [composer setSubject:@"iPhone Web Service Benchmark Results"];
         NSString *errorDescription = nil;
         NSData *data = [NSPropertyListSerialization dataFromPropertyList:self.tries
                                                                   format:NSPropertyListXMLFormat_v1_0 

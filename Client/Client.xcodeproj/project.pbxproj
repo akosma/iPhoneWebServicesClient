@@ -12,7 +12,6 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
 		3A0A81F2113D1A4200E23EDC /* SyckInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0A81F1113D1A4200E23EDC /* SyckInput.m */; };
-		3A0A8216113D1B1F00E23EDC /* libsyck.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0A8215113D1B1F00E23EDC /* libsyck.a */; };
 		3A0A8251113D201700E23EDC /* BinaryPlistDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0A8250113D201700E23EDC /* BinaryPlistDeserializer.m */; };
 		3A0A8267113D229A00E23EDC /* XMLPlistDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0A8266113D229A00E23EDC /* XMLPlistDeserializer.m */; };
 		3A0A826B113D22E000E23EDC /* PlistDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0A826A113D22E000E23EDC /* PlistDeserializer.m */; };
@@ -34,6 +33,7 @@
 		3A976C56113FD1E700D200EE /* parseCSV.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A976C55113FD1E700D200EE /* parseCSV.m */; };
 		3A976C65113FD26B00D200EE /* CSVDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A976C64113FD26B00D200EE /* CSVDeserializer.m */; };
 		3A976CA1113FDA1400D200EE /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A976CA0113FDA1400D200EE /* MessageUI.framework */; };
+		3A976DD31140061B00D200EE /* libsyck.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A976DD21140061B00D200EE /* libsyck.a */; };
 		3A9A0847113BB756003E62D4 /* datawsdl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9A083A113BB756003E62D4 /* datawsdl.m */; };
 		3A9A0848113BB756003E62D4 /* ns1.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9A083C113BB756003E62D4 /* ns1.m */; };
 		3A9A0849113BB756003E62D4 /* NSDate+ISO8601Parsing.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9A083E113BB756003E62D4 /* NSDate+ISO8601Parsing.m */; };
@@ -99,7 +99,6 @@
 		28A0AAE50D9B0CCF005BE974 /* Client_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Client_Prefix.pch; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3A0A81F1113D1A4200E23EDC /* SyckInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyckInput.m; sourceTree = "<group>"; };
-		3A0A8215113D1B1F00E23EDC /* libsyck.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libsyck.a; path = /sw/lib/libsyck.a; sourceTree = "<absolute>"; };
 		3A0A824F113D201700E23EDC /* BinaryPlistDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BinaryPlistDeserializer.h; sourceTree = "<group>"; };
 		3A0A8250113D201700E23EDC /* BinaryPlistDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BinaryPlistDeserializer.m; sourceTree = "<group>"; };
 		3A0A8265113D229A00E23EDC /* XMLPlistDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLPlistDeserializer.h; sourceTree = "<group>"; };
@@ -140,6 +139,7 @@
 		3A976C63113FD26B00D200EE /* CSVDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSVDeserializer.h; sourceTree = "<group>"; };
 		3A976C64113FD26B00D200EE /* CSVDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSVDeserializer.m; sourceTree = "<group>"; };
 		3A976CA0113FDA1400D200EE /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		3A976DD21140061B00D200EE /* libsyck.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libsyck.a; path = ../Libraries/libsyck/libsyck.a; sourceTree = SOURCE_ROOT; };
 		3A9A0839113BB756003E62D4 /* datawsdl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = datawsdl.h; sourceTree = "<group>"; };
 		3A9A083A113BB756003E62D4 /* datawsdl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = datawsdl.m; sourceTree = "<group>"; };
 		3A9A083B113BB756003E62D4 /* ns1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ns1.h; sourceTree = "<group>"; };
@@ -268,10 +268,10 @@
 				3A9A084F113BB75F003E62D4 /* CFNetwork.framework in Frameworks */,
 				3AA35CA6113CF25C00A89E31 /* SystemConfiguration.framework in Frameworks */,
 				3AA35CA8113CF25C00A89E31 /* libz.1.2.3.dylib in Frameworks */,
-				3A0A8216113D1B1F00E23EDC /* libsyck.a in Frameworks */,
 				3AB15C65113ECDC000B132E6 /* AddressBook.framework in Frameworks */,
 				3AB15C67113ECDC000B132E6 /* AddressBookUI.framework in Frameworks */,
 				3A976CA1113FDA1400D200EE /* MessageUI.framework in Frameworks */,
+				3A976DD31140061B00D200EE /* libsyck.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,7 +320,7 @@
 				3AB15C66113ECDC000B132E6 /* AddressBookUI.framework */,
 				3A9A084E113BB75F003E62D4 /* CFNetwork.framework */,
 				3AA35CA5113CF25C00A89E31 /* SystemConfiguration.framework */,
-				3A0A8215113D1B1F00E23EDC /* libsyck.a */,
+				3A976DD21140061B00D200EE /* libsyck.a */,
 				3A9A0854113BB77E003E62D4 /* libxml2.2.7.3.dylib */,
 				3AA35CA7113CF25C00A89E31 /* libz.1.2.3.dylib */,
 			);
@@ -801,10 +801,7 @@
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				HEADER_SEARCH_PATHS = "/sw/include/**";
 				INFOPLIST_FILE = "Client-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"/sw/lib/**",
-					/sw/lib,
-				);
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../Libraries/libsyck\"";
 				OTHER_CFLAGS = "-I/usr/include/libxml2";
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = Client;
@@ -822,10 +819,7 @@
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				HEADER_SEARCH_PATHS = "/sw/include/**";
 				INFOPLIST_FILE = "Client-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"/sw/lib/**",
-					/sw/lib,
-				);
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../Libraries/libsyck\"";
 				OTHER_CFLAGS = "-I/usr/include/libxml2";
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = Client;
@@ -858,10 +852,7 @@
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				HEADER_SEARCH_PATHS = "/sw/include/**";
 				INFOPLIST_FILE = "Client-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"/sw/lib/**",
-					/sw/lib,
-				);
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../Libraries/libsyck\"";
 				OTHER_CFLAGS = "-I/usr/include/libxml2";
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = Client;
