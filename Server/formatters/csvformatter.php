@@ -39,7 +39,7 @@ class CSVFormatter extends Formatter
 
         // CSV generation code adapted from
         // http://www.php.net/manual/en/function.fputcsv.php#74118
-        $csv = fopen('php://temp/maxmemory:'. (5*1024*1024), 'r+');
+        $csv = fopen('php://temp/maxmemory:'. (5 * 1024 * 1024), 'r+');
         foreach ($array as $item) 
         {
             fputcsv($csv, $item);

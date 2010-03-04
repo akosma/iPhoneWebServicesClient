@@ -1,5 +1,7 @@
 h1. iPhone Web Services Consumption Comparison
 
+h2. Introduction
+
 This project showcases different transport formats and libraries to consume web services from an iPhone application. It features a server application, a command-line script that saves the output of the server application in different formats, and an iPhone client application (compatible with iPhone OS 3.0 and higher).
 
 The server application (written in PHP) reads a MySQL database (Server/data/schema.sql) and outputs data in the following formats:
@@ -11,6 +13,7 @@ The server application (written in PHP) reads a MySQL database (Server/data/sche
 * SOAP
 * Binary property list
 * XML property list
+* CSV
 
 For each output format, there is a single "Formatter" subclass in the Server/formatters folder. A static method in the FormatterFactory class returns the formatter that corresponds to the requested output format.
 
@@ -29,6 +32,7 @@ For the iPhone client:
 * "ASIHTTPRequest":http://allseeing-i.com/ASIHTTPRequest - wrapper around the CFNetwork API
 * "json-framework":http://code.google.com/p/json-framework/ - A strict JSON parser/generator for Objective-C
 * "touchcode":http://code.google.com/p/touchcode/ - Repository of iPhone and iPod Touch source code.
+* "cCSVParse":http://michael.stapelberg.de/cCSVParse - A CSV parsing library in Objective-C
 
 h3. YAML in Cocoa
 
@@ -42,13 +46,24 @@ h3. SOAP in Cocoa
 
 The "wsdl2objc":http://code.google.com/p/wsdl2objc/ tool was used to generate Objective-C (Cocoa) code from the server's WSDL. This code was later adapted to parse the array returned by the server.
 
-h2. Sample Data
+h2. Installation
 
-The sample data generated in this example comes from "http://www.generatedata.com/":http://www.generatedata.com/.
+# Set up the server:
+## Upload the "Server" folder contents via FTP or other means.
+## Create a MySQL database.
+## Import the "Server/data/schema.sql" file into the database. This will create a "data" table in the database.
+## Change the settings in the "Server/data/database.php" file to access the database (server, username, password).
+# Set up the client:
+## Open the "Client/Client.xcodeproj" project in Xcode.
+## Change the "BASE_URL" setting in the "Client/Definitions.h" file to match the location of your index.php.
+## Compile the project (read the discussion about YAML in Cocoa above to install the Syck library in your system!).
+## Execute the client, which will connect to your server and retrieve data.
 
 h2. Other Links
 
-Some other interesting links for those working in other technologies, organized by platform or programming language.
+h3. Sample Data
+
+The sample data generated in this example comes from "http://www.generatedata.com/":http://www.generatedata.com/.
 
 h3. Ruby
 
@@ -58,6 +73,10 @@ h3. Python
 
 * "PyYAML":http://pyyaml.org/ - PyYAML.org - the home of various YAML implementations for Python
 * "plistlib":http://docs.python.org/dev/library/plistlib.html - Generate and parse Mac OS X .plist files
+
+h3. Objective-C
+
+* "Discussion about CSV parsing in Objective-C":http://www.cocoadev.com/index.pl?ReadWriteCSVAndTSV
 
 h3. Tools
 
