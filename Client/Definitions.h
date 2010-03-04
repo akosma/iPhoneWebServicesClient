@@ -33,3 +33,6 @@
 //
 
 #define BASE_URL @"http://localhost:8888"
+
+#define BENCHMARK_MAXIMUM_LIMIT 500
+#define BENCHMARK_LIMIT_INCREMENT 100

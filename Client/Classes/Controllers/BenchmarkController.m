@@ -38,9 +38,6 @@
 #import "Definitions.h"
 #import "Reachability.h"
 
-#define MAXIMUM_LIMIT 500
-#define INCREMENT 100
-
 #define KEY_DATA_LOADER @"dataLoader"
 #define KEY_DESERIALIZER @"deserializer"
 #define KEY_LIMIT @"limit"
@@ -318,11 +315,11 @@
 
 - (void)performNextBenchmark
 {
-    self.currentLimit += INCREMENT;
-    if (self.currentLimit > MAXIMUM_LIMIT)
+    self.currentLimit += BENCHMARK_LIMIT_INCREMENT;
+    if (self.currentLimit > BENCHMARK_MAXIMUM_LIMIT)
     {
         self.currentLoaderIndex += 1;
-        self.currentLimit = INCREMENT;
+        self.currentLimit = BENCHMARK_LIMIT_INCREMENT;
     }
     
     if (self.running)
