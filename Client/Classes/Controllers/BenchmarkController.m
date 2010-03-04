@@ -234,6 +234,13 @@
     [dict setObject:[NSNumber numberWithInt:loader.limit] forKey:@"limit"];
     [dict setObject:[NSNumber numberWithDouble:loader.interval] forKey:@"loaderTime"];
     [dict setObject:[NSNumber numberWithDouble:loader.deserializer.interval] forKey:@"deserializerTime"];
+    
+    NSUInteger size = 0;
+    if ([loader.data isKindOfClass:[NSData class]])
+    {
+        size = [loader.data length];
+    }
+    [dict setObject:[NSNumber numberWithUnsignedInt:size] forKey:@"dataLength"];
     [self.tries addObject:dict];
     loader.data = nil;
     [self.tableView reloadData];
@@ -290,10 +297,11 @@
     NSInteger count = [[dict objectForKey:@"limit"] intValue];
     NSTimeInterval loadInterval = [[dict objectForKey:@"loaderTime"] doubleValue];
     NSTimeInterval deserializerInterval = [[dict objectForKey:@"deserializerTime"] doubleValue];
+    float size = [[dict objectForKey:@"dataLength"] unsignedIntValue] / 1024.0;
 
     cell.textLabel.text = [NSString stringWithFormat:@"%@ / %@", dataLoaderClass, deserializerClass];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%d items: %1.3f sec / %1.3f sec", 
-                                 count, loadInterval, deserializerInterval];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%d items (%1.0f KB): %1.3f sec / %1.3f sec", 
+                                 count, size, loadInterval, deserializerInterval];
     
     return cell;
 }

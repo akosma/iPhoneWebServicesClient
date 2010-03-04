@@ -95,7 +95,7 @@
 					<object class="IBUISegmentedControl" id="278386698">
 						<reference key="NSNextResponder" ref="86840390"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{0, 20}, {320, 30}}</string>
+						<string key="NSFrame">{{20, 20}, {280, 30}}</string>
 						<reference key="NSSuperview" ref="86840390"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
