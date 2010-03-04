@@ -11,18 +11,13 @@
 
 #define FILE_NAME @"csvdata.csv"
 
-@interface CSVDeserializer ()
-@property (nonatomic, readonly) NSString *applicationDocumentsDirectory;
-@end
-
-
 @implementation CSVDeserializer
-
-@dynamic applicationDocumentsDirectory;
 
 - (NSArray *)performDeserialization:(id)data
 {
-    NSString *fileName = [self.applicationDocumentsDirectory stringByAppendingPathComponent:FILE_NAME];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
+    NSString *fileName = [basePath stringByAppendingPathComponent:FILE_NAME];
     [data writeToFile:fileName atomically:YES];
     
     CSVParser *parser = [CSVParser new];
@@ -55,16 +50,6 @@
 - (NSString *)formatIdentifier
 {
     return @"csv";
-}
-
-#pragma mark -
-#pragma mark Private methods
-
-- (NSString *)applicationDocumentsDirectory 
-{
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
-    return basePath;
 }
 
 @end
