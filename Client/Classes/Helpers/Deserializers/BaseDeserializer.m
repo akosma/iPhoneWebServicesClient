@@ -47,6 +47,7 @@
 #import "TBXMLDeserializer.h"
 #import "KissXMLDeserializer.h"
 #import "TinyXMLDeserializer.h"
+#import "GoogleXMLDeserializer.h"
 
 @implementation BaseDeserializer
 
@@ -140,6 +141,12 @@
         case DeserializerTypeTinyXML:
         {
             deserializer = [TinyXMLDeserializer deserializer];
+            break;
+        }
+        
+        case DeserializerTypeGoogleXML:
+        {
+            deserializer = [GoogleXMLDeserializer deserializer];
             break;
         }
 

@@ -89,6 +89,8 @@
 		3AC8A6B811426C0600ADB270 /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8A6B611426C0600ADB270 /* tinyxmlerror.cpp */; };
 		3AC8A6B911426C0600ADB270 /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8A6B711426C0600ADB270 /* tinyxmlparser.cpp */; };
 		3AC8A6BE11426C5000ADB270 /* TinyXMLDeserializer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8A6BD11426C5000ADB270 /* TinyXMLDeserializer.mm */; };
+		3AC8A71F1142740A00ADB270 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8A71E1142740A00ADB270 /* GDataXMLNode.m */; };
+		3AC8A7241142751500ADB270 /* GoogleXMLDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8A7231142751500ADB270 /* GoogleXMLDeserializer.m */; };
 		3AD27253113D7BCB004B310D /* NSXMLParserDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD27252113D7BCB004B310D /* NSXMLParserDeserializer.m */; };
 		3AD2726C113D7C29004B310D /* TouchXMLDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD2726B113D7C29004B310D /* TouchXMLDeserializer.m */; };
 		3AD2728D113D7CE2004B310D /* CXMLDocument_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD27276113D7CE2004B310D /* CXMLDocument_CreationExtensions.m */; };
@@ -267,6 +269,10 @@
 		3AC8A6B711426C0600ADB270 /* tinyxmlparser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlparser.cpp; sourceTree = "<group>"; };
 		3AC8A6BC11426C5000ADB270 /* TinyXMLDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TinyXMLDeserializer.h; sourceTree = "<group>"; };
 		3AC8A6BD11426C5000ADB270 /* TinyXMLDeserializer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TinyXMLDeserializer.mm; sourceTree = "<group>"; };
+		3AC8A71D1142740A00ADB270 /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
+		3AC8A71E1142740A00ADB270 /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
+		3AC8A7221142751500ADB270 /* GoogleXMLDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleXMLDeserializer.h; sourceTree = "<group>"; };
+		3AC8A7231142751500ADB270 /* GoogleXMLDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleXMLDeserializer.m; sourceTree = "<group>"; };
 		3AD27251113D7BCB004B310D /* NSXMLParserDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSXMLParserDeserializer.h; sourceTree = "<group>"; };
 		3AD27252113D7BCB004B310D /* NSXMLParserDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSXMLParserDeserializer.m; sourceTree = "<group>"; };
 		3AD2726A113D7C29004B310D /* TouchXMLDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchXMLDeserializer.h; sourceTree = "<group>"; };
@@ -480,6 +486,7 @@
 		3AA35BB9113CEEB300A89E31 /* Externals */ = {
 			isa = PBXGroup;
 			children = (
+				3AC8A71C1142740A00ADB270 /* gdata-objectivec-client */,
 				3AC8A6A911426B7300ADB270 /* TinyXML */,
 				3AC8A65C114264CD00ADB270 /* KissXML */,
 				3AC8A62511425D5300ADB270 /* TBXML */,
@@ -632,6 +639,8 @@
 				3AC8A673114265C300ADB270 /* KissXMLDeserializer.m */,
 				3AC8A6BC11426C5000ADB270 /* TinyXMLDeserializer.h */,
 				3AC8A6BD11426C5000ADB270 /* TinyXMLDeserializer.mm */,
+				3AC8A7221142751500ADB270 /* GoogleXMLDeserializer.h */,
+				3AC8A7231142751500ADB270 /* GoogleXMLDeserializer.m */,
 			);
 			path = Deserializers;
 			sourceTree = "<group>";
@@ -694,6 +703,15 @@
 				3AC8A6AA11426B7300ADB270 /* tinyxml.h */,
 			);
 			path = TinyXML;
+			sourceTree = "<group>";
+		};
+		3AC8A71C1142740A00ADB270 /* gdata-objectivec-client */ = {
+			isa = PBXGroup;
+			children = (
+				3AC8A71D1142740A00ADB270 /* GDataXMLNode.h */,
+				3AC8A71E1142740A00ADB270 /* GDataXMLNode.m */,
+			);
+			path = "gdata-objectivec-client";
 			sourceTree = "<group>";
 		};
 		3AD27273113D7CE2004B310D /* TouchXML */ = {
@@ -890,6 +908,8 @@
 				3AC8A6B811426C0600ADB270 /* tinyxmlerror.cpp in Sources */,
 				3AC8A6B911426C0600ADB270 /* tinyxmlparser.cpp in Sources */,
 				3AC8A6BE11426C5000ADB270 /* TinyXMLDeserializer.mm in Sources */,
+				3AC8A71F1142740A00ADB270 /* GDataXMLNode.m in Sources */,
+				3AC8A7241142751500ADB270 /* GoogleXMLDeserializer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -23,19 +23,20 @@ The project uses several different libraries:
 
 For the server:
 
-* "cfpropertylist":http://code.google.com/p/cfpropertylist/ - A PHP Implementation Of Apple's plist (PropertyList)
-* "NuSOAP":http://sourceforge.net/projects/nusoap/ - SOAP Toolkit for PHP
-* "spyc":http://code.google.com/p/spyc/ - A simple YAML loader/dumper class for PHP
+* "cfpropertylist":http://code.google.com/p/cfpropertylist/ - A PHP Implementation Of Apple's plist (PropertyList).
+* "NuSOAP":http://sourceforge.net/projects/nusoap/ - SOAP Toolkit for PHP.
+* "spyc":http://code.google.com/p/spyc/ - A simple YAML loader/dumper class for PHP.
 
 For the iPhone client:
 
-* "ASIHTTPRequest":http://allseeing-i.com/ASIHTTPRequest - wrapper around the CFNetwork API
-* "json-framework":http://code.google.com/p/json-framework/ - A strict JSON parser/generator for Objective-C
+* "ASIHTTPRequest":http://allseeing-i.com/ASIHTTPRequest - wrapper around the CFNetwork API.
+* "json-framework":http://code.google.com/p/json-framework/ - A strict JSON parser/generator for Objective-C.
 * "touchcode":http://code.google.com/p/touchcode/ - Repository of iPhone and iPod Touch source code.
-* "cCSVParse":http://michael.stapelberg.de/cCSVParse - A CSV parsing library in Objective-C
-* "TBXML V1.3":http://www.tbxml.co.uk/ - XML Parser by Tim Bray
+* "cCSVParse":http://michael.stapelberg.de/cCSVParse - A CSV parsing library in Objective-C.
+* "TBXML V1.3":http://www.tbxml.co.uk/ - XML Parser by Tim Bray.
 * "KissXML":http://code.google.com/p/kissxml/ - KissXML is a replacement for Cocoa's NSXML cluster of classes. It is based on libxml.
 * "TinyXML":http://www.grinninglizard.com/tinyxml/ - TinyXML is a simple, small, C++ XML parser that can be easily integrating into other programs.
+* "gdata-objectivec-client":http://code.google.com/p/gdata-objectivec-client/source/browse/trunk/Source/XMLSupport/ - XML support classes included in the Google Data APIs Objective-C Client Library.
 
 h3. YAML in Cocoa
 

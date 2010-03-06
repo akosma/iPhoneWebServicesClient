@@ -90,7 +90,7 @@
             break;
             
         case 1:
-            self.currentDataFormat = DeserializerTypeTinyXML;
+            self.currentDataFormat = DeserializerTypeGoogleXML;
             break;
             
         case 2:
