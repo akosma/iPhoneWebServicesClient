@@ -51,6 +51,7 @@
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application 
 {
+    [UIApplication sharedApplication].idleTimerDisabled = YES;
 	[self.window addSubview:[self.navigationController view]];
     [self.window makeKeyAndVisible];
 }
