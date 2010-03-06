@@ -50,5 +50,6 @@ typedef enum {
     DeserializerTypeKissXML = 12,
     DeserializerTypeTinyXML = 13,
     DeserializerTypeGoogleXML = 14,
-    DeserializerTypeSOAP = 15
+    DeserializerTypeAPXML = 15,
+    DeserializerTypeSOAP = 16
 } DeserializerType;

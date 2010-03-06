@@ -90,7 +90,7 @@
             break;
             
         case 1:
-            self.currentDataFormat = DeserializerTypeGoogleXML;
+            self.currentDataFormat = DeserializerTypeAPXML;
             break;
             
         case 2:

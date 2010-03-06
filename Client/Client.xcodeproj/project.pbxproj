@@ -91,6 +91,10 @@
 		3AC8A6BE11426C5000ADB270 /* TinyXMLDeserializer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8A6BD11426C5000ADB270 /* TinyXMLDeserializer.mm */; };
 		3AC8A71F1142740A00ADB270 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8A71E1142740A00ADB270 /* GDataXMLNode.m */; };
 		3AC8A7241142751500ADB270 /* GoogleXMLDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8A7231142751500ADB270 /* GoogleXMLDeserializer.m */; };
+		3AC8A74A114277F600ADB270 /* APAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8A741114277F600ADB270 /* APAttribute.m */; };
+		3AC8A74B114277F600ADB270 /* APDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8A743114277F600ADB270 /* APDocument.m */; };
+		3AC8A74C114277F600ADB270 /* APElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8A745114277F600ADB270 /* APElement.m */; };
+		3AC8A7551142785500ADB270 /* APXMLDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8A7541142785500ADB270 /* APXMLDeserializer.m */; };
 		3AD27253113D7BCB004B310D /* NSXMLParserDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD27252113D7BCB004B310D /* NSXMLParserDeserializer.m */; };
 		3AD2726C113D7C29004B310D /* TouchXMLDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD2726B113D7C29004B310D /* TouchXMLDeserializer.m */; };
 		3AD2728D113D7CE2004B310D /* CXMLDocument_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD27276113D7CE2004B310D /* CXMLDocument_CreationExtensions.m */; };
@@ -273,6 +277,15 @@
 		3AC8A71E1142740A00ADB270 /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
 		3AC8A7221142751500ADB270 /* GoogleXMLDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleXMLDeserializer.h; sourceTree = "<group>"; };
 		3AC8A7231142751500ADB270 /* GoogleXMLDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleXMLDeserializer.m; sourceTree = "<group>"; };
+		3AC8A740114277F600ADB270 /* APAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APAttribute.h; sourceTree = "<group>"; };
+		3AC8A741114277F600ADB270 /* APAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APAttribute.m; sourceTree = "<group>"; };
+		3AC8A742114277F600ADB270 /* APDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APDocument.h; sourceTree = "<group>"; };
+		3AC8A743114277F600ADB270 /* APDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APDocument.m; sourceTree = "<group>"; };
+		3AC8A744114277F600ADB270 /* APElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APElement.h; sourceTree = "<group>"; };
+		3AC8A745114277F600ADB270 /* APElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APElement.m; sourceTree = "<group>"; };
+		3AC8A746114277F600ADB270 /* APXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APXML.h; sourceTree = "<group>"; };
+		3AC8A7531142785500ADB270 /* APXMLDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APXMLDeserializer.h; sourceTree = "<group>"; };
+		3AC8A7541142785500ADB270 /* APXMLDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APXMLDeserializer.m; sourceTree = "<group>"; };
 		3AD27251113D7BCB004B310D /* NSXMLParserDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSXMLParserDeserializer.h; sourceTree = "<group>"; };
 		3AD27252113D7BCB004B310D /* NSXMLParserDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSXMLParserDeserializer.m; sourceTree = "<group>"; };
 		3AD2726A113D7C29004B310D /* TouchXMLDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchXMLDeserializer.h; sourceTree = "<group>"; };
@@ -486,6 +499,7 @@
 		3AA35BB9113CEEB300A89E31 /* Externals */ = {
 			isa = PBXGroup;
 			children = (
+				3AC8A73F114277F600ADB270 /* arashpayan-apxml */,
 				3AC8A71C1142740A00ADB270 /* gdata-objectivec-client */,
 				3AC8A6A911426B7300ADB270 /* TinyXML */,
 				3AC8A65C114264CD00ADB270 /* KissXML */,
@@ -641,6 +655,8 @@
 				3AC8A6BD11426C5000ADB270 /* TinyXMLDeserializer.mm */,
 				3AC8A7221142751500ADB270 /* GoogleXMLDeserializer.h */,
 				3AC8A7231142751500ADB270 /* GoogleXMLDeserializer.m */,
+				3AC8A7531142785500ADB270 /* APXMLDeserializer.h */,
+				3AC8A7541142785500ADB270 /* APXMLDeserializer.m */,
 			);
 			path = Deserializers;
 			sourceTree = "<group>";
@@ -712,6 +728,20 @@
 				3AC8A71E1142740A00ADB270 /* GDataXMLNode.m */,
 			);
 			path = "gdata-objectivec-client";
+			sourceTree = "<group>";
+		};
+		3AC8A73F114277F600ADB270 /* arashpayan-apxml */ = {
+			isa = PBXGroup;
+			children = (
+				3AC8A740114277F600ADB270 /* APAttribute.h */,
+				3AC8A741114277F600ADB270 /* APAttribute.m */,
+				3AC8A742114277F600ADB270 /* APDocument.h */,
+				3AC8A743114277F600ADB270 /* APDocument.m */,
+				3AC8A744114277F600ADB270 /* APElement.h */,
+				3AC8A745114277F600ADB270 /* APElement.m */,
+				3AC8A746114277F600ADB270 /* APXML.h */,
+			);
+			path = "arashpayan-apxml";
 			sourceTree = "<group>";
 		};
 		3AD27273113D7CE2004B310D /* TouchXML */ = {
@@ -910,6 +940,10 @@
 				3AC8A6BE11426C5000ADB270 /* TinyXMLDeserializer.mm in Sources */,
 				3AC8A71F1142740A00ADB270 /* GDataXMLNode.m in Sources */,
 				3AC8A7241142751500ADB270 /* GoogleXMLDeserializer.m in Sources */,
+				3AC8A74A114277F600ADB270 /* APAttribute.m in Sources */,
+				3AC8A74B114277F600ADB270 /* APDocument.m in Sources */,
+				3AC8A74C114277F600ADB270 /* APElement.m in Sources */,
+				3AC8A7551142785500ADB270 /* APXMLDeserializer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
