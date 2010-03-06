@@ -37,13 +37,7 @@
 #import "BaseDeserializer.h"
 #import "Definitions.h"
 #import "Reachability.h"
-
-#define KEY_DATA_LOADER @"dataLoader"
-#define KEY_DESERIALIZER @"deserializer"
-#define KEY_LIMIT @"limit"
-#define KEY_LOADER_TIME @"loaderTime"
-#define KEY_DESERIALIZER_TIME @"deserializerTime"
-#define KEY_DATA_LENGTH @"dataLength"
+#import "NSArray+Extensions.h"
 
 @interface BenchmarkController ()
 @property (nonatomic, readonly) UITableView *tableView;
@@ -198,14 +192,10 @@
         [composer setMessageBody:body
                           isHTML:NO];
         
-        [composer setSubject:@"iPhone Web Service Benchmark Results"];
-        NSString *errorDescription = nil;
-        NSData *data = [NSPropertyListSerialization dataFromPropertyList:self.testResults
-                                                                  format:NSPropertyListXMLFormat_v1_0 
-                                                        errorDescription:&errorDescription];
-        [composer addAttachmentData:data 
-                           mimeType:@"application/plist" 
-                           fileName:@"results.plist"];
+        [composer setSubject:@"iPhoneWebServicesClient Benchmark Results"];
+        [composer addAttachmentData:[self.testResults formattedAsCSV]
+                           mimeType:@"text/csv" 
+                           fileName:@"results.csv"];
         
         [self.navigationController presentModalViewController:composer 
                                                      animated:YES];
