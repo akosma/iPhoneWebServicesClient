@@ -46,5 +46,6 @@ typedef enum {
     DeserializerTypeTouchXML = 8,
     DeserializerTypeLibXML = 9,
     DeserializerTypeCSV = 10,
-    DeserializerTypeSOAP = 11
+    DeserializerTypeTBXML = 11,
+    DeserializerTypeSOAP = 12
 } DeserializerType;

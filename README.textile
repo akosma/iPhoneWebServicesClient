@@ -33,14 +33,17 @@ For the iPhone client:
 * "json-framework":http://code.google.com/p/json-framework/ - A strict JSON parser/generator for Objective-C
 * "touchcode":http://code.google.com/p/touchcode/ - Repository of iPhone and iPod Touch source code.
 * "cCSVParse":http://michael.stapelberg.de/cCSVParse - A CSV parsing library in Objective-C
+* "TBXML V1.3":http://www.tbxml.co.uk/ - XML Parser by Tim Bray
 
 h3. YAML in Cocoa
 
-For parsing YAML in Cocoa, the code in "this page":http://will.thimbleby.net/yaml.html was adapted, removing dependencies on the Cocoa AppKit framework (not available on the iPhone). This code also requires to have the YAML::Syck library installed:
+For parsing YAML in Cocoa, the code in "this page":http://will.thimbleby.net/yaml.html was adapted, removing dependencies on the Cocoa AppKit framework (not available on the iPhone). This code also requires to have the YAML::Syck library installed using Fink:
 
 # Install Fink on Mac OS X 10.6 from source "following these instructions":http://www.finkproject.org/download/srcdist.php (there is no binary installer available for Snow Leopard at the time of this writing).
 # Type "/sw/bin/fink install syck" to install syck.
 # The Xcode project should now compile without problems.
+
+Alternatively, this package includes a version of libsyck.a in "fat binary" format for both ARM (iPhone OS) and Intel (Simulator) processors.
 
 h3. SOAP in Cocoa
 

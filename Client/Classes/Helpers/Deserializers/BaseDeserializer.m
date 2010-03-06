@@ -44,6 +44,7 @@
 #import "TouchXMLDeserializer.h"
 #import "LibXMLDeserializer.h"
 #import "CSVDeserializer.h"
+#import "TBXMLDeserializer.h"
 
 @implementation BaseDeserializer
 
@@ -119,6 +120,12 @@
         case DeserializerTypeCSV:
         {
             deserializer = [CSVDeserializer deserializer];
+            break;
+        }
+            
+        case DeserializerTypeTBXML:
+        {
+            deserializer = [TBXMLDeserializer deserializer];
             break;
         }
 
