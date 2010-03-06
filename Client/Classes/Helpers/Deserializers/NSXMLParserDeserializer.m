@@ -109,6 +109,7 @@
 
 - (void)startDeserializing:(id)data
 {
+    [self startTimer];
     self.parser = [[[NSXMLParser alloc] initWithData:data] autorelease];
     self.array = [NSMutableArray array];
 
@@ -244,6 +245,7 @@
 
 - (void)parserDidEndDocument:(NSXMLParser *)parser 
 {
+    [self stopTimer];
     if ([self.delegate respondsToSelector:@selector(deserializer:didFinishDeserializing:)])
     {
         [self.delegate deserializer:self didFinishDeserializing:self.array];

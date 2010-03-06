@@ -48,5 +48,7 @@
 + (id<Deserializer>)deserializerForFormat:(DeserializerType)format;
 + (id<Deserializer>)deserializer;
 - (NSArray *)performDeserialization:(id)data;
+- (void)startTimer;
+- (void)stopTimer;
 
 @end

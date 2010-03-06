@@ -180,7 +180,7 @@
 
 - (NSArray *)deserializeData:(id)data
 {
-    self.interval = [NSDate timeIntervalSinceReferenceDate];
+    [self startTimer];
     NSArray *result = nil;
     if ([data isKindOfClass:[NSArray class]])
     {
@@ -190,7 +190,7 @@
     {
         result = [self performDeserialization:data];
     }
-    self.interval = [NSDate timeIntervalSinceReferenceDate] - self.interval;
+    [self stopTimer];
     return result;
 }
 
@@ -206,6 +206,16 @@
 
 - (void)startDeserializing:(id)data
 {
+}
+
+- (void)startTimer
+{
+    self.interval = [NSDate timeIntervalSinceReferenceDate];
+}
+
+- (void)stopTimer
+{
+    self.interval = [NSDate timeIntervalSinceReferenceDate] - self.interval;
 }
 
 @end
