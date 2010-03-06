@@ -37,6 +37,7 @@ For the iPhone client:
 * "KissXML":http://code.google.com/p/kissxml/ - KissXML is a replacement for Cocoa's NSXML cluster of classes. It is based on libxml.
 * "TinyXML":http://www.grinninglizard.com/tinyxml/ - TinyXML is a simple, small, C++ XML parser that can be easily integrating into other programs.
 * "gdata-objectivec-client":http://code.google.com/p/gdata-objectivec-client/source/browse/trunk/Source/XMLSupport/ - XML support classes included in the Google Data APIs Objective-C Client Library.
+* "APXML":http://arashpayan.com/blog/index.php/2009/01/14/apxml-nsxmldocument-substitute-for-iphoneipod-touch/ - NSXMLDocument ’substitute’ for iPhone/iPod Touch
 
 h3. YAML in Cocoa
 
