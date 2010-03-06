@@ -119,11 +119,6 @@
     [self.parser parse];
 }
 
-- (NSString *)formatIdentifier
-{
-    return @"xml";
-}
-
 #pragma mark -
 #pragma mark NSXMLParserDelegate methods
 

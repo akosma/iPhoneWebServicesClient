@@ -32,8 +32,8 @@
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#import "BaseDeserializer.h"
+#import "BaseXMLDeserializer.h"
 
-@interface LibXMLDeserializer : BaseDeserializer
+@interface LibXMLDeserializer : BaseXMLDeserializer
 
 @end

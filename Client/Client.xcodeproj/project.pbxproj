@@ -95,6 +95,7 @@
 		3AC8A74B114277F600ADB270 /* APDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8A743114277F600ADB270 /* APDocument.m */; };
 		3AC8A74C114277F600ADB270 /* APElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8A745114277F600ADB270 /* APElement.m */; };
 		3AC8A7551142785500ADB270 /* APXMLDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8A7541142785500ADB270 /* APXMLDeserializer.m */; };
+		3AC8A76911427AC600ADB270 /* BaseXMLDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8A76811427AC600ADB270 /* BaseXMLDeserializer.m */; };
 		3AD27253113D7BCB004B310D /* NSXMLParserDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD27252113D7BCB004B310D /* NSXMLParserDeserializer.m */; };
 		3AD2726C113D7C29004B310D /* TouchXMLDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD2726B113D7C29004B310D /* TouchXMLDeserializer.m */; };
 		3AD2728D113D7CE2004B310D /* CXMLDocument_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD27276113D7CE2004B310D /* CXMLDocument_CreationExtensions.m */; };
@@ -286,6 +287,8 @@
 		3AC8A746114277F600ADB270 /* APXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APXML.h; sourceTree = "<group>"; };
 		3AC8A7531142785500ADB270 /* APXMLDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APXMLDeserializer.h; sourceTree = "<group>"; };
 		3AC8A7541142785500ADB270 /* APXMLDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APXMLDeserializer.m; sourceTree = "<group>"; };
+		3AC8A76711427AC600ADB270 /* BaseXMLDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseXMLDeserializer.h; sourceTree = "<group>"; };
+		3AC8A76811427AC600ADB270 /* BaseXMLDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseXMLDeserializer.m; sourceTree = "<group>"; };
 		3AD27251113D7BCB004B310D /* NSXMLParserDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSXMLParserDeserializer.h; sourceTree = "<group>"; };
 		3AD27252113D7BCB004B310D /* NSXMLParserDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSXMLParserDeserializer.m; sourceTree = "<group>"; };
 		3AD2726A113D7C29004B310D /* TouchXMLDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchXMLDeserializer.h; sourceTree = "<group>"; };
@@ -657,6 +660,8 @@
 				3AC8A7231142751500ADB270 /* GoogleXMLDeserializer.m */,
 				3AC8A7531142785500ADB270 /* APXMLDeserializer.h */,
 				3AC8A7541142785500ADB270 /* APXMLDeserializer.m */,
+				3AC8A76711427AC600ADB270 /* BaseXMLDeserializer.h */,
+				3AC8A76811427AC600ADB270 /* BaseXMLDeserializer.m */,
 			);
 			path = Deserializers;
 			sourceTree = "<group>";
@@ -944,6 +949,7 @@
 				3AC8A74B114277F600ADB270 /* APDocument.m in Sources */,
 				3AC8A74C114277F600ADB270 /* APElement.m in Sources */,
 				3AC8A7551142785500ADB270 /* APXMLDeserializer.m in Sources */,
+				3AC8A76911427AC600ADB270 /* BaseXMLDeserializer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

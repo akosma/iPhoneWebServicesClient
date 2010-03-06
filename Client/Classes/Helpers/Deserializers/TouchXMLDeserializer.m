@@ -63,9 +63,4 @@
     return array;
 }
 
-- (NSString *)formatIdentifier
-{
-    return @"xml";
-}
-
 @end
