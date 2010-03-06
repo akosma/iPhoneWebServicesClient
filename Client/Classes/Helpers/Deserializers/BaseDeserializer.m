@@ -45,6 +45,7 @@
 #import "LibXMLDeserializer.h"
 #import "CSVDeserializer.h"
 #import "TBXMLDeserializer.h"
+#import "KissXMLDeserializer.h"
 
 @implementation BaseDeserializer
 
@@ -126,6 +127,12 @@
         case DeserializerTypeTBXML:
         {
             deserializer = [TBXMLDeserializer deserializer];
+            break;
+        }
+            
+        case DeserializerTypeKissXML:
+        {
+            deserializer = [KissXMLDeserializer deserializer];
             break;
         }
 

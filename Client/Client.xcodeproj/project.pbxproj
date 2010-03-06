@@ -78,6 +78,12 @@
 		3AC8A62011425BBE00ADB270 /* TBXMLDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8A61F11425BBE00ADB270 /* TBXMLDeserializer.m */; };
 		3AC8A62A11425D5300ADB270 /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8A62711425D5300ADB270 /* NSDataAdditions.m */; };
 		3AC8A62B11425D5300ADB270 /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8A62911425D5300ADB270 /* TBXML.m */; };
+		3AC8A669114264CD00ADB270 /* DDXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8A65F114264CD00ADB270 /* DDXMLDocument.m */; };
+		3AC8A66A114264CD00ADB270 /* DDXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8A661114264CD00ADB270 /* DDXMLElement.m */; };
+		3AC8A66B114264CD00ADB270 /* DDXMLElementAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8A663114264CD00ADB270 /* DDXMLElementAdditions.m */; };
+		3AC8A66C114264CD00ADB270 /* DDXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8A665114264CD00ADB270 /* DDXMLNode.m */; };
+		3AC8A66D114264CD00ADB270 /* NSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8A668114264CD00ADB270 /* NSStringAdditions.m */; };
+		3AC8A674114265C300ADB270 /* KissXMLDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8A673114265C300ADB270 /* KissXMLDeserializer.m */; };
 		3AD27253113D7BCB004B310D /* NSXMLParserDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD27252113D7BCB004B310D /* NSXMLParserDeserializer.m */; };
 		3AD2726C113D7C29004B310D /* TouchXMLDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD2726B113D7C29004B310D /* TouchXMLDeserializer.m */; };
 		3AD2728D113D7CE2004B310D /* CXMLDocument_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD27276113D7CE2004B310D /* CXMLDocument_CreationExtensions.m */; };
@@ -234,6 +240,20 @@
 		3AC8A62711425D5300ADB270 /* NSDataAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataAdditions.m; sourceTree = "<group>"; };
 		3AC8A62811425D5300ADB270 /* TBXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBXML.h; sourceTree = "<group>"; };
 		3AC8A62911425D5300ADB270 /* TBXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBXML.m; sourceTree = "<group>"; };
+		3AC8A65D114264CD00ADB270 /* DDXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXML.h; sourceTree = "<group>"; };
+		3AC8A65E114264CD00ADB270 /* DDXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLDocument.h; sourceTree = "<group>"; };
+		3AC8A65F114264CD00ADB270 /* DDXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLDocument.m; sourceTree = "<group>"; };
+		3AC8A660114264CD00ADB270 /* DDXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLElement.h; sourceTree = "<group>"; };
+		3AC8A661114264CD00ADB270 /* DDXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLElement.m; sourceTree = "<group>"; };
+		3AC8A662114264CD00ADB270 /* DDXMLElementAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLElementAdditions.h; sourceTree = "<group>"; };
+		3AC8A663114264CD00ADB270 /* DDXMLElementAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLElementAdditions.m; sourceTree = "<group>"; };
+		3AC8A664114264CD00ADB270 /* DDXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLNode.h; sourceTree = "<group>"; };
+		3AC8A665114264CD00ADB270 /* DDXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLNode.m; sourceTree = "<group>"; };
+		3AC8A666114264CD00ADB270 /* DDXMLPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLPrivate.h; sourceTree = "<group>"; };
+		3AC8A667114264CD00ADB270 /* NSStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringAdditions.h; sourceTree = "<group>"; };
+		3AC8A668114264CD00ADB270 /* NSStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringAdditions.m; sourceTree = "<group>"; };
+		3AC8A672114265C300ADB270 /* KissXMLDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KissXMLDeserializer.h; sourceTree = "<group>"; };
+		3AC8A673114265C300ADB270 /* KissXMLDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KissXMLDeserializer.m; sourceTree = "<group>"; };
 		3AD27251113D7BCB004B310D /* NSXMLParserDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSXMLParserDeserializer.h; sourceTree = "<group>"; };
 		3AD27252113D7BCB004B310D /* NSXMLParserDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSXMLParserDeserializer.m; sourceTree = "<group>"; };
 		3AD2726A113D7C29004B310D /* TouchXMLDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchXMLDeserializer.h; sourceTree = "<group>"; };
@@ -447,6 +467,7 @@
 		3AA35BB9113CEEB300A89E31 /* Externals */ = {
 			isa = PBXGroup;
 			children = (
+				3AC8A65C114264CD00ADB270 /* KissXML */,
 				3AC8A62511425D5300ADB270 /* TBXML */,
 				3A976C53113FD1E700D200EE /* cCSVParse */,
 				3AA35C8D113CF24C00A89E31 /* ASIHTTPRequest */,
@@ -593,6 +614,8 @@
 				3A976C64113FD26B00D200EE /* CSVDeserializer.m */,
 				3AC8A61E11425BBE00ADB270 /* TBXMLDeserializer.h */,
 				3AC8A61F11425BBE00ADB270 /* TBXMLDeserializer.m */,
+				3AC8A672114265C300ADB270 /* KissXMLDeserializer.h */,
+				3AC8A673114265C300ADB270 /* KissXMLDeserializer.m */,
 			);
 			path = Deserializers;
 			sourceTree = "<group>";
@@ -623,6 +646,25 @@
 				3AC8A62911425D5300ADB270 /* TBXML.m */,
 			);
 			path = TBXML;
+			sourceTree = "<group>";
+		};
+		3AC8A65C114264CD00ADB270 /* KissXML */ = {
+			isa = PBXGroup;
+			children = (
+				3AC8A65D114264CD00ADB270 /* DDXML.h */,
+				3AC8A65E114264CD00ADB270 /* DDXMLDocument.h */,
+				3AC8A65F114264CD00ADB270 /* DDXMLDocument.m */,
+				3AC8A660114264CD00ADB270 /* DDXMLElement.h */,
+				3AC8A661114264CD00ADB270 /* DDXMLElement.m */,
+				3AC8A662114264CD00ADB270 /* DDXMLElementAdditions.h */,
+				3AC8A663114264CD00ADB270 /* DDXMLElementAdditions.m */,
+				3AC8A664114264CD00ADB270 /* DDXMLNode.h */,
+				3AC8A665114264CD00ADB270 /* DDXMLNode.m */,
+				3AC8A666114264CD00ADB270 /* DDXMLPrivate.h */,
+				3AC8A667114264CD00ADB270 /* NSStringAdditions.h */,
+				3AC8A668114264CD00ADB270 /* NSStringAdditions.m */,
+			);
+			path = KissXML;
 			sourceTree = "<group>";
 		};
 		3AD27273113D7CE2004B310D /* TouchXML */ = {
@@ -808,6 +850,12 @@
 				3AC8A62011425BBE00ADB270 /* TBXMLDeserializer.m in Sources */,
 				3AC8A62A11425D5300ADB270 /* NSDataAdditions.m in Sources */,
 				3AC8A62B11425D5300ADB270 /* TBXML.m in Sources */,
+				3AC8A669114264CD00ADB270 /* DDXMLDocument.m in Sources */,
+				3AC8A66A114264CD00ADB270 /* DDXMLElement.m in Sources */,
+				3AC8A66B114264CD00ADB270 /* DDXMLElementAdditions.m in Sources */,
+				3AC8A66C114264CD00ADB270 /* DDXMLNode.m in Sources */,
+				3AC8A66D114264CD00ADB270 /* NSStringAdditions.m in Sources */,
+				3AC8A674114265C300ADB270 /* KissXMLDeserializer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

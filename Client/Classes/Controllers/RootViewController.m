@@ -90,7 +90,7 @@
             break;
             
         case 1:
-            self.currentDataFormat = DeserializerTypeTBXML;
+            self.currentDataFormat = DeserializerTypeKissXML;
             break;
             
         case 2:
