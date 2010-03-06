@@ -35,6 +35,7 @@ For the iPhone client:
 * "cCSVParse":http://michael.stapelberg.de/cCSVParse - A CSV parsing library in Objective-C
 * "TBXML V1.3":http://www.tbxml.co.uk/ - XML Parser by Tim Bray
 * "KissXML":http://code.google.com/p/kissxml/ - KissXML is a replacement for Cocoa's NSXML cluster of classes. It is based on libxml.
+* "TinyXML":http://www.grinninglizard.com/tinyxml/ - TinyXML is a simple, small, C++ XML parser that can be easily integrating into other programs.
 
 h3. YAML in Cocoa
 
@@ -71,7 +72,7 @@ h2. Other Links
 * "plistlib":http://docs.python.org/dev/library/plistlib.html - Generate and parse Mac OS X .plist files
 * "Discussion about CSV parsing in Objective-C":http://www.cocoadev.com/index.pl?ReadWriteCSVAndTSV
 * "soapUI":http://www.soapui.org/ - Cross-platform tool for testing SOAP web services
-* "How To Chose The Best XML Parser for Your iPhone Project":http://www.raywenderlich.com/553/how-to-chose-the-best-xml-parser-for-your-iphone-project - by Ray Wenderlich, iPhone Developer and Gamer
+* "How To Choose The Best XML Parser for Your iPhone Project":http://www.raywenderlich.com/553/how-to-chose-the-best-xml-parser-for-your-iphone-project - by Ray Wenderlich, iPhone Developer and Gamer
 * "iPhone Programming Tips: building Unix software":http://latenitesoft.blogspot.com/2008/10/iphone-programming-tips-building-unix.html - The bundled libsyck.a static library (fat binary for both ARM and Intel) was created using the information in this page.
 
 h2. License
