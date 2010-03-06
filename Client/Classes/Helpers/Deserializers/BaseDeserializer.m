@@ -105,7 +105,7 @@
             
         case DeserializerTypeNSXMLParser:
         {
-            deserializer = [LibXMLDeserializer deserializer];
+            deserializer = [NSXMLParserDeserializer deserializer];
             break;
         }
             
