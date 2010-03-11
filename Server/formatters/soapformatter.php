@@ -35,7 +35,7 @@ class SOAPFormatter extends Formatter
 {
     public function formatData()
     {
-        $path = $this->currentServer() . "/soap/server.php";
+        $path = $this->currentServer() . "soap/server.php";
         $request_file = dirname(__FILE__) . "/soaprequest.xml";
         $file_contents = file_get_contents($request_file);
         $limit = $this->getData()->count();
@@ -79,6 +79,7 @@ class SOAPFormatter extends Formatter
         {
             $pageURL .= $_SERVER["SERVER_NAME"];
         }
+        $pageURL .= str_replace("index.php", "", $_SERVER["PHP_SELF"]);
         return $pageURL;
     }
 }
