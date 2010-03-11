@@ -206,7 +206,6 @@
 		3A72D68D113E9C2C0055AF36 /* BenchmarkController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BenchmarkController.h; sourceTree = "<group>"; };
 		3A72D68E113E9C2C0055AF36 /* BenchmarkController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BenchmarkController.m; sourceTree = "<group>"; };
 		3A72D692113E9C740055AF36 /* BenchmarkController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BenchmarkController.xib; sourceTree = "<group>"; };
-		3A72D718113EA2D40055AF36 /* Definitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Definitions.h; sourceTree = "<group>"; };
 		3A976C54113FD1E700D200EE /* parseCSV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = parseCSV.h; sourceTree = "<group>"; };
 		3A976C55113FD1E700D200EE /* parseCSV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = parseCSV.m; sourceTree = "<group>"; };
 		3A976C63113FD26B00D200EE /* CSVDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSVDeserializer.h; sourceTree = "<group>"; };
@@ -422,7 +421,6 @@
 			children = (
 				28A0AAE50D9B0CCF005BE974 /* Client_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
-				3A72D718113EA2D40055AF36 /* Definitions.h */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";

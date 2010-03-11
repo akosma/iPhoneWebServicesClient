@@ -48,6 +48,8 @@
     NSMutableArray *_loaders;
     NSInteger _currentLimit;
     NSInteger _currentLoaderIndex;
+    NSInteger _benchmarkMaximum;
+    NSInteger _benchmarkIncrement;
     UINavigationController *_navigationController;
     BOOL _benchmarkFinished;
     BOOL _running;

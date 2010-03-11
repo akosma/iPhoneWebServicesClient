@@ -32,6 +32,48 @@
 		</dict>
 		<dict>
 			<key>Title</key>
+			<string>Benchmark Limits</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Maximum</string>
+			<key>Key</key>
+			<string>benchmark_maximum</string>
+			<key>DefaultValue</key>
+			<integer>200</integer>
+			<key>IsSecure</key>
+			<false/>
+			<key>KeyboardType</key>
+			<string>Alphabet</string>
+			<key>AutocapitalizationType</key>
+			<string>None</string>
+			<key>AutocorrectionType</key>
+			<string>No</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Increment</string>
+			<key>Key</key>
+			<string>benchmark_increment</string>
+			<key>DefaultValue</key>
+			<integer>50</integer>
+			<key>IsSecure</key>
+			<false/>
+			<key>KeyboardType</key>
+			<string>Alphabet</string>
+			<key>AutocapitalizationType</key>
+			<string>None</string>
+			<key>AutocorrectionType</key>
+			<string>No</string>
+		</dict>
+		<dict>
+			<key>Title</key>
 			<string>Web Services Client by akosma</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>

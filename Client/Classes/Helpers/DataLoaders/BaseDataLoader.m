@@ -36,7 +36,6 @@
 #import "ASIHTTPRequestDataLoader.h"
 #import "NSURLConnectionDataLoader.h"
 #import "SOAPDataLoader.h"
-#import "Definitions.h"
 
 @implementation BaseDataLoader
 

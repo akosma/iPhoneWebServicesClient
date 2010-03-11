@@ -35,7 +35,6 @@
 #import "BenchmarkController.h"
 #import "BaseDataLoader.h"
 #import "BaseDeserializer.h"
-#import "Definitions.h"
 #import "Reachability.h"
 #import "NSArray+Extensions.h"
 
@@ -45,6 +44,8 @@
 @property (nonatomic, retain) NSMutableArray *testResults;
 @property (nonatomic) NSInteger currentLimit;
 @property (nonatomic) NSInteger currentLoaderIndex;
+@property (nonatomic) NSInteger benchmarkMaximum;
+@property (nonatomic) NSInteger benchmarkIncrement;
 @property (nonatomic) BOOL benchmarkFinished;
 @property (nonatomic) BOOL running;
 @property (nonatomic, readonly) UIBarButtonItem *mailButton;
@@ -68,6 +69,8 @@
 @synthesize mailButton = _mailButton;
 @synthesize startButton = _startButton;
 @synthesize doneButton = _doneButton;
+@synthesize benchmarkMaximum = _benchmarkMaximum;
+@synthesize benchmarkIncrement = _benchmarkIncrement;
 
 - (id)init
 {
@@ -81,6 +84,10 @@
         self.currentLoaderIndex = 0;
         self.testResults = [NSMutableArray arrayWithCapacity:100];
         self.loaders = [NSMutableArray arrayWithCapacity:21];
+        
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        self.benchmarkMaximum = [defaults integerForKey:@"benchmark_maximum"];
+        self.benchmarkIncrement = [defaults integerForKey:@"benchmark_increment"];
 
         id<DataLoader> loader = nil;
         for (LoaderMechanism lm = 1; lm < LoaderMechanismSOAP; ++lm)
@@ -301,11 +308,11 @@
 
 - (void)performNextBenchmark
 {
-    self.currentLimit += BENCHMARK_LIMIT_INCREMENT;
-    if (self.currentLimit > BENCHMARK_MAXIMUM_LIMIT)
+    self.currentLimit += self.benchmarkIncrement;
+    if (self.currentLimit > self.benchmarkMaximum)
     {
         self.currentLoaderIndex += 1;
-        self.currentLimit = BENCHMARK_LIMIT_INCREMENT;
+        self.currentLimit = self.benchmarkIncrement;
     }
     
     if (self.running)

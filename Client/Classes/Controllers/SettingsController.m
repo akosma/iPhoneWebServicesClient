@@ -33,7 +33,6 @@
 //
 
 #import "SettingsController.h"
-#import "Definitions.h"
 
 @implementation SettingsController
 
