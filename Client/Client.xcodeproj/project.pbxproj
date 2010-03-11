@@ -29,6 +29,7 @@
 		3A0932301148FB68008EEBBE /* IASKSpecifierValuesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A0932201148FB68008EEBBE /* IASKSpecifierValuesView.xib */; };
 		3A0932361148FB97008EEBBE /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3A0932351148FB97008EEBBE /* Settings.bundle */; };
 		3A0932621148FC76008EEBBE /* SettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0932611148FC76008EEBBE /* SettingsController.m */; };
+		3A09333A11490BCA008EEBBE /* NSUserDefaults+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A09333911490BCA008EEBBE /* NSUserDefaults+Extensions.m */; };
 		3A0A81F2113D1A4200E23EDC /* SyckInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0A81F1113D1A4200E23EDC /* SyckInput.m */; };
 		3A0A8251113D201700E23EDC /* BinaryPlistDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0A8250113D201700E23EDC /* BinaryPlistDeserializer.m */; };
 		3A0A8267113D229A00E23EDC /* XMLPlistDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0A8266113D229A00E23EDC /* XMLPlistDeserializer.m */; };
@@ -169,6 +170,8 @@
 		3A0932351148FB97008EEBBE /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		3A0932601148FC76008EEBBE /* SettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsController.h; sourceTree = "<group>"; };
 		3A0932611148FC76008EEBBE /* SettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsController.m; sourceTree = "<group>"; };
+		3A09333811490BCA008EEBBE /* NSUserDefaults+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+Extensions.h"; sourceTree = "<group>"; };
+		3A09333911490BCA008EEBBE /* NSUserDefaults+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+Extensions.m"; sourceTree = "<group>"; };
 		3A0A81F1113D1A4200E23EDC /* SyckInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyckInput.m; sourceTree = "<group>"; };
 		3A0A824F113D201700E23EDC /* BinaryPlistDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BinaryPlistDeserializer.h; sourceTree = "<group>"; };
 		3A0A8250113D201700E23EDC /* BinaryPlistDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BinaryPlistDeserializer.m; sourceTree = "<group>"; };
@@ -739,6 +742,8 @@
 				3AB15C5D113ECCF800B132E6 /* NSDictionary+Extensions.m */,
 				3AC8A77E1142801800ADB270 /* NSArray+Extensions.h */,
 				3AC8A77F1142801800ADB270 /* NSArray+Extensions.m */,
+				3A09333811490BCA008EEBBE /* NSUserDefaults+Extensions.h */,
+				3A09333911490BCA008EEBBE /* NSUserDefaults+Extensions.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -1096,6 +1101,7 @@
 				3A09322A1148FB68008EEBBE /* IASKSwitch.m in Sources */,
 				3A09322B1148FB68008EEBBE /* IASKTextField.m in Sources */,
 				3A0932621148FC76008EEBBE /* SettingsController.m in Sources */,
+				3A09333A11490BCA008EEBBE /* NSUserDefaults+Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

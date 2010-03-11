@@ -36,6 +36,7 @@
 #import "ASIHTTPRequestDataLoader.h"
 #import "NSURLConnectionDataLoader.h"
 #import "SOAPDataLoader.h"
+#import "NSUserDefaults+Extensions.h"
 
 @implementation BaseDataLoader
 
@@ -87,7 +88,7 @@
     if (self = [super init])
     {
         self.limit = 300;
-        NSString *baseURL = [[NSUserDefaults standardUserDefaults] stringForKey:@"server_url"];
+        NSString *baseURL = [NSUserDefaults standardUserDefaults].serverURL;
         self.baseURLString = [NSString stringWithFormat:@"%@/index.php", baseURL];
     }
     return self;

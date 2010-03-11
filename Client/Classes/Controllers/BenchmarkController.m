@@ -37,6 +37,7 @@
 #import "BaseDeserializer.h"
 #import "Reachability.h"
 #import "NSArray+Extensions.h"
+#import "NSUserDefaults+Extensions.h"
 
 @interface BenchmarkController ()
 @property (nonatomic, readonly) UITableView *tableView;
@@ -86,8 +87,8 @@
         self.loaders = [NSMutableArray arrayWithCapacity:21];
         
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        self.benchmarkMaximum = [defaults integerForKey:@"benchmark_maximum"];
-        self.benchmarkIncrement = [defaults integerForKey:@"benchmark_increment"];
+        self.benchmarkMaximum = defaults.benchmarkMaximum;
+        self.benchmarkIncrement = defaults.benchmarkIncrement;
 
         id<DataLoader> loader = nil;
         for (LoaderMechanism lm = 1; lm < LoaderMechanismSOAP; ++lm)
@@ -169,7 +170,7 @@
         MFMailComposeViewController *composer = [[MFMailComposeViewController alloc] init];
         composer.mailComposeDelegate = self;
         
-        NSString *baseURL = [[NSUserDefaults standardUserDefaults] stringForKey:@"server_url"];
+        NSString *baseURL = [NSUserDefaults standardUserDefaults].serverURL;
         NSURL *url = [NSURL URLWithString:baseURL];
         Reachability *reachability = [Reachability reachabilityWithHostName:url.host];
         NSString *connection = nil;

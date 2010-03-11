@@ -340,7 +340,7 @@ static NSString *kIASKCredits = @"Powered by InAppSettingsKit"; // Leave this as
         }
         [[cell label] setText:[specifier title]];
         [[cell textField] setText:[[NSUserDefaults standardUserDefaults] objectForKey:key] != nil ? 
-		 [[NSUserDefaults standardUserDefaults] objectForKey:key] : [specifier defaultStringValue]];
+		 [[[NSUserDefaults standardUserDefaults] objectForKey:key] description] : [specifier defaultStringValue]];
         [[cell textField] setKey:key];
         [[cell textField] setDelegate:self];
         [[cell textField] addTarget:self action:@selector(_textChanged:) forControlEvents:UIControlEventEditingChanged];

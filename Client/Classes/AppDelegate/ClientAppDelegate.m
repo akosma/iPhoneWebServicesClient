@@ -34,6 +34,7 @@
 
 #import "ClientAppDelegate.h"
 #import "RootViewController.h"
+#import "NSUserDefaults+Extensions.h"
 
 @interface ClientAppDelegate ()
 @property (nonatomic, retain) UIWindow *window;
@@ -51,6 +52,7 @@
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application 
 {
+    [[NSUserDefaults standardUserDefaults] setDefaultValuesIfRequired];
     [UIApplication sharedApplication].idleTimerDisabled = YES;
 	[self.window addSubview:[self.navigationController view]];
     [self.window makeKeyAndVisible];
@@ -59,9 +61,6 @@
 - (void)applicationWillTerminate:(UIApplication *)application 
 {
 }
-
-#pragma mark -
-#pragma mark Memory management
 
 - (void)dealloc 
 {
