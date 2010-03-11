@@ -185,23 +185,15 @@
     return self;
 }
 
-- (NSArray *)deserializeData:(id)data
+- (NSArray *)deserializeData:(NSData *)data
 {
     [self startTimer];
-    NSArray *result = nil;
-    if ([data isKindOfClass:[NSArray class]])
-    {
-        result = data;
-    }
-    else
-    {
-        result = [self performDeserialization:data];
-    }
+    NSArray *result = [self performDeserialization:data];
     [self stopTimer];
     return result;
 }
 
-- (NSArray *)performDeserialization:(id)data
+- (NSArray *)performDeserialization:(NSData *)data
 {
     return nil;
 }
@@ -211,7 +203,7 @@
     return nil;
 }
 
-- (void)startDeserializing:(id)data
+- (void)startDeserializing:(NSData *)data
 {
 }
 

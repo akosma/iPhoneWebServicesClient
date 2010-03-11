@@ -42,7 +42,7 @@
 @interface BaseDataLoader : NSObject <DataLoader>
 {
 @private
-    id _data;
+    NSData *_data;
     NSURL *_url;
     NSError *_error;
     NSTimeInterval _interval;

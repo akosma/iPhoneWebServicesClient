@@ -257,56 +257,6 @@ limit:(NSNumber *)aLimit
 {
 	if (responseData != nil && delegate != nil)
 	{
-		xmlDocPtr doc;
-		xmlNodePtr cur;
-		
-		if (binding.logXMLInOut) {
-			NSLog(@"ResponseBody:\n%@", [[[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding] autorelease]);
-		}
-		
-		doc = xmlParseMemory([responseData bytes], [responseData length]);
-		
-		if (doc == NULL) {
-			NSDictionary *userInfo = [NSDictionary dictionaryWithObject:@"Errors while parsing returned XML" forKey:NSLocalizedDescriptionKey];
-			
-			response.error = [NSError errorWithDomain:@"datawsdlBindingResponseXML" code:1 userInfo:userInfo];
-			[delegate operation:self completedWithResponse:response];
-		} else {
-			cur = xmlDocGetRootElement(doc);
-			cur = cur->children;
-			
-			for( ; cur != NULL ; cur = cur->next) {
-				if(cur->type == XML_ELEMENT_NODE) {
-					
-					if(xmlStrEqual(cur->name, (const xmlChar *) "Body")) {
-						NSMutableArray *responseBodyParts = [NSMutableArray array];
-						
-						xmlNodePtr bodyNode;
-						for(bodyNode=cur->children ; bodyNode != NULL ; bodyNode = bodyNode->next) {
-							if(cur->type == XML_ELEMENT_NODE) {
-								if(xmlStrEqual(bodyNode->name, (const xmlChar *) "return")) {
-									id bodyObject = [ns1_Array deserializeNode:bodyNode];
-									//NSAssert1(bodyObject != nil, @"Errors while parsing body %s", bodyNode->name);
-									if (bodyObject != nil) [responseBodyParts addObject:bodyObject];
-								}
-                                                                else if (xmlStrEqual(bodyNode->ns->prefix, (const xmlChar *) "soap") && 
-                                                                         xmlStrEqual(bodyNode->name, (const xmlChar *) "Fault")) {
-									SOAPFault *bodyObject = [SOAPFault deserializeNode:bodyNode];
-									//NSAssert1(bodyObject != nil, @"Errors while parsing body %s", bodyNode->name);
-									if (bodyObject != nil) [responseBodyParts addObject:bodyObject];
-                                                                }
-							}
-						}
-						
-						response.bodyParts = responseBodyParts;
-					}
-				}
-			}
-			
-			xmlFreeDoc(doc);
-		}
-		
-		xmlCleanupParser();
 		[delegate operation:self completedWithResponse:response];
 	}
 }

@@ -233,11 +233,7 @@
     [statistics setObject:[NSNumber numberWithDouble:loader.interval] forKey:KEY_LOADER_TIME];
     [statistics setObject:[NSNumber numberWithDouble:loader.deserializer.interval] forKey:KEY_DESERIALIZER_TIME];
     
-    NSUInteger size = 0;
-    if ([loader.data isKindOfClass:[NSData class]])
-    {
-        size = [loader.data length];
-    }
+    NSUInteger size = [loader.data length];
     [statistics setObject:[NSNumber numberWithUnsignedInt:size] forKey:KEY_DATA_LENGTH];
     [self.testResults addObject:statistics];
     loader.data = nil;

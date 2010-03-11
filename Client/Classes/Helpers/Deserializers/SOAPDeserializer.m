@@ -33,8 +33,48 @@
 //
 
 #import "SOAPDeserializer.h"
+#import <libxml/tree.h>
+#import "USAdditions.h"
+#import "ns1.h"
 
 @implementation SOAPDeserializer
+
+- (NSArray *)performDeserialization:(id)data
+{
+    xmlDocPtr doc;
+    xmlNodePtr cur;
+    NSArray *result = nil;
+    
+    doc = xmlParseMemory([data bytes], [data length]);
+    
+    if (doc != NULL) 
+    {
+        cur = xmlDocGetRootElement(doc);
+        cur = cur->children;
+        
+        for( ; cur != NULL ; cur = cur->next) {
+            if(cur->type == XML_ELEMENT_NODE) {
+                
+                if(xmlStrEqual(cur->name, (const xmlChar *) "Body")) {
+                    
+                    xmlNodePtr bodyNode;
+                    for(bodyNode=cur->children ; bodyNode != NULL ; bodyNode = bodyNode->next) {
+                        if(cur->type == XML_ELEMENT_NODE) {
+                            if(xmlStrEqual(bodyNode->name, (const xmlChar *) "return")) {
+                                result = [ns1_Array deserializeNode:bodyNode];
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        xmlFreeDoc(doc);
+    }
+    
+    xmlCleanupParser();
+    return result;
+}
 
 - (NSString *)formatIdentifier
 {

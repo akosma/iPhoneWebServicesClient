@@ -47,7 +47,7 @@
 
 - (void)operation:(datawsdlBindingOperation *)operation completedWithResponse:(datawsdlBindingResponse *)response
 {
-    self.data = [response.bodyParts objectAtIndex:0];
+    self.data = operation.responseData;
     [self ready];
 }
 
