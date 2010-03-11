@@ -74,3 +74,11 @@ curl http://localhost:8888/soap/server.php\?wsdl > wsdl.xml
 echo 
 echo "============= XML ============="
 curl http://${SERVER}/index.php\?format=xml\&limit=${LIMIT} > data.xml
+
+echo 
+echo "============= CSV ============="
+curl http://${SERVER}/index.php\?format=csv\&limit=${LIMIT} > data.csv
+
+echo 
+echo "============= Protocol Buffer ============="
+curl http://${SERVER}/index.php\?format=pbuf\&limit=${LIMIT} > data.pbuf

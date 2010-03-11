@@ -1,0 +1,56 @@
+============= Retrieving 5000 items from a remote server via wifi =============
+
+============= HTML =============
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 1859k    0 1859k    0     0   406k      0 --:--:--  0:00:04 --:--:--  469k
+
+============= XML Property List =============
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 3666k    0 3666k    0     0   424k      0 --:--:--  0:00:08 --:--:--  648k
+
+============= XML Property List (formatted) =============
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 4671k    0 4671k    0     0   444k      0 --:--:--  0:00:10 --:--:--  652k
+
+============= Binary Property List =============
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 1370k    0 1370k    0     0   128k      0 --:--:--  0:00:10 --:--:--  305k
+
+============= JSON =============
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 2098k  100 2098k    0     0   440k      0  0:00:04  0:00:04 --:--:--  455k
+
+============= YAML =============
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 2269k  100 2269k    0     0   342k      0  0:00:06  0:00:06 --:--:--  530k
+
+============= SOAP =============
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 4066k  100 4066k    0     0   156k      0  0:00:25  0:00:25 --:--:--  659k
+
+============= WSDL =============
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+105  1787  105  1787    0     0  65936      0 --:--:-- --:--:-- --:--:-- 74458
+
+============= XML =============
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 2581k  100 2581k    0     0   366k      0  0:00:07  0:00:07 --:--:--  535k
+
+============= CSV =============
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 1309k    0 1309k    0     0   309k      0 --:--:--  0:00:04 --:--:--  324k
+
+============= Protocol Buffer =============
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 1338k    0 1338k    0     0   183k      0 --:--:--  0:00:07 --:--:--  326k
