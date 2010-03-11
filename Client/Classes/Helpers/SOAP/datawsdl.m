@@ -4,8 +4,6 @@
 #import <CFNetwork/CFNetwork.h>
 #endif
 
-#import "Definitions.h"
-
 @implementation datawsdl
 + (void)initialize
 {
@@ -16,7 +14,8 @@
 }
 + (datawsdlBinding *)datawsdlBinding
 {
-    NSString *address = [NSString stringWithFormat:@"%@/soap/server.php", BASE_URL];
+    NSString *baseURL = [[NSUserDefaults standardUserDefaults] stringForKey:@"server_url"];
+    NSString *address = [NSString stringWithFormat:@"%@/soap/server.php", baseURL];
 	return [[[datawsdlBinding alloc] initWithAddress:address] autorelease];
 }
 @end

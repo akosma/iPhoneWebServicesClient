@@ -88,7 +88,8 @@
     if (self = [super init])
     {
         self.limit = 300;
-        self.baseURLString = [NSString stringWithFormat:@"%@/index.php", BASE_URL];
+        NSString *baseURL = [[NSUserDefaults standardUserDefaults] stringForKey:@"server_url"];
+        self.baseURLString = [NSString stringWithFormat:@"%@/index.php", baseURL];
     }
     return self;
 }

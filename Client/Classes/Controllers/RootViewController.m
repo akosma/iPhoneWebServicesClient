@@ -38,6 +38,7 @@
 #import "BaseDeserializer.h"
 #import "BenchmarkController.h"
 #import "NSDictionary+Extensions.h"
+#import "SettingsController.h"
 
 @interface RootViewController ()
 
@@ -142,6 +143,14 @@
     [self.navigationController presentModalViewController:benchmark.navigationController 
                                                  animated:YES];
     [benchmark release];
+}
+
+- (IBAction)showSettings:(id)sender
+{
+    SettingsController *settings = [[SettingsController alloc] init];
+    [self.navigationController presentModalViewController:settings.navigationController 
+                                                 animated:YES];
+    [settings release];
 }
 
 #pragma mark -

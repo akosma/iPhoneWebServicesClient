@@ -162,7 +162,8 @@
         MFMailComposeViewController *composer = [[MFMailComposeViewController alloc] init];
         composer.mailComposeDelegate = self;
         
-        NSURL *url = [NSURL URLWithString:BASE_URL];
+        NSString *baseURL = [[NSUserDefaults standardUserDefaults] stringForKey:@"server_url"];
+        NSURL *url = [NSURL URLWithString:baseURL];
         Reachability *reachability = [Reachability reachabilityWithHostName:url.host];
         NSString *connection = nil;
         switch ([reachability currentReachabilityStatus]) 
@@ -183,7 +184,7 @@
                 connection = @"(unknown)";
                 break;
         }
-        NSString *body = [NSString stringWithFormat:@"Results after connecting to %@ using a %@ connection.", BASE_URL, connection];
+        NSString *body = [NSString stringWithFormat:@"Results after connecting to %@ using a %@ connection.", baseURL, connection];
         [composer setMessageBody:body
                           isHTML:NO];
         

@@ -12,7 +12,6 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="13"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -76,20 +75,16 @@
 							<object class="IBUIBarButtonItem" id="1073443478">
 								<string key="IBUITitle">Benchmark</string>
 								<int key="IBUIStyle">1</int>
-								<reference key="IBUIToolbar"/>
 							</object>
 							<object class="IBUIBarButtonItem" id="11167551">
-								<reference key="IBUIToolbar"/>
 								<int key="IBUISystemItemIdentifier">5</int>
 							</object>
 							<object class="IBUIBarButtonItem" id="545047097">
-								<string key="IBUITitle">About</string>
+								<string key="IBUITitle">Settings</string>
 								<int key="IBUIStyle">1</int>
-								<reference key="IBUIToolbar"/>
 							</object>
 						</object>
 						<object class="IBUINavigationItem" key="IBUINavigationItem" id="394667715">
-							<reference key="IBUINavigationBar"/>
 							<object class="IBUIBarButtonItem" key="IBUILeftBarButtonItem" id="494141393">
 								<int key="IBUIStyle">1</int>
 								<int key="IBUISystemItemIdentifier">13</int>
@@ -146,6 +141,14 @@
 						<reference key="destination" ref="619226028"/>
 					</object>
 					<int key="connectionID">34</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">showSettings:</string>
+						<reference key="source" ref="545047097"/>
+						<reference key="destination" ref="619226028"/>
+					</object>
+					<int key="connectionID">36</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -308,7 +311,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">34</int>
+			<int key="maxID">36</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -372,10 +375,12 @@
 							<string>formatChanged:</string>
 							<string>refresh:</string>
 							<string>showBenchmark:</string>
+							<string>showSettings:</string>
 							<string>sliderChanged:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>

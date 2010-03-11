@@ -1,8 +1,8 @@
 //
-//  RootViewController.h
+//  SettingsController.h
 //  Client
 //
-//  Created by Adrian on 2/8/10.
+//  Created by Adrian on 3/11/10.
 //  Copyright (c) 2010, akosma software / Adrian Kosmaczewski
 //  All rights reserved.
 //
@@ -26,34 +26,21 @@
 //  DISCLAIMED. IN NO EVENT SHALL ADRIAN KOSMACZEWSKI BE LIABLE FOR ANY
 //  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
 //  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-//  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+//   LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
 //  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 //  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#import "DeserializerType.h"
-#import "DataLoader.h"
-#import "DataLoaderDelegate.h"
+#import <UIKit/UIKit.h>
+#import "IASKAppSettingsViewController.h"
 
-@interface RootViewController : UITableViewController <DataLoaderDelegate>
+@interface SettingsController : IASKAppSettingsViewController <IASKSettingsDelegate>
 {
 @private
-    IBOutlet UIView *_headerView;
-    IBOutlet UISlider *_slider;
-    IBOutlet UILabel *_sliderLabel;
-    IBOutlet UISegmentedControl *_formatControl;
-    IBOutlet UIActivityIndicatorView *_spinningWheel;
-    
-    DeserializerType _currentDataFormat;
-    id<DataLoader> _dataLoader;
-    NSArray *_data;
+    UINavigationController *_navigationController;
 }
 
-- (IBAction)sliderChanged:(id)sender;
-- (IBAction)formatChanged:(id)sender;
-- (IBAction)refresh:(id)sender;
-- (IBAction)showBenchmark:(id)sender;
-- (IBAction)showSettings:(id)sender;
+@property (nonatomic, readonly) UINavigationController *navigationController;
 
 @end

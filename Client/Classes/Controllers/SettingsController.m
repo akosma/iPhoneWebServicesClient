@@ -1,8 +1,8 @@
 //
-//  RootViewController.h
+//  SettingsController.m
 //  Client
 //
-//  Created by Adrian on 2/8/10.
+//  Created by Adrian on 3/11/10.
 //  Copyright (c) 2010, akosma software / Adrian Kosmaczewski
 //  All rights reserved.
 //
@@ -26,34 +26,64 @@
 //  DISCLAIMED. IN NO EVENT SHALL ADRIAN KOSMACZEWSKI BE LIABLE FOR ANY
 //  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
 //  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-//  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+//   LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
 //  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 //  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#import "DeserializerType.h"
-#import "DataLoader.h"
-#import "DataLoaderDelegate.h"
+#import "SettingsController.h"
+#import "Definitions.h"
 
-@interface RootViewController : UITableViewController <DataLoaderDelegate>
+@implementation SettingsController
+
+@synthesize navigationController = _navigationController;
+
+#pragma mark -
+#pragma mark Init and dealloc
+
+- (id)init
 {
-@private
-    IBOutlet UIView *_headerView;
-    IBOutlet UISlider *_slider;
-    IBOutlet UILabel *_sliderLabel;
-    IBOutlet UISegmentedControl *_formatControl;
-    IBOutlet UIActivityIndicatorView *_spinningWheel;
-    
-    DeserializerType _currentDataFormat;
-    id<DataLoader> _dataLoader;
-    NSArray *_data;
+    if (self = [super initWithNibName:@"IASKAppSettingsView" bundle:nil]) 
+    {
+        self.delegate = self;
+        _navigationController = [[UINavigationController alloc] initWithRootViewController:self];
+    }
+    return self;
 }
 
-- (IBAction)sliderChanged:(id)sender;
-- (IBAction)formatChanged:(id)sender;
-- (IBAction)refresh:(id)sender;
-- (IBAction)showBenchmark:(id)sender;
-- (IBAction)showSettings:(id)sender;
+- (void)dealloc 
+{
+    [_navigationController release];
+    [super dealloc];
+}
+
+#pragma mark -
+#pragma mark UIViewController methods
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.title = @"Settings";
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void)didReceiveMemoryWarning 
+{
+    [super didReceiveMemoryWarning];
+}
+
+#pragma mark -
+#pragma mark IASKSettingsDelegate methods
+
+- (void)settingsViewControllerDidEnd:(IASKAppSettingsViewController*)sender
+{
+    [self dismissModalViewControllerAnimated:YES];
+}
 
 @end
