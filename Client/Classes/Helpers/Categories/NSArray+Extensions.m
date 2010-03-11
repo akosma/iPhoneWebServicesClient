@@ -49,6 +49,7 @@
             {
                 [text appendFormat:@"%@, ", key];
             }            
+            [text appendString:@"\n"];
         }
         for (NSString *key in dict)
         {
