@@ -37,7 +37,8 @@ For the iPhone client:
 * "KissXML":http://code.google.com/p/kissxml/ - KissXML is a replacement for Cocoa's NSXML cluster of classes. It is based on libxml.
 * "TinyXML":http://www.grinninglizard.com/tinyxml/ - TinyXML is a simple, small, C++ XML parser that can be easily integrating into other programs.
 * "gdata-objectivec-client":http://code.google.com/p/gdata-objectivec-client/source/browse/trunk/Source/XMLSupport/ - XML support classes included in the Google Data APIs Objective-C Client Library.
-* "APXML":http://arashpayan.com/blog/index.php/2009/01/14/apxml-nsxmldocument-substitute-for-iphoneipod-touch/ - NSXMLDocument ’substitute’ for iPhone/iPod Touch
+* "APXML":http://arashpayan.com/blog/index.php/2009/01/14/apxml-nsxmldocument-substitute-for-iphoneipod-touch/ - NSXMLDocument ’substitute’ for iPhone/iPod Touch.
+* "InAppSettingsKit":http://www.inappsettingskit.com/ - Library allowing to access the current setting bundle from the application.
 
 h3. YAML in Cocoa
 
@@ -81,6 +82,8 @@ h2. Other Links
 * "libxml2 Push Parsing":http://bill.dudney.net/roller/objc/entry/libxml2_push_parsing
 * "web services with cocoa surprise":http://samsoff.es/posts/web-services-with-cocoa-surprise
 * "iphone plist tutorial":http://samsoff.es/posts/iphone-plist-tutorial
+* "Comparison of data serialization formats":http://en.wikipedia.org/wiki/Comparison_of_data_serialization_formats
+* "Property list":http://en.wikipedia.org/wiki/Property_list
 
 h2. License
 
