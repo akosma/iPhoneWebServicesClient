@@ -49,7 +49,6 @@ $data = execute($query);
 $format = $_GET["format"];
 $formatter = FormatterFactory::createFormatter($format);
 $formatter->setData($data);
-$output = $formatter->formatData();
 header('Content-type: ' . $formatter->getContentType());
+$output = $formatter->formatData();
 echo($output);
-?>
