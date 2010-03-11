@@ -1,8 +1,8 @@
 //
-//  NSXMLParserDeserializer.m
+//  LibXMLSAXDeserializer.m
 //  Client
 //
-//  Created by Adrian on 3/2/10.
+//  Created by Adrian on 3/11/10.
 //  Copyright (c) 2010, akosma software / Adrian Kosmaczewski
 //  All rights reserved.
 //
@@ -32,10 +32,18 @@
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#import "NSXMLParserDeserializer.h"
+#import "LibXMLSAXDeserializer.h"
 
-@interface NSXMLParserDeserializer ()
-@property (nonatomic, retain) NSXMLParser *parser;
+struct _xmlSAX2Attributes {
+    const xmlChar* localname;
+    const xmlChar* prefix;
+    const xmlChar* uri;
+    const xmlChar* value;
+    const xmlChar* end;
+};
+typedef struct _xmlSAX2Attributes xmlSAX2Attributes;
+
+@interface LibXMLSAXDeserializer ()
 @property (nonatomic, retain) NSMutableArray *array;
 @property (nonatomic, copy) NSString *currentElement;
 @property (nonatomic, retain) NSMutableString *currentEntryId;
@@ -52,11 +60,84 @@
 @property (nonatomic, retain) NSMutableString *currentPassword;
 @property (nonatomic, retain) NSMutableString *currentCreatedOn;
 @property (nonatomic, retain) NSMutableString *currentModifiedOn;
+
+- (void)elementFound:(const xmlChar *)localname prefix:(const xmlChar *)prefix 
+                 uri:(const xmlChar *)URI namespaceCount:(int)namespaceCount
+          namespaces:(const xmlChar **)namespaces attributeCount:(int)attributeCount 
+defaultAttributeCount:(int)defaultAttributeCount attributes:(xmlSAX2Attributes *)attributes;
+- (void)endElement:(const xmlChar *)localname prefix:(const xmlChar *)prefix uri:(const xmlChar *)URI;
+- (void)charactersFound:(const xmlChar *)characters length:(int)length;
+- (void)endDocument;
 @end
 
-@implementation NSXMLParserDeserializer
+#pragma mark -
+#pragma mark SAX Parsing Callbacks
 
-@synthesize parser = _parser;
+// The libxml SAX code in this class was adapted from Bill Dudney's project here:
+// http://bill.dudney.net/roller/objc/entry/libxml2_push_parsing
+
+static void startElementSAX(void *ctx, const xmlChar *localname, const xmlChar *prefix,
+                            const xmlChar *URI, int nb_namespaces, const xmlChar **namespaces,
+                            int nb_attributes, int nb_defaulted, const xmlChar **attributes) 
+{
+    [((LibXMLSAXDeserializer *)ctx) elementFound:localname prefix:prefix uri:URI 
+                             namespaceCount:nb_namespaces namespaces:namespaces
+                             attributeCount:nb_attributes defaultAttributeCount:nb_defaulted
+                                 attributes:(xmlSAX2Attributes*)attributes];
+}
+
+static void	endElementSAX(void *ctx, const xmlChar *localname, const xmlChar *prefix, const xmlChar *URI) 
+{    
+    [((LibXMLSAXDeserializer *)ctx) endElement:localname prefix:prefix uri:URI];
+}
+
+static void	charactersFoundSAX(void *ctx, const xmlChar *ch, int len) 
+{
+    [((LibXMLSAXDeserializer *)ctx) charactersFound:ch length:len];
+}
+
+static void endDocumentSAX(void *ctx) 
+{
+    [((LibXMLSAXDeserializer *)ctx) endDocument];
+}
+
+static xmlSAXHandler simpleSAXHandlerStruct = {
+    NULL,                       // internalSubset
+    NULL,                       // isStandalone
+    NULL,                       // hasInternalSubset
+    NULL,                       // hasExternalSubset
+    NULL,                       // resolveEntity
+    NULL,                       // getEntity
+    NULL,                       // entityDecl
+    NULL,                       // notationDecl
+    NULL,                       // attributeDecl
+    NULL,                       // elementDecl
+    NULL,                       // unparsedEntityDecl
+    NULL,                       // setDocumentLocator
+    NULL,                       // startDocument
+    endDocumentSAX,             // endDocument
+    NULL,                       // startElement
+    NULL,                       // endElement
+    NULL,                       // reference
+    charactersFoundSAX,         // characters
+    NULL,                       // ignorableWhitespace
+    NULL,                       // processingInstruction
+    NULL,                       // comment
+    NULL,                       // warning
+    NULL,                       // error
+    NULL,                       // fatalError //: unused error() get all the errors
+    NULL,                       // getParameterEntity
+    NULL,                       // cdataBlock
+    NULL,                       // externalSubset
+    XML_SAX2_MAGIC,             // initialized? not sure what it means just do it
+    NULL,                       // private
+    startElementSAX,            // startElementNs
+    endElementSAX,              // endElementNs
+    NULL,                       // serror
+};
+
+@implementation LibXMLSAXDeserializer
+
 @synthesize array = _array;
 
 @synthesize currentElement = _currentElement;
@@ -87,7 +168,6 @@
 - (void)dealloc
 {
     self.array = nil;
-    self.parser = nil;
     
     self.currentEntryId = nil;
     self.currentElement = nil;
@@ -109,27 +189,25 @@
 
 - (void)startDeserializing:(id)data
 {
-    [self startTimer];
-    self.parser = [[[NSXMLParser alloc] initWithData:data] autorelease];
     self.array = [NSMutableArray array];
-
-    [self.parser setDelegate:self];
-    [self.parser setShouldProcessNamespaces:NO];
-    [self.parser setShouldReportNamespacePrefixes:NO];
-    [self.parser setShouldResolveExternalEntities:NO];
-    [self.parser parse];
+    _xmlParserContext = xmlCreatePushParserCtxt(&simpleSAXHandlerStruct, self, NULL, 0, NULL);
+    // Signal the context that parsing is complete by passing "1" as the last parameter.
+    xmlParseChunk(_xmlParserContext, (const char *)[data bytes], [data length], 1);
+    [self startTimer];
 }
 
 #pragma mark -
-#pragma mark NSXMLParserDelegate methods
+#pragma mark Private methods
 
-- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName 
-  namespaceURI:(NSString *)namespaceURI 
- qualifiedName:(NSString *)qName 
-    attributes:(NSDictionary *)attributeDict
+- (void)elementFound:(const xmlChar *)localname prefix:(const xmlChar *)prefix 
+                 uri:(const xmlChar *)URI namespaceCount:(int)namespaceCount
+          namespaces:(const xmlChar **)namespaces attributeCount:(int)attributeCount 
+defaultAttributeCount:(int)defaultAttributeCount attributes:(xmlSAX2Attributes *)attributes
 {
+    NSString *elementName = [NSString stringWithCString:(const char *)localname 
+                                               encoding:NSUTF8StringEncoding];
 	self.currentElement = [[elementName copy] autorelease];
-
+    
     if ([self.currentElement isEqualToString:@"person"])
     {
         self.currentEntryId = [NSMutableString string];
@@ -149,34 +227,11 @@
     }
 }
 
-- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName 
-  namespaceURI:(NSString *)namespaceURI 
- qualifiedName:(NSString *)qName
+- (void)charactersFound:(const xmlChar *)characters length:(int)length
 {
-    if ([elementName isEqualToString:@"person"]) 
-    {
-        NSMutableDictionary *item = [NSMutableDictionary dictionary];
-        [item setObject:self.currentEntryId forKey:@"entryId"];
-        [item setObject:self.currentFirstName forKey:@"firstName"];
-        [item setObject:self.currentLastName forKey:@"lastName"];
-        [item setObject:self.currentPhone forKey:@"phone"];
-        [item setObject:self.currentEmail forKey:@"email"];
-        [item setObject:self.currentAddress forKey:@"address"];
-        [item setObject:self.currentCity forKey:@"city"];
-        [item setObject:self.currentZip forKey:@"zip"];
-        [item setObject:self.currentState forKey:@"state"];
-        [item setObject:self.currentCountry forKey:@"country"];
-        [item setObject:self.currentDescription forKey:@"description"];
-        [item setObject:self.currentPassword forKey:@"password"];
-        [item setObject:self.currentCreatedOn forKey:@"createdOn"];
-        [item setObject:self.currentModifiedOn forKey:@"modifiedOn"];
-
-        [self.array addObject:item];
-    }
-}
-
-- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
-{
+    NSString *string = [[NSString alloc] initWithBytes:(const void *)characters
+                                                length:length
+                                              encoding:NSUTF8StringEncoding];
     if ([self.currentElement isEqualToString:@"entryId"]) 
     {
         [self.currentEntryId appendString:string];
@@ -235,7 +290,33 @@
     }
 }
 
-- (void)parserDidEndDocument:(NSXMLParser *)parser 
+- (void)endElement:(const xmlChar *)localname prefix:(const xmlChar *)prefix uri:(const xmlChar *)URI
+{
+    NSString *elementName = [NSString stringWithCString:(const char *)localname 
+                                               encoding:NSUTF8StringEncoding];
+    if ([elementName isEqualToString:@"person"]) 
+    {
+        NSMutableDictionary *item = [NSMutableDictionary dictionary];
+        [item setObject:self.currentEntryId forKey:@"entryId"];
+        [item setObject:self.currentFirstName forKey:@"firstName"];
+        [item setObject:self.currentLastName forKey:@"lastName"];
+        [item setObject:self.currentPhone forKey:@"phone"];
+        [item setObject:self.currentEmail forKey:@"email"];
+        [item setObject:self.currentAddress forKey:@"address"];
+        [item setObject:self.currentCity forKey:@"city"];
+        [item setObject:self.currentZip forKey:@"zip"];
+        [item setObject:self.currentState forKey:@"state"];
+        [item setObject:self.currentCountry forKey:@"country"];
+        [item setObject:self.currentDescription forKey:@"description"];
+        [item setObject:self.currentPassword forKey:@"password"];
+        [item setObject:self.currentCreatedOn forKey:@"createdOn"];
+        [item setObject:self.currentModifiedOn forKey:@"modifiedOn"];
+        
+        [self.array addObject:item];
+    }
+}
+
+-(void)endDocument
 {
     [self stopTimer];
     if ([self.delegate respondsToSelector:@selector(deserializer:didFinishDeserializing:)])

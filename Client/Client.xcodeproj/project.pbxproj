@@ -28,6 +28,7 @@
 		3A50C58011204B560027974D /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A50C57E11204B560027974D /* MainWindow.xib */; };
 		3A50C58111204B560027974D /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A50C57F11204B560027974D /* RootViewController.xib */; };
 		3A50C58411204B6C0027974D /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A50C58311204B6C0027974D /* Entitlements.plist */; };
+		3A61543C1148E1F700D447BD /* LibXMLSAXDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A61543B1148E1F700D447BD /* LibXMLSAXDeserializer.m */; };
 		3A72D690113E9C2C0055AF36 /* BenchmarkController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A72D68E113E9C2C0055AF36 /* BenchmarkController.m */; };
 		3A72D693113E9C740055AF36 /* BenchmarkController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A72D692113E9C740055AF36 /* BenchmarkController.xib */; };
 		3A976C56113FD1E700D200EE /* parseCSV.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A976C55113FD1E700D200EE /* parseCSV.m */; };
@@ -152,6 +153,8 @@
 		3A50C57E11204B560027974D /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		3A50C57F11204B560027974D /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		3A50C58311204B6C0027974D /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
+		3A61543A1148E1F700D447BD /* LibXMLSAXDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibXMLSAXDeserializer.h; sourceTree = "<group>"; };
+		3A61543B1148E1F700D447BD /* LibXMLSAXDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibXMLSAXDeserializer.m; sourceTree = "<group>"; };
 		3A72D68D113E9C2C0055AF36 /* BenchmarkController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BenchmarkController.h; sourceTree = "<group>"; };
 		3A72D68E113E9C2C0055AF36 /* BenchmarkController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BenchmarkController.m; sourceTree = "<group>"; };
 		3A72D692113E9C740055AF36 /* BenchmarkController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BenchmarkController.xib; sourceTree = "<group>"; };
@@ -653,6 +656,8 @@
 				3AD2726B113D7C29004B310D /* TouchXMLDeserializer.m */,
 				3AD2729E113D7D07004B310D /* LibXMLDomDeserializer.h */,
 				3AD2729F113D7D07004B310D /* LibXMLDomDeserializer.m */,
+				3A61543A1148E1F700D447BD /* LibXMLSAXDeserializer.h */,
+				3A61543B1148E1F700D447BD /* LibXMLSAXDeserializer.m */,
 				3A976C63113FD26B00D200EE /* CSVDeserializer.h */,
 				3A976C64113FD26B00D200EE /* CSVDeserializer.m */,
 				3AC8A61E11425BBE00ADB270 /* TBXMLDeserializer.h */,
@@ -956,6 +961,7 @@
 				3AC8A7551142785500ADB270 /* APXMLDeserializer.m in Sources */,
 				3AC8A76911427AC600ADB270 /* BaseXMLDeserializer.m in Sources */,
 				3AC8A7801142801800ADB270 /* NSArray+Extensions.m in Sources */,
+				3A61543C1148E1F700D447BD /* LibXMLSAXDeserializer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

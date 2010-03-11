@@ -90,7 +90,7 @@
             break;
             
         case 1:
-            self.currentDataFormat = DeserializerTypeAPXML;
+            self.currentDataFormat = DeserializerTypeLibXMLSAX;
             break;
             
         case 2:

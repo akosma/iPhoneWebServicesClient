@@ -43,6 +43,7 @@
 #import "NSXMLParserDeserializer.h"
 #import "TouchXMLDeserializer.h"
 #import "LibXMLDomDeserializer.h"
+#import "LibXMLSAXDeserializer.h"
 #import "CSVDeserializer.h"
 #import "TBXMLDeserializer.h"
 #import "KissXMLDeserializer.h"
@@ -115,9 +116,15 @@
             break;
         }
             
-        case DeserializerTypeLibXML:
+        case DeserializerTypeLibXMLDOM:
         {
             deserializer = [LibXMLDomDeserializer deserializer];
+            break;
+        }
+            
+        case DeserializerTypeLibXMLSAX:
+        {
+            deserializer = [LibXMLSAXDeserializer deserializer];
             break;
         }
             
