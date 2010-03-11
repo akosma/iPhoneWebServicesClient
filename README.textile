@@ -75,11 +75,11 @@ h2. Other Links
 
 * The sample data generated in this example comes from "http://www.generatedata.com/":http://www.generatedata.com/.
 * "cfpropertylist in Ruby":http://rubyforge.org/projects/cfpropertylist/ - Read, manipulate and write both binary and XML property lists as defined by Apple.
-* "PyYAML":http://pyyaml.org/ - PyYAML.org - the home of various YAML implementations for Python
-* "plistlib":http://docs.python.org/dev/library/plistlib.html - Generate and parse Mac OS X .plist files
+* "PyYAML":http://pyyaml.org/ - PyYAML.org - the home of various YAML implementations for Python.
+* "plistlib":http://docs.python.org/dev/library/plistlib.html - Generate and parse Mac OS X .plist files from Python.
 * "Discussion about CSV parsing in Objective-C":http://www.cocoadev.com/index.pl?ReadWriteCSVAndTSV
-* "soapUI":http://www.soapui.org/ - Cross-platform tool for testing SOAP web services
-* "How To Choose The Best XML Parser for Your iPhone Project":http://www.raywenderlich.com/553/how-to-chose-the-best-xml-parser-for-your-iphone-project - by Ray Wenderlich, iPhone Developer and Gamer
+* "soapUI":http://www.soapui.org/ - Cross-platform tool for testing SOAP web services.
+* "How To Choose The Best XML Parser for Your iPhone Project":http://www.raywenderlich.com/553/how-to-chose-the-best-xml-parser-for-your-iphone-project - by Ray Wenderlich, iPhone Developer and Gamer.
 * "iPhone Programming Tips: building Unix software":http://latenitesoft.blogspot.com/2008/10/iphone-programming-tips-building-unix.html - The bundled libsyck.a static library (fat binary for both ARM and Intel) was created using the information in this page.
 * "XML Benchmarks - libxml2 sax":http://dotnot.org/blog/archives/2008/02/23/xml-benchmarks-libxml2-sax/
 * "Using the SAX Interface of LibXML":http://www.jamesh.id.au/articles/libxml-sax/libxml-sax.html
@@ -87,9 +87,10 @@ h2. Other Links
 * "web services with cocoa surprise":http://samsoff.es/posts/web-services-with-cocoa-surprise
 * "iphone plist tutorial":http://samsoff.es/posts/iphone-plist-tutorial
 * "Comparison of data serialization formats":http://en.wikipedia.org/wiki/Comparison_of_data_serialization_formats
-* "Property list":http://en.wikipedia.org/wiki/Property_list
-* "Protocol Buffers":http://en.wikipedia.org/wiki/Protocol_Buffers
+* "Property list":http://en.wikipedia.org/wiki/Property_list - Wikipedia page.
+* "Protocol Buffers":http://en.wikipedia.org/wiki/Protocol_Buffers - Wikipedia page.
 * "Protocol Buffers Developer Guide":http://code.google.com/apis/protocolbuffers/docs/overview.html
+* "XMLRPC framework":http://iphone.trac.wordpress.org/browser/trunk/Classes/XMLRPC used by the WordPress iPhone application.
 
 h2. License
 
