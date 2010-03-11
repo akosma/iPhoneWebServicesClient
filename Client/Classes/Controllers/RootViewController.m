@@ -38,6 +38,7 @@
 #import "BaseDeserializer.h"
 #import "BenchmarkController.h"
 #import "NSDictionary+Extensions.h"
+#import "NSUserDefaults+Extensions.h"
 #import "SettingsController.h"
 
 @interface RootViewController ()
@@ -79,6 +80,7 @@
 - (IBAction)sliderChanged:(id)sender
 {
     NSInteger limit = (NSInteger)_slider.value;
+    [NSUserDefaults standardUserDefaults].sliderValue = limit;
     self.sliderLabel.text = [NSString stringWithFormat:@"%d", limit];
 }
 
@@ -160,7 +162,8 @@
 {
     [super viewDidLoad];
     self.tableView.tableHeaderView = self.headerView;
-    NSInteger limit = (NSInteger)self.slider.value;
+    NSInteger limit = [NSUserDefaults standardUserDefaults].sliderValue;
+    self.slider.value = limit;
     self.sliderLabel.text = [NSString stringWithFormat:@"%d", limit];
 
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:_spinningWheel];

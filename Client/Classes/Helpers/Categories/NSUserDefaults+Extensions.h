@@ -15,5 +15,6 @@
 @property (nonatomic, copy) NSString *serverURL;
 @property (nonatomic) NSInteger benchmarkMaximum;
 @property (nonatomic) NSInteger benchmarkIncrement;
+@property (nonatomic) NSInteger sliderValue;
 
 @end
