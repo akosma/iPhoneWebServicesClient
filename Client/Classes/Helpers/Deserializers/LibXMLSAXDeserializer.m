@@ -189,11 +189,12 @@ static xmlSAXHandler simpleSAXHandlerStruct = {
 
 - (void)startDeserializing:(id)data
 {
+    [self startTimer];
     self.array = [NSMutableArray array];
     _xmlParserContext = xmlCreatePushParserCtxt(&simpleSAXHandlerStruct, self, NULL, 0, NULL);
+
     // Signal the context that parsing is complete by passing "1" as the last parameter.
     xmlParseChunk(_xmlParserContext, (const char *)[data bytes], [data length], 1);
-    [self startTimer];
 }
 
 #pragma mark -
