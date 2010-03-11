@@ -640,6 +640,8 @@
 				3AA35D55113CFDEA00A89E31 /* SBJSONDeserializer.m */,
 				3A33FA04113D03BB006A3962 /* YAMLDeserializer.h */,
 				3A33FA05113D03BB006A3962 /* YAMLDeserializer.m */,
+				3A976C63113FD26B00D200EE /* CSVDeserializer.h */,
+				3A976C64113FD26B00D200EE /* CSVDeserializer.m */,
 				3A0A8269113D22E000E23EDC /* PlistDeserializer.h */,
 				3A0A826A113D22E000E23EDC /* PlistDeserializer.m */,
 				3A0A824F113D201700E23EDC /* BinaryPlistDeserializer.h */,
@@ -650,6 +652,8 @@
 				3A0A82C4113D2BB700E23EDC /* XMLFormattedPlistDeserializer.m */,
 				3A0A8352113D328500E23EDC /* SOAPDeserializer.h */,
 				3A0A8353113D328500E23EDC /* SOAPDeserializer.m */,
+				3AC8A76711427AC600ADB270 /* BaseXMLDeserializer.h */,
+				3AC8A76811427AC600ADB270 /* BaseXMLDeserializer.m */,
 				3AD27251113D7BCB004B310D /* NSXMLParserDeserializer.h */,
 				3AD27252113D7BCB004B310D /* NSXMLParserDeserializer.m */,
 				3AD2726A113D7C29004B310D /* TouchXMLDeserializer.h */,
@@ -658,8 +662,6 @@
 				3AD2729F113D7D07004B310D /* LibXMLDomDeserializer.m */,
 				3A61543A1148E1F700D447BD /* LibXMLSAXDeserializer.h */,
 				3A61543B1148E1F700D447BD /* LibXMLSAXDeserializer.m */,
-				3A976C63113FD26B00D200EE /* CSVDeserializer.h */,
-				3A976C64113FD26B00D200EE /* CSVDeserializer.m */,
 				3AC8A61E11425BBE00ADB270 /* TBXMLDeserializer.h */,
 				3AC8A61F11425BBE00ADB270 /* TBXMLDeserializer.m */,
 				3AC8A672114265C300ADB270 /* KissXMLDeserializer.h */,
@@ -670,8 +672,6 @@
 				3AC8A7231142751500ADB270 /* GoogleXMLDeserializer.m */,
 				3AC8A7531142785500ADB270 /* APXMLDeserializer.h */,
 				3AC8A7541142785500ADB270 /* APXMLDeserializer.m */,
-				3AC8A76711427AC600ADB270 /* BaseXMLDeserializer.h */,
-				3AC8A76811427AC600ADB270 /* BaseXMLDeserializer.m */,
 			);
 			path = Deserializers;
 			sourceTree = "<group>";
