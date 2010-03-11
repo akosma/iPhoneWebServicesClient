@@ -93,6 +93,9 @@
 		3AB15C5E113ECCF800B132E6 /* NSDictionary+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB15C5D113ECCF800B132E6 /* NSDictionary+Extensions.m */; };
 		3AB15C65113ECDC000B132E6 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB15C64113ECDC000B132E6 /* AddressBook.framework */; };
 		3AB15C67113ECDC000B132E6 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB15C66113ECDC000B132E6 /* AddressBookUI.framework */; };
+		3AB9AB6711493F62009A5CC2 /* Person.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB9AB6511493F62009A5CC2 /* Person.pb.m */; };
+		3AB9AC4C114943EA009A5CC2 /* libProtocolBuffers.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB9AC1D11494251009A5CC2 /* libProtocolBuffers.a */; };
+		3AB9AC5611494442009A5CC2 /* ProtocolBufferDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB9AC5511494442009A5CC2 /* ProtocolBufferDeserializer.m */; };
 		3ABF6E2F113C4CFE00EEE0D4 /* BaseDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ABF6E2E113C4CFE00EEE0D4 /* BaseDeserializer.m */; };
 		3ABF6E89113C534700EEE0D4 /* BaseDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ABF6E88113C534700EEE0D4 /* BaseDataLoader.m */; };
 		3AC8A62011425BBE00ADB270 /* TBXMLDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8A61F11425BBE00ADB270 /* TBXMLDeserializer.m */; };
@@ -132,6 +135,37 @@
 		3AD27297113D7CE2004B310D /* CTidy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD2728B113D7CE2004B310D /* CTidy.m */; };
 		3AD272A0113D7D07004B310D /* LibXMLDomDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD2729F113D7D07004B310D /* LibXMLDomDeserializer.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3AB9AC1C11494251009A5CC2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3AB9AC051149424E009A5CC2 /* ProtocolBuffers.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7461B52E0F94FAF800A0C422 /* libProtocolBuffers.a */;
+			remoteInfo = ProtocolBuffers;
+		};
+		3AB9AC1E11494251009A5CC2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3AB9AC051149424E009A5CC2 /* ProtocolBuffers.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7401C1A80F950347006D8281 /* UnitTests.octest */;
+			remoteInfo = UnitTests;
+		};
+		3AB9AC2011494251009A5CC2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3AB9AC051149424E009A5CC2 /* ProtocolBuffers.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 748F14580FD75E3B000858A9 /* CommandLineTests.app */;
+			remoteInfo = CommandLineTests;
+		};
+		3AB9AC2D114942D0009A5CC2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3AB9AC051149424E009A5CC2 /* ProtocolBuffers.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7461B52D0F94FAF800A0C422 /* ProtocolBuffers */;
+			remoteInfo = ProtocolBuffers;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -292,6 +326,12 @@
 		3AB15C5D113ECCF800B132E6 /* NSDictionary+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Extensions.m"; sourceTree = "<group>"; };
 		3AB15C64113ECDC000B132E6 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		3AB15C66113ECDC000B132E6 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		3AB9AB6511493F62009A5CC2 /* Person.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.pb.m; sourceTree = "<group>"; };
+		3AB9AB6611493F62009A5CC2 /* Person.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.pb.h; sourceTree = "<group>"; };
+		3AB9AC051149424E009A5CC2 /* ProtocolBuffers.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ProtocolBuffers.xcodeproj; path = ProtocolBuffers/ProtocolBuffers.xcodeproj; sourceTree = "<group>"; };
+		3AB9AC2A114942B2009A5CC2 /* ProtocolBuffers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProtocolBuffers.h; path = ProtocolBuffers/Classes/ProtocolBuffers.h; sourceTree = "<group>"; };
+		3AB9AC5411494442009A5CC2 /* ProtocolBufferDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProtocolBufferDeserializer.h; sourceTree = "<group>"; };
+		3AB9AC5511494442009A5CC2 /* ProtocolBufferDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProtocolBufferDeserializer.m; sourceTree = "<group>"; };
 		3ABF6E2C113C4C5600EEE0D4 /* Deserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deserializer.h; sourceTree = "<group>"; };
 		3ABF6E2D113C4CFE00EEE0D4 /* BaseDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDeserializer.h; sourceTree = "<group>"; };
 		3ABF6E2E113C4CFE00EEE0D4 /* BaseDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseDeserializer.m; sourceTree = "<group>"; };
@@ -382,6 +422,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AB9AC4C114943EA009A5CC2 /* libProtocolBuffers.a in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
@@ -626,6 +667,7 @@
 		3AA35BB9113CEEB300A89E31 /* Externals */ = {
 			isa = PBXGroup;
 			children = (
+				3AB9AC261149429B009A5CC2 /* ProtocolBuffers */,
 				3A0932011148FB68008EEBBE /* InAppSettingsKit */,
 				3AC8A73F114277F600ADB270 /* arashpayan-apxml */,
 				3AC8A71C1142740A00ADB270 /* gdata-objectivec-client */,
@@ -748,6 +790,25 @@
 			path = Categories;
 			sourceTree = "<group>";
 		};
+		3AB9AC1711494251009A5CC2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3AB9AC1D11494251009A5CC2 /* libProtocolBuffers.a */,
+				3AB9AC1F11494251009A5CC2 /* UnitTests.octest */,
+				3AB9AC2111494251009A5CC2 /* CommandLineTests.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3AB9AC261149429B009A5CC2 /* ProtocolBuffers */ = {
+			isa = PBXGroup;
+			children = (
+				3AB9AC2A114942B2009A5CC2 /* ProtocolBuffers.h */,
+				3AB9AC051149424E009A5CC2 /* ProtocolBuffers.xcodeproj */,
+			);
+			name = ProtocolBuffers;
+			sourceTree = "<group>";
+		};
 		3ABF6E08113C4A5600EEE0D4 /* Deserializers */ = {
 			isa = PBXGroup;
 			children = (
@@ -793,6 +854,10 @@
 				3AC8A7231142751500ADB270 /* GoogleXMLDeserializer.m */,
 				3AC8A7531142785500ADB270 /* APXMLDeserializer.h */,
 				3AC8A7541142785500ADB270 /* APXMLDeserializer.m */,
+				3AB9AB6511493F62009A5CC2 /* Person.pb.m */,
+				3AB9AB6611493F62009A5CC2 /* Person.pb.h */,
+				3AB9AC5411494442009A5CC2 /* ProtocolBufferDeserializer.h */,
+				3AB9AC5511494442009A5CC2 /* ProtocolBufferDeserializer.m */,
 			);
 			path = Deserializers;
 			sourceTree = "<group>";
@@ -940,6 +1005,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				3AB9AC2E114942D0009A5CC2 /* PBXTargetDependency */,
 			);
 			name = Client;
 			productName = Client;
@@ -966,12 +1032,42 @@
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 3AB9AC1711494251009A5CC2 /* Products */;
+					ProjectRef = 3AB9AC051149424E009A5CC2 /* ProtocolBuffers.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* Client */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		3AB9AC1D11494251009A5CC2 /* libProtocolBuffers.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libProtocolBuffers.a;
+			remoteRef = 3AB9AC1C11494251009A5CC2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3AB9AC1F11494251009A5CC2 /* UnitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = UnitTests.octest;
+			remoteRef = 3AB9AC1E11494251009A5CC2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3AB9AC2111494251009A5CC2 /* CommandLineTests.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = CommandLineTests.app;
+			remoteRef = 3AB9AC2011494251009A5CC2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1D60588D0D05DD3D006BFB54 /* Resources */ = {
@@ -1102,10 +1198,20 @@
 				3A09322B1148FB68008EEBBE /* IASKTextField.m in Sources */,
 				3A0932621148FC76008EEBBE /* SettingsController.m in Sources */,
 				3A09333A11490BCA008EEBBE /* NSUserDefaults+Extensions.m in Sources */,
+				3AB9AB6711493F62009A5CC2 /* Person.pb.m in Sources */,
+				3AB9AC5611494442009A5CC2 /* ProtocolBufferDeserializer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3AB9AC2E114942D0009A5CC2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ProtocolBuffers;
+			targetProxy = 3AB9AC2D114942D0009A5CC2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
@@ -1121,7 +1227,11 @@
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				HEADER_SEARCH_PATHS = "/sw/include/**";
 				INFOPLIST_FILE = "Client-Info.plist";
-				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../Libraries/libsyck\"";
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../Libraries/libsyck\"",
+					"\"$(SRCROOT)/Externals/ProtocolBuffers/build/Debug\"",
+					"\"$(SRCROOT)/Externals/ProtocolBuffers/build/Release-iphoneos\"",
+				);
 				OTHER_CFLAGS = "-I/usr/include/libxml2";
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = Client;
@@ -1139,7 +1249,11 @@
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				HEADER_SEARCH_PATHS = "/sw/include/**";
 				INFOPLIST_FILE = "Client-Info.plist";
-				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../Libraries/libsyck\"";
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../Libraries/libsyck\"",
+					"\"$(SRCROOT)/Externals/ProtocolBuffers/build/Debug\"",
+					"\"$(SRCROOT)/Externals/ProtocolBuffers/build/Release-iphoneos\"",
+				);
 				OTHER_CFLAGS = "-I/usr/include/libxml2";
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = Client;
@@ -1154,6 +1268,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/Externals/ProtocolBuffers/build\"/**";
 				PREBINDING = NO;
 				SDKROOT = iphoneos3.1.3;
 			};
@@ -1172,7 +1287,11 @@
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				HEADER_SEARCH_PATHS = "/sw/include/**";
 				INFOPLIST_FILE = "Client-Info.plist";
-				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../Libraries/libsyck\"";
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../Libraries/libsyck\"",
+					"\"$(SRCROOT)/Externals/ProtocolBuffers/build/Debug\"",
+					"\"$(SRCROOT)/Externals/ProtocolBuffers/build/Release-iphoneos\"",
+				);
 				OTHER_CFLAGS = "-I/usr/include/libxml2";
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = Client;
@@ -1188,6 +1307,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/Externals/ProtocolBuffers/build\"/**";
 				PREBINDING = NO;
 				SDKROOT = iphoneos3.1.3;
 			};
@@ -1201,6 +1321,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/Externals/ProtocolBuffers/build\"/**";
 				PREBINDING = NO;
 				SDKROOT = iphoneos3.1.3;
 			};

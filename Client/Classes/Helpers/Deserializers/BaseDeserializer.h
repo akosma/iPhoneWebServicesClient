@@ -1,5 +1,5 @@
 //
-//  DeserializerFactory.h
+//  BaseDeserializer.h
 //  Client
 //
 //  Created by Adrian on 3/1/10.

@@ -37,6 +37,7 @@ require_once('binaryplistformatter.php');
 require_once('xmlplistformatter.php');
 require_once('soapformatter.php');
 require_once('csvformatter.php');
+require_once('protocolbufferformatter.php');
 
 class FormatterFactory
 {
@@ -90,6 +91,12 @@ class FormatterFactory
             case "csv":
             {
                 $formatter = new CSVFormatter;
+                break;
+            }
+            
+            case "pbuf":
+            {
+                $formatter = new ProtocolBufferFormatter;
                 break;
             }
 

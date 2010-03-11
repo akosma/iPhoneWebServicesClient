@@ -111,7 +111,11 @@
         case 5:
             self.currentDataFormat = DeserializerTypeCSV;
             break;
-            
+
+        case 6:
+            self.currentDataFormat = DeserializerTypeProtocolBuffer;
+            break;
+
         default:
             break;
     }

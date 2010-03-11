@@ -1,5 +1,5 @@
 //
-//  DeserializerFactory.m
+//  BaseDeserializer.m
 //  Client
 //
 //  Created by Adrian on 3/1/10.
@@ -50,6 +50,7 @@
 #import "TinyXMLDeserializer.h"
 #import "GoogleXMLDeserializer.h"
 #import "APXMLDeserializer.h"
+#import "ProtocolBufferDeserializer.h"
 
 @implementation BaseDeserializer
 
@@ -161,6 +162,12 @@
         case DeserializerTypeAPXML:
         {
             deserializer = [APXMLDeserializer deserializer];
+            break;
+        }
+            
+        case DeserializerTypeProtocolBuffer:
+        {
+            deserializer = [ProtocolBufferDeserializer deserializer];
             break;
         }
 

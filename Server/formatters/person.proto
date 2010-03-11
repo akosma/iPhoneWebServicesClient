@@ -1,0 +1,22 @@
+message Person
+{
+  required int32 entryId = 1;
+  required string firstName = 2;
+  required string lastName = 3;
+  required string phone = 4;
+  required string email = 5;
+  required string address = 6;
+  required string city = 7;
+  required string zip = 8;
+  required string state = 9;
+  required string country = 10;
+  required string description = 11;
+  required string password = 12;
+  required string createdOn = 13;
+  required string modifiedOn = 14;
+}
+
+message Data 
+{
+  repeated Person person = 1;
+}
