@@ -159,11 +159,6 @@
 {
     if (self.benchmarkFinished)
     {
-        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-        NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
-        NSString *fileName = [basePath stringByAppendingPathComponent:@"lastRun"];
-        [self.testResults writeToFile:fileName atomically:YES];
-
         MFMailComposeViewController *composer = [[MFMailComposeViewController alloc] init];
         composer.mailComposeDelegate = self;
         
@@ -328,6 +323,12 @@
 
             self.benchmarkFinished = YES;
             self.mailButton.enabled = YES;
+
+            NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+            NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
+            NSString *fileName = [basePath stringByAppendingPathComponent:@"testResults.csv"];
+            NSData *csv = [self.testResults formattedAsCSV];
+            [csv writeToFile:fileName atomically:YES];
         }
     }
     else
