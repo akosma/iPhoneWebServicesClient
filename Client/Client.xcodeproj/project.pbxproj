@@ -110,7 +110,7 @@
 		3AD27295113D7CE2004B310D /* CXMLNode_PrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD27286113D7CE2004B310D /* CXMLNode_PrivateExtensions.m */; };
 		3AD27296113D7CE2004B310D /* CXMLNode_XPathExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD27288113D7CE2004B310D /* CXMLNode_XPathExtensions.m */; };
 		3AD27297113D7CE2004B310D /* CTidy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD2728B113D7CE2004B310D /* CTidy.m */; };
-		3AD272A0113D7D07004B310D /* LibXMLDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD2729F113D7D07004B310D /* LibXMLDeserializer.m */; };
+		3AD272A0113D7D07004B310D /* LibXMLDomDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD2729F113D7D07004B310D /* LibXMLDomDeserializer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -319,8 +319,8 @@
 		3AD2728A113D7CE2004B310D /* CTidy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTidy.h; sourceTree = "<group>"; };
 		3AD2728B113D7CE2004B310D /* CTidy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTidy.m; sourceTree = "<group>"; };
 		3AD2728C113D7CE2004B310D /* TouchXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchXML.h; sourceTree = "<group>"; };
-		3AD2729E113D7D07004B310D /* LibXMLDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibXMLDeserializer.h; sourceTree = "<group>"; };
-		3AD2729F113D7D07004B310D /* LibXMLDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibXMLDeserializer.m; sourceTree = "<group>"; };
+		3AD2729E113D7D07004B310D /* LibXMLDomDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibXMLDomDeserializer.h; sourceTree = "<group>"; };
+		3AD2729F113D7D07004B310D /* LibXMLDomDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibXMLDomDeserializer.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Client-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Client-Info.plist"; path = "../Client-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -651,8 +651,8 @@
 				3AD27252113D7BCB004B310D /* NSXMLParserDeserializer.m */,
 				3AD2726A113D7C29004B310D /* TouchXMLDeserializer.h */,
 				3AD2726B113D7C29004B310D /* TouchXMLDeserializer.m */,
-				3AD2729E113D7D07004B310D /* LibXMLDeserializer.h */,
-				3AD2729F113D7D07004B310D /* LibXMLDeserializer.m */,
+				3AD2729E113D7D07004B310D /* LibXMLDomDeserializer.h */,
+				3AD2729F113D7D07004B310D /* LibXMLDomDeserializer.m */,
 				3A976C63113FD26B00D200EE /* CSVDeserializer.h */,
 				3A976C64113FD26B00D200EE /* CSVDeserializer.m */,
 				3AC8A61E11425BBE00ADB270 /* TBXMLDeserializer.h */,
@@ -929,7 +929,7 @@
 				3AD27295113D7CE2004B310D /* CXMLNode_PrivateExtensions.m in Sources */,
 				3AD27296113D7CE2004B310D /* CXMLNode_XPathExtensions.m in Sources */,
 				3AD27297113D7CE2004B310D /* CTidy.m in Sources */,
-				3AD272A0113D7D07004B310D /* LibXMLDeserializer.m in Sources */,
+				3AD272A0113D7D07004B310D /* LibXMLDomDeserializer.m in Sources */,
 				3A72D690113E9C2C0055AF36 /* BenchmarkController.m in Sources */,
 				3AB15C5E113ECCF800B132E6 /* NSDictionary+Extensions.m in Sources */,
 				3A976C56113FD1E700D200EE /* parseCSV.m in Sources */,

@@ -1,5 +1,5 @@
 //
-//  LibXMLDeserializer.h
+//  LibXMLDomDeserializer.m
 //  Client
 //
 //  Created by Adrian on 3/2/10.
@@ -32,8 +32,49 @@
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#import "BaseXMLDeserializer.h"
+#import "LibXMLDomDeserializer.h"
+#import <libxml/parser.h>
 
-@interface LibXMLDeserializer : BaseXMLDeserializer
+@implementation LibXMLDomDeserializer
+
+- (NSArray *)performDeserialization:(id)data
+{
+    NSMutableArray *array = [NSMutableArray array];
+    xmlDocPtr document = xmlParseMemory([data bytes], [data length]);
+    xmlNodePtr currentNode = xmlDocGetRootElement(document);
+    currentNode = currentNode->children;
+
+    for(; currentNode != NULL; currentNode = currentNode->next) 
+    {
+        if(currentNode->type == XML_ELEMENT_NODE && 
+           xmlStrEqual(currentNode->name, (const xmlChar *) "person"))
+        {
+            NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+            for (xmlNodePtr node = currentNode->children; node != NULL; node = node->next) 
+            {
+                xmlChar *elementText = xmlNodeListGetString(node->doc, node->children, 1);
+                NSString *value = nil;
+                
+                if(elementText != NULL) 
+                {
+                    value = [NSString stringWithCString:(char *)elementText 
+                                               encoding:NSUTF8StringEncoding];
+                    xmlFree(elementText);
+                }
+                
+                [dict setObject:value 
+                         forKey:[NSString stringWithCString:(const char *)node->name 
+                                                   encoding:NSUTF8StringEncoding]];
+            }
+            [array addObject:dict];
+            [dict release];
+        }
+    }
+
+    xmlFreeDoc(document);
+    xmlCleanupParser();
+
+    return array;
+}
 
 @end

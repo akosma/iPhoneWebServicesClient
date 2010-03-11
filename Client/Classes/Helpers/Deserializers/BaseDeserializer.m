@@ -42,7 +42,7 @@
 #import "SOAPDeserializer.h"
 #import "NSXMLParserDeserializer.h"
 #import "TouchXMLDeserializer.h"
-#import "LibXMLDeserializer.h"
+#import "LibXMLDomDeserializer.h"
 #import "CSVDeserializer.h"
 #import "TBXMLDeserializer.h"
 #import "KissXMLDeserializer.h"
@@ -117,7 +117,7 @@
             
         case DeserializerTypeLibXML:
         {
-            deserializer = [LibXMLDeserializer deserializer];
+            deserializer = [LibXMLDomDeserializer deserializer];
             break;
         }
             
