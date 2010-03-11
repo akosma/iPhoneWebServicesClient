@@ -52,6 +52,7 @@
 @property (nonatomic, readonly) UIBarButtonItem *mailButton;
 @property (nonatomic, readonly) UIBarButtonItem *startButton;
 @property (nonatomic, readonly) UIBarButtonItem *doneButton;
+@property (nonatomic, readonly) NSString *csvFilePath;
 
 - (void)performNextBenchmark;
 @end
@@ -72,6 +73,7 @@
 @synthesize doneButton = _doneButton;
 @synthesize benchmarkMaximum = _benchmarkMaximum;
 @synthesize benchmarkIncrement = _benchmarkIncrement;
+@dynamic csvFilePath;
 
 - (id)init
 {
@@ -122,7 +124,7 @@
     [super viewDidLoad];
     self.navigationItem.rightBarButtonItem = self.startButton;
     self.navigationItem.leftBarButtonItem = self.doneButton;
-    self.mailButton.enabled = NO;
+    self.mailButton.enabled = [[NSFileManager defaultManager] fileExistsAtPath:self.csvFilePath];
     self.toolbarItems = [NSArray arrayWithObject:self.mailButton];
     self.title = @"Benchmark";
 }
@@ -165,46 +167,43 @@
 
 - (IBAction)sendResultsViaEmail:(id)sender
 {
-    if (self.benchmarkFinished)
+    MFMailComposeViewController *composer = [[MFMailComposeViewController alloc] init];
+    composer.mailComposeDelegate = self;
+    
+    NSString *baseURL = [NSUserDefaults standardUserDefaults].serverURL;
+    NSURL *url = [NSURL URLWithString:baseURL];
+    Reachability *reachability = [Reachability reachabilityWithHostName:url.host];
+    NSString *connection = nil;
+    switch ([reachability currentReachabilityStatus]) 
     {
-        MFMailComposeViewController *composer = [[MFMailComposeViewController alloc] init];
-        composer.mailComposeDelegate = self;
-        
-        NSString *baseURL = [NSUserDefaults standardUserDefaults].serverURL;
-        NSURL *url = [NSURL URLWithString:baseURL];
-        Reachability *reachability = [Reachability reachabilityWithHostName:url.host];
-        NSString *connection = nil;
-        switch ([reachability currentReachabilityStatus]) 
-        {
-            case ReachableViaWiFi:
-                connection = @"wifi";
-                break;
-                
-            case NotReachable:
-                connection = @"(none!)";
-                break;
-                
-            case ReachableViaWWAN:
-                connection = @"telephony";
-                break;
+        case ReachableViaWiFi:
+            connection = @"wifi";
+            break;
+            
+        case NotReachable:
+            connection = @"(none!)";
+            break;
+            
+        case ReachableViaWWAN:
+            connection = @"telephony";
+            break;
 
-            default:
-                connection = @"(unknown)";
-                break;
-        }
-        NSString *body = [NSString stringWithFormat:@"Results after connecting to %@ using a %@ connection.", baseURL, connection];
-        [composer setMessageBody:body
-                          isHTML:NO];
-        
-        [composer setSubject:@"iPhoneWebServicesClient Benchmark Results"];
-        [composer addAttachmentData:[self.testResults formattedAsCSV]
-                           mimeType:@"text/csv" 
-                           fileName:@"results.csv"];
-        
-        [self.navigationController presentModalViewController:composer 
-                                                     animated:YES];
-        [composer release];
+        default:
+            connection = @"(unknown)";
+            break;
     }
+    NSString *body = [NSString stringWithFormat:@"Results after connecting to %@ using a %@ connection.", baseURL, connection];
+    [composer setMessageBody:body
+                      isHTML:NO];
+    
+    [composer setSubject:@"iPhoneWebServicesClient Benchmark Results"];
+    [composer addAttachmentData:[NSData dataWithContentsOfFile:self.csvFilePath]
+                       mimeType:@"text/csv" 
+                       fileName:@"results.csv"];
+    
+    [self.navigationController presentModalViewController:composer 
+                                                 animated:YES];
+    [composer release];
 }
 
 #pragma mark -
@@ -329,18 +328,24 @@
             self.benchmarkFinished = YES;
             self.mailButton.enabled = YES;
 
-            NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-            NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
-            NSString *fileName = [basePath stringByAppendingPathComponent:@"testResults.csv"];
             NSData *csv = [self.testResults formattedAsCSV];
-            [csv writeToFile:fileName atomically:YES];
+            [csv writeToFile:self.csvFilePath atomically:YES];
         }
     }
     else
     {
         self.startButton.title = @"Start";
         self.doneButton.enabled = YES;
+        self.mailButton.enabled = [[NSFileManager defaultManager] fileExistsAtPath:self.csvFilePath];
     }
+}
+
+- (NSString *)csvFilePath
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
+    NSString *fileName = [basePath stringByAppendingPathComponent:@"testResults.csv"];
+    return fileName;
 }
 
 @end
