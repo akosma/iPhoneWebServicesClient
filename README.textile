@@ -11,9 +11,11 @@ The server application (written in PHP) reads a MySQL database (Server/data/sche
 * YAML
 * XML (arbitrary format)
 * SOAP
-* Binary property list
-* XML property list
+* Property list
+** Binary property list
+** XML property list
 * CSV
+* Protocol Buffer (Google)
 
 For each output format, there is a single "Formatter" subclass in the Server/formatters folder. A static method in the FormatterFactory class returns the formatter that corresponds to the requested output format.
 
@@ -26,6 +28,7 @@ For the server:
 * "cfpropertylist":http://code.google.com/p/cfpropertylist/ - A PHP Implementation Of Apple's plist (PropertyList).
 * "NuSOAP":http://sourceforge.net/projects/nusoap/ - SOAP Toolkit for PHP.
 * "spyc":http://code.google.com/p/spyc/ - A simple YAML loader/dumper class for PHP.
+* "pb4php":http://code.google.com/p/pb4php/ - Protocol Buffer for PHP
 
 For the iPhone client:
 
@@ -38,6 +41,7 @@ For the iPhone client:
 * "TinyXML":http://www.grinninglizard.com/tinyxml/ - TinyXML is a simple, small, C++ XML parser that can be easily integrating into other programs.
 * "gdata-objectivec-client":http://code.google.com/p/gdata-objectivec-client/source/browse/trunk/Source/XMLSupport/ - XML support classes included in the Google Data APIs Objective-C Client Library.
 * "APXML":http://arashpayan.com/blog/index.php/2009/01/14/apxml-nsxmldocument-substitute-for-iphoneipod-touch/ - NSXMLDocument ’substitute’ for iPhone/iPod Touch.
+* "ProtocolBuffers":http://code.google.com/p/metasyntactic/wiki/ProtocolBuffers - Objective-C Protocol Buffers for OSX and the iPhone.
 * "InAppSettingsKit":http://www.inappsettingskit.com/ - Library allowing to access the current setting bundle from the application.
 
 h3. YAML in Cocoa
@@ -84,6 +88,8 @@ h2. Other Links
 * "iphone plist tutorial":http://samsoff.es/posts/iphone-plist-tutorial
 * "Comparison of data serialization formats":http://en.wikipedia.org/wiki/Comparison_of_data_serialization_formats
 * "Property list":http://en.wikipedia.org/wiki/Property_list
+* "Protocol Buffers":http://en.wikipedia.org/wiki/Protocol_Buffers
+* "Protocol Buffers Developer Guide":http://code.google.com/apis/protocolbuffers/docs/overview.html
 
 h2. License
 
