@@ -89,11 +89,11 @@
     switch (self.formatControl.selectedSegmentIndex) 
     {
         case 0:
-            self.currentDataFormat = DeserializerTypeTouchJSON;
+            self.currentDataFormat = DeserializerTypeSBJSON;
             break;
             
         case 1:
-            self.currentDataFormat = DeserializerTypeLibXMLSAX;
+            self.currentDataFormat = DeserializerTypeTBXML;
             break;
             
         case 2:
