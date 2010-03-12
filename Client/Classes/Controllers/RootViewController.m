@@ -93,7 +93,7 @@
             break;
             
         case 1:
-            self.currentDataFormat = DeserializerTypeAQXMLParser;
+            self.currentDataFormat = DeserializerTypeNSXMLParser;
             break;
             
         case 2:

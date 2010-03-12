@@ -38,42 +38,15 @@
 @property (nonatomic, retain) NSXMLParser *parser;
 @property (nonatomic, retain) NSMutableArray *array;
 @property (nonatomic, copy) NSString *currentElement;
-@property (nonatomic, retain) NSMutableString *currentEntryId;
-@property (nonatomic, retain) NSMutableString *currentFirstName;
-@property (nonatomic, retain) NSMutableString *currentLastName;
-@property (nonatomic, retain) NSMutableString *currentPhone;
-@property (nonatomic, retain) NSMutableString *currentEmail;
-@property (nonatomic, retain) NSMutableString *currentAddress;
-@property (nonatomic, retain) NSMutableString *currentCity;
-@property (nonatomic, retain) NSMutableString *currentZip;
-@property (nonatomic, retain) NSMutableString *currentState;
-@property (nonatomic, retain) NSMutableString *currentCountry;
-@property (nonatomic, retain) NSMutableString *currentDescription;
-@property (nonatomic, retain) NSMutableString *currentPassword;
-@property (nonatomic, retain) NSMutableString *currentCreatedOn;
-@property (nonatomic, retain) NSMutableString *currentModifiedOn;
+@property (nonatomic, retain) NSMutableDictionary *currentItem;
 @end
 
 @implementation NSXMLParserDeserializer
 
 @synthesize parser = _parser;
 @synthesize array = _array;
-
 @synthesize currentElement = _currentElement;
-@synthesize currentEntryId = _currentEntryId;
-@synthesize currentFirstName = _currentFirstName;
-@synthesize currentLastName = _currentLastName;
-@synthesize currentPhone = _currentPhone;
-@synthesize currentEmail = _currentEmail;
-@synthesize currentAddress = _currentAddress;
-@synthesize currentCity = _currentCity;
-@synthesize currentZip = _currentZip;
-@synthesize currentState = _currentState;
-@synthesize currentCountry = _currentCountry;
-@synthesize currentDescription = _currentDescription;
-@synthesize currentPassword = _currentPassword;
-@synthesize currentCreatedOn = _currentCreatedOn;
-@synthesize currentModifiedOn = _currentModifiedOn;
+@synthesize currentItem = _currentItem;
 
 - (id)init
 {
@@ -89,21 +62,8 @@
     self.array = nil;
     self.parser = nil;
     
-    self.currentEntryId = nil;
     self.currentElement = nil;
-    self.currentFirstName = nil;
-    self.currentLastName = nil;
-    self.currentPhone = nil;
-    self.currentEmail = nil;
-    self.currentAddress = nil;
-    self.currentCity = nil;
-    self.currentZip = nil;
-    self.currentState = nil;
-    self.currentCountry = nil;
-    self.currentDescription = nil;
-    self.currentPassword = nil;
-    self.currentCreatedOn = nil;
-    self.currentModifiedOn = nil;
+    self.currentItem = nil;
     [super dealloc];
 }
 
@@ -129,23 +89,10 @@
     attributes:(NSDictionary *)attributeDict
 {
 	self.currentElement = [[elementName copy] autorelease];
-
+    
     if ([self.currentElement isEqualToString:@"person"])
     {
-        self.currentEntryId = [NSMutableString string];
-        self.currentFirstName = [NSMutableString string];
-        self.currentLastName = [NSMutableString string];
-        self.currentPhone = [NSMutableString string];
-        self.currentEmail = [NSMutableString string];
-        self.currentAddress = [NSMutableString string];
-        self.currentCity = [NSMutableString string];
-        self.currentZip = [NSMutableString string];
-        self.currentState = [NSMutableString string];
-        self.currentCountry = [NSMutableString string];
-        self.currentDescription = [NSMutableString string];
-        self.currentPassword = [NSMutableString string];
-        self.currentCreatedOn = [NSMutableString string];
-        self.currentModifiedOn = [NSMutableString string];
+        self.currentItem = [NSMutableDictionary dictionary];
     }
 }
 
@@ -155,84 +102,20 @@
 {
     if ([elementName isEqualToString:@"person"]) 
     {
-        NSMutableDictionary *item = [NSMutableDictionary dictionary];
-        [item setObject:self.currentEntryId forKey:@"entryId"];
-        [item setObject:self.currentFirstName forKey:@"firstName"];
-        [item setObject:self.currentLastName forKey:@"lastName"];
-        [item setObject:self.currentPhone forKey:@"phone"];
-        [item setObject:self.currentEmail forKey:@"email"];
-        [item setObject:self.currentAddress forKey:@"address"];
-        [item setObject:self.currentCity forKey:@"city"];
-        [item setObject:self.currentZip forKey:@"zip"];
-        [item setObject:self.currentState forKey:@"state"];
-        [item setObject:self.currentCountry forKey:@"country"];
-        [item setObject:self.currentDescription forKey:@"description"];
-        [item setObject:self.currentPassword forKey:@"password"];
-        [item setObject:self.currentCreatedOn forKey:@"createdOn"];
-        [item setObject:self.currentModifiedOn forKey:@"modifiedOn"];
-
-        [self.array addObject:item];
+        [self.array addObject:self.currentItem];
+        self.currentItem = nil;
     }
 }
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
 {
-    if ([self.currentElement isEqualToString:@"entryId"]) 
+    NSMutableString *field = [self.currentItem objectForKey:self.currentElement];
+    if (field == nil)
     {
-        [self.currentEntryId appendString:string];
-    } 
-    else if ([self.currentElement isEqualToString:@"firstName"]) 
-    {
-        [self.currentFirstName appendString:string];
-    } 
-    else if ([self.currentElement isEqualToString:@"lastName"]) 
-    {
-        [self.currentLastName appendString:string];
-    } 
-    else if ([self.currentElement isEqualToString:@"phone"])
-    {
-        [self.currentPhone appendString:string];
+        field = [NSMutableString string];
+        [self.currentItem setObject:field forKey:self.currentElement];
     }
-    else if ([self.currentElement isEqualToString:@"email"]) 
-    {
-        [self.currentEmail appendString:string];
-    }
-    else if ([self.currentElement isEqualToString:@"address"])
-    {
-        [self.currentAddress appendString:string];
-    }
-    else if ([self.currentElement isEqualToString:@"city"])
-    {
-        [self.currentCity appendString:string];
-    }
-    else if ([self.currentElement isEqualToString:@"zip"])
-    {
-        [self.currentZip appendString:string];
-    }
-    else if ([self.currentElement isEqualToString:@"state"])
-    {
-        [self.currentState appendString:string];
-    }
-    else if ([self.currentElement isEqualToString:@"country"])
-    {
-        [self.currentCountry appendString:string];
-    }
-    else if ([self.currentElement isEqualToString:@"description"])
-    {
-        [self.currentDescription appendString:string];
-    }
-    else if ([self.currentElement isEqualToString:@"password"])
-    {
-        [self.currentPassword appendString:string];
-    }
-    else if ([self.currentElement isEqualToString:@"createdOn"])
-    {
-        [self.currentCreatedOn appendString:string];
-    }
-    else if ([self.currentElement isEqualToString:@"modifiedOn"])
-    {
-        [self.currentModifiedOn appendString:string];
-    }
+    [field appendString:string];
 }
 
 - (void)parserDidEndDocument:(NSXMLParser *)parser 

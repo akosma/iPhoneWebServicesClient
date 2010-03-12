@@ -40,22 +40,8 @@
 @private
     NSMutableArray *_array;
     xmlParserCtxtPtr _xmlParserContext;
-    
     NSString *_currentElement;
-    NSMutableString *_currentEntryId;
-    NSMutableString *_currentFirstName;
-    NSMutableString *_currentLastName;
-    NSMutableString *_currentPhone;
-    NSMutableString *_currentEmail;
-    NSMutableString *_currentAddress;
-    NSMutableString *_currentCity;
-    NSMutableString *_currentZip;
-    NSMutableString *_currentState;
-    NSMutableString *_currentCountry;
-    NSMutableString *_currentDescription;
-    NSMutableString *_currentPassword;
-    NSMutableString *_currentCreatedOn;
-    NSMutableString *_currentModifiedOn;
+    NSMutableDictionary *_currentItem;
 }
 
 @end
