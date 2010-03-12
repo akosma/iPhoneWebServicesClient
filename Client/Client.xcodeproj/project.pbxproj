@@ -137,6 +137,8 @@
 		3AD35151114A5C8F00F7A14D /* AQXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD3514D114A5C8F00F7A14D /* AQXMLParser.m */; };
 		3AD35152114A5C8F00F7A14D /* AQXMLParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD3514F114A5C8F00F7A14D /* AQXMLParserDelegate.m */; };
 		3AD35158114A5D1D00F7A14D /* AQXMLParserDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD35157114A5D1D00F7A14D /* AQXMLParserDeserializer.m */; };
+		3AF4B446114A68AC0029CAB9 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AF4B444114A68AC0029CAB9 /* Default.png */; };
+		3AF4B447114A68AC0029CAB9 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AF4B445114A68AC0029CAB9 /* Icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -424,6 +426,8 @@
 		3AD35150114A5C8F00F7A14D /* iPhoneNonatomic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPhoneNonatomic.h; sourceTree = "<group>"; };
 		3AD35156114A5D1D00F7A14D /* AQXMLParserDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQXMLParserDeserializer.h; sourceTree = "<group>"; };
 		3AD35157114A5D1D00F7A14D /* AQXMLParserDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AQXMLParserDeserializer.m; sourceTree = "<group>"; };
+		3AF4B444114A68AC0029CAB9 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		3AF4B445114A68AC0029CAB9 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Client-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Client-Info.plist"; path = "../Client-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -629,6 +633,7 @@
 				8D1107310486CEB800E47090 /* Client-Info.plist */,
 				3A50C58311204B6C0027974D /* Entitlements.plist */,
 				3A50C57D11204B560027974D /* NIBs */,
+				3AF4B443114A68AC0029CAB9 /* Images */,
 				3A0932351148FB97008EEBBE /* Settings.bundle */,
 			);
 			path = Resources;
@@ -1016,6 +1021,15 @@
 			path = StreamingXMLParser;
 			sourceTree = "<group>";
 		};
+		3AF4B443114A68AC0029CAB9 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				3AF4B444114A68AC0029CAB9 /* Default.png */,
+				3AF4B445114A68AC0029CAB9 /* Icon.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1109,6 +1123,8 @@
 				3A09322F1148FB68008EEBBE /* IASKPSToggleSwitchSpecifierViewCell.xib in Resources */,
 				3A0932301148FB68008EEBBE /* IASKSpecifierValuesView.xib in Resources */,
 				3A0932361148FB97008EEBBE /* Settings.bundle in Resources */,
+				3AF4B446114A68AC0029CAB9 /* Default.png in Resources */,
+				3AF4B447114A68AC0029CAB9 /* Icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

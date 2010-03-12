@@ -52,6 +52,7 @@
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application 
 {
+    [UIApplication sharedApplication].statusBarHidden = NO;
     [[NSUserDefaults standardUserDefaults] setDefaultValuesIfRequired];
     [UIApplication sharedApplication].idleTimerDisabled = YES;
 	[self.window addSubview:[self.navigationController view]];

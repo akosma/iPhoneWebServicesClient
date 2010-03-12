@@ -94,6 +94,8 @@ h2. Other Links
 * "XMLRPC framework":http://iphone.trac.wordpress.org/browser/trunk/Classes/XMLRPC used by the WordPress iPhone application.
 * "AQXMLParser == Big Memory Win":http://quatermain.tumblr.com/post/93651539/aqxmlparser-big-memory-win - Article about the AQXMLParser library.
 
+The application icon and splash screen have been adapted from "this picture":http://www.eee.bham.ac.uk/com_test/img\dsnl\internet15jan06.png.
+
 h2. License
 
 This project is released with a liberal BSD license. See the LICENSE file for details.
