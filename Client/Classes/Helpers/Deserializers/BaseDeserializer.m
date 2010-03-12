@@ -51,6 +51,7 @@
 #import "GoogleXMLDeserializer.h"
 #import "APXMLDeserializer.h"
 #import "ProtocolBufferDeserializer.h"
+#import "AQXMLParserDeserializer.h"
 
 @implementation BaseDeserializer
 
@@ -168,6 +169,12 @@
         case DeserializerTypeProtocolBuffer:
         {
             deserializer = [ProtocolBufferDeserializer deserializer];
+            break;
+        }
+            
+        case DeserializerTypeAQXMLParser:
+        {
+            deserializer = [AQXMLParserDeserializer deserializer];
             break;
         }
 

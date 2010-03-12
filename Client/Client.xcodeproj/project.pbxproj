@@ -134,6 +134,9 @@
 		3AD27296113D7CE2004B310D /* CXMLNode_XPathExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD27288113D7CE2004B310D /* CXMLNode_XPathExtensions.m */; };
 		3AD27297113D7CE2004B310D /* CTidy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD2728B113D7CE2004B310D /* CTidy.m */; };
 		3AD272A0113D7D07004B310D /* LibXMLDomDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD2729F113D7D07004B310D /* LibXMLDomDeserializer.m */; };
+		3AD35151114A5C8F00F7A14D /* AQXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD3514D114A5C8F00F7A14D /* AQXMLParser.m */; };
+		3AD35152114A5C8F00F7A14D /* AQXMLParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD3514F114A5C8F00F7A14D /* AQXMLParserDelegate.m */; };
+		3AD35158114A5D1D00F7A14D /* AQXMLParserDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD35157114A5D1D00F7A14D /* AQXMLParserDeserializer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -414,6 +417,13 @@
 		3AD2728C113D7CE2004B310D /* TouchXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchXML.h; sourceTree = "<group>"; };
 		3AD2729E113D7D07004B310D /* LibXMLDomDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibXMLDomDeserializer.h; sourceTree = "<group>"; };
 		3AD2729F113D7D07004B310D /* LibXMLDomDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibXMLDomDeserializer.m; sourceTree = "<group>"; };
+		3AD3514C114A5C8F00F7A14D /* AQXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQXMLParser.h; sourceTree = "<group>"; };
+		3AD3514D114A5C8F00F7A14D /* AQXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AQXMLParser.m; sourceTree = "<group>"; };
+		3AD3514E114A5C8F00F7A14D /* AQXMLParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQXMLParserDelegate.h; sourceTree = "<group>"; };
+		3AD3514F114A5C8F00F7A14D /* AQXMLParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AQXMLParserDelegate.m; sourceTree = "<group>"; };
+		3AD35150114A5C8F00F7A14D /* iPhoneNonatomic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPhoneNonatomic.h; sourceTree = "<group>"; };
+		3AD35156114A5D1D00F7A14D /* AQXMLParserDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQXMLParserDeserializer.h; sourceTree = "<group>"; };
+		3AD35157114A5D1D00F7A14D /* AQXMLParserDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AQXMLParserDeserializer.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Client-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Client-Info.plist"; path = "../Client-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -667,6 +677,7 @@
 		3AA35BB9113CEEB300A89E31 /* Externals */ = {
 			isa = PBXGroup;
 			children = (
+				3AD3514B114A5C8F00F7A14D /* StreamingXMLParser */,
 				3AB9AC261149429B009A5CC2 /* ProtocolBuffers */,
 				3A0932011148FB68008EEBBE /* InAppSettingsKit */,
 				3AC8A73F114277F600ADB270 /* arashpayan-apxml */,
@@ -854,6 +865,8 @@
 				3AC8A7231142751500ADB270 /* GoogleXMLDeserializer.m */,
 				3AC8A7531142785500ADB270 /* APXMLDeserializer.h */,
 				3AC8A7541142785500ADB270 /* APXMLDeserializer.m */,
+				3AD35156114A5D1D00F7A14D /* AQXMLParserDeserializer.h */,
+				3AD35157114A5D1D00F7A14D /* AQXMLParserDeserializer.m */,
 				3AB9AB6511493F62009A5CC2 /* Person.pb.m */,
 				3AB9AB6611493F62009A5CC2 /* Person.pb.h */,
 				3AB9AC5411494442009A5CC2 /* ProtocolBufferDeserializer.h */,
@@ -989,6 +1002,18 @@
 				3AD2728B113D7CE2004B310D /* CTidy.m */,
 			);
 			path = Tidy;
+			sourceTree = "<group>";
+		};
+		3AD3514B114A5C8F00F7A14D /* StreamingXMLParser */ = {
+			isa = PBXGroup;
+			children = (
+				3AD3514C114A5C8F00F7A14D /* AQXMLParser.h */,
+				3AD3514D114A5C8F00F7A14D /* AQXMLParser.m */,
+				3AD3514E114A5C8F00F7A14D /* AQXMLParserDelegate.h */,
+				3AD3514F114A5C8F00F7A14D /* AQXMLParserDelegate.m */,
+				3AD35150114A5C8F00F7A14D /* iPhoneNonatomic.h */,
+			);
+			path = StreamingXMLParser;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1200,6 +1225,9 @@
 				3A09333A11490BCA008EEBBE /* NSUserDefaults+Extensions.m in Sources */,
 				3AB9AB6711493F62009A5CC2 /* Person.pb.m in Sources */,
 				3AB9AC5611494442009A5CC2 /* ProtocolBufferDeserializer.m in Sources */,
+				3AD35151114A5C8F00F7A14D /* AQXMLParser.m in Sources */,
+				3AD35152114A5C8F00F7A14D /* AQXMLParserDelegate.m in Sources */,
+				3AD35158114A5D1D00F7A14D /* AQXMLParserDeserializer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

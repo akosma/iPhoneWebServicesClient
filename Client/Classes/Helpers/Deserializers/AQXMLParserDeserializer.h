@@ -1,8 +1,8 @@
 //
-//  DataFormat.h
+//  AQXMLParserDeserializer.h
 //  Client
 //
-//  Created by Adrian on 3/1/10.
+//  Created by Adrian on 3/12/10.
 //  Copyright (c) 2010, akosma software / Adrian Kosmaczewski
 //  All rights reserved.
 //
@@ -32,27 +32,30 @@
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#import <Foundation/Foundation.h>
+#import "BaseXMLDeserializer.h"
+#import "AQXMLParser.h"
 
-typedef enum {
-    DeserializerTypeNone = 0,
-    DeserializerTypeTouchJSON = 1,
-    DeserializerTypeSBJSON = 2,
-    DeserializerTypeYAML = 3,
-    DeserializerTypeBinaryPlist = 4,
-    DeserializerTypeXMLPlist = 5,
-    DeserializerTypeXMLFormattedPlist = 6,
-    DeserializerTypeNSXMLParser = 7,
-    DeserializerTypeTouchXML = 8,
-    DeserializerTypeLibXMLDOM = 9,
-    DeserializerTypeLibXMLSAX = 10,
-    DeserializerTypeCSV = 11,
-    DeserializerTypeTBXML = 12,
-    DeserializerTypeKissXML = 13,
-    DeserializerTypeTinyXML = 14,
-    DeserializerTypeGoogleXML = 15,
-    DeserializerTypeAPXML = 16,
-    DeserializerTypeProtocolBuffer = 17,
-    DeserializerTypeAQXMLParser = 18,
-    DeserializerTypeSOAP = 19
-} DeserializerType;
+@interface AQXMLParserDeserializer : BaseXMLDeserializer <AQXMLParserDelegate>
+{
+@private
+    AQXMLParser *_parser;
+    NSMutableArray *_array;
+    
+    NSString *_currentElement;
+    NSMutableString *_currentEntryId;
+    NSMutableString *_currentFirstName;
+    NSMutableString *_currentLastName;
+    NSMutableString *_currentPhone;
+    NSMutableString *_currentEmail;
+    NSMutableString *_currentAddress;
+    NSMutableString *_currentCity;
+    NSMutableString *_currentZip;
+    NSMutableString *_currentState;
+    NSMutableString *_currentCountry;
+    NSMutableString *_currentDescription;
+    NSMutableString *_currentPassword;
+    NSMutableString *_currentCreatedOn;
+    NSMutableString *_currentModifiedOn;
+}
+
+@end

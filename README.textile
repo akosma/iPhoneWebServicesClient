@@ -42,6 +42,7 @@ For the iPhone client:
 * "gdata-objectivec-client":http://code.google.com/p/gdata-objectivec-client/source/browse/trunk/Source/XMLSupport/ - XML support classes included in the Google Data APIs Objective-C Client Library.
 * "APXML":http://arashpayan.com/blog/index.php/2009/01/14/apxml-nsxmldocument-substitute-for-iphoneipod-touch/ - NSXMLDocument ’substitute’ for iPhone/iPod Touch.
 * "ProtocolBuffers":http://code.google.com/p/metasyntactic/wiki/ProtocolBuffers - Objective-C Protocol Buffers for OSX and the iPhone.
+* "AQXMLParser":http://github.com/AlanQuatermain/aqtoolkit - Another parser for XML in Objective-C.
 * "InAppSettingsKit":http://www.inappsettingskit.com/ - Library allowing to access the current setting bundle from the application.
 
 h3. YAML in Cocoa
@@ -91,6 +92,7 @@ h2. Other Links
 * "Protocol Buffers":http://en.wikipedia.org/wiki/Protocol_Buffers - Wikipedia page.
 * "Protocol Buffers Developer Guide":http://code.google.com/apis/protocolbuffers/docs/overview.html
 * "XMLRPC framework":http://iphone.trac.wordpress.org/browser/trunk/Classes/XMLRPC used by the WordPress iPhone application.
+* "AQXMLParser == Big Memory Win":http://quatermain.tumblr.com/post/93651539/aqxmlparser-big-memory-win - Article about the AQXMLParser library.
 
 h2. License
 
