@@ -93,6 +93,7 @@ h2. Other Links
 * "Protocol Buffers Developer Guide":http://code.google.com/apis/protocolbuffers/docs/overview.html
 * "XMLRPC framework":http://iphone.trac.wordpress.org/browser/trunk/Classes/XMLRPC used by the WordPress iPhone application.
 * "AQXMLParser == Big Memory Win":http://quatermain.tumblr.com/post/93651539/aqxmlparser-big-memory-win - Article about the AQXMLParser library.
+* "Results of Northwind database rows serialization benchmarks run at 06/02/2010":http://www.servicestack.net/benchmarks/NorthwindDatabaseRowsSerialization.1000000-times.2010-02-06.html - Interesting analysis of serialization performance using .NET libraries.
 
 The application icon and splash screen have been adapted from "this picture":http://www.eee.bham.ac.uk/com_test/img\dsnl\internet15jan06.png.
 
