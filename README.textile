@@ -36,7 +36,7 @@ For the iPhone client:
 * "json-framework":http://code.google.com/p/json-framework/ - A strict JSON parser/generator for Objective-C.
 * "touchcode":http://code.google.com/p/touchcode/ - Repository of iPhone and iPod Touch source code.
 * "cCSVParse":http://michael.stapelberg.de/cCSVParse - A CSV parsing library in Objective-C.
-* "TBXML V1.3":http://www.tbxml.co.uk/ - XML Parser by Tim Bray.
+* "TBXML V1.3":http://www.tbxml.co.uk/ - XML Parser by Tom Bradley.
 * "KissXML":http://code.google.com/p/kissxml/ - KissXML is a replacement for Cocoa's NSXML cluster of classes. It is based on libxml.
 * "TinyXML":http://www.grinninglizard.com/tinyxml/ - TinyXML is a simple, small, C++ XML parser that can be easily integrating into other programs.
 * "gdata-objectivec-client":http://code.google.com/p/gdata-objectivec-client/source/browse/trunk/Source/XMLSupport/ - XML support classes included in the Google Data APIs Objective-C Client Library.
