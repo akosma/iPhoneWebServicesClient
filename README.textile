@@ -68,9 +68,9 @@ h2. Installation
 ## Change the settings in the "Server/data/database.php" file to access the database (server, username, password).
 # Set up the client:
 ## Open the "Client/Client.xcodeproj" project in Xcode.
-## Change the "BASE_URL" setting in the "Client/Definitions.h" file to match the location of your index.php.
 ## Compile the project (read the discussion about YAML in Cocoa above to install the Syck library in your system!).
 ## Execute the client, which will connect to your server and retrieve data.
+## If required, change the URL of the remote data tapping the "Settings" button in the interface.
 
 h2. Other Links
 
