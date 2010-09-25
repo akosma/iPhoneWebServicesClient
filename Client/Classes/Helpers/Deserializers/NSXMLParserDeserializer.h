@@ -34,7 +34,7 @@
 
 #import "BaseXMLDeserializer.h"
 
-@interface NSXMLParserDeserializer : BaseXMLDeserializer
+@interface NSXMLParserDeserializer : BaseXMLDeserializer <NSXMLParserDelegate>
 {
 @private
     NSXMLParser *_parser;

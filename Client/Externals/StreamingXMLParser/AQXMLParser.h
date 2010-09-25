@@ -46,7 +46,7 @@ extern NSString * const AQXMLParserParsingRunLoopMode;
 
 // delegates should implement the same functions used by AQXMLParser
 
-@interface AQXMLParser : NSObject
+@interface AQXMLParser : NSObject <NSStreamDelegate>
 {
 	void *                                  _parser;
 	id<AQXMLParserDelegate> __weak          _delegate;
