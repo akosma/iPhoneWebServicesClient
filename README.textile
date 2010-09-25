@@ -19,6 +19,16 @@ The server application (written in PHP) reads a MySQL database (Server/data/sche
 
 For each output format, there is a single "Formatter" subclass in the Server/formatters folder. A static method in the FormatterFactory class returns the formatter that corresponds to the requested output format.
 
+h2. Future Extensions
+
+In future versions of this project, the following formats and libraries could be integrated:
+
+* "MessagePack":http://msgpack.org/
+* "Apache Thrift":http://incubator.apache.org/thrift/ ("StackOverflow article":http://stackoverflow.com/questions/3620888/thrift-framework-for-iphone about how to integrate with the iPhone)
+* "BERT":http://bert-rpc.org/
+* "Apache Avro":http://avro.apache.org/
+* "Open Network Computing Remote Procedure Call (ONC RPC) aka Sun RPC":http://en.wikipedia.org/wiki/Open_Network_Computing_Remote_Procedure_Call
+
 h2. Libraries Used
 
 The project uses several different libraries:
