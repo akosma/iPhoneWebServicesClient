@@ -3,7 +3,7 @@
 #import "GSNSDataExtensions.h"
 #import "YAMLCocoaCategories.h"
 #import "YAMLCategories.h"
-#import <syck.h>
+#import "syck.h"
 
 void cocoa_syck_error_handler( SyckParser *p, char *msg )
 {

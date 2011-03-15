@@ -276,6 +276,9 @@
 		3A9A0846113BB756003E62D4 /* xsd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xsd.m; sourceTree = "<group>"; };
 		3A9A084E113BB75F003E62D4 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		3A9A0854113BB77E003E62D4 /* libxml2.2.7.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.7.3.dylib; path = usr/lib/libxml2.2.7.3.dylib; sourceTree = SDKROOT; };
+		3A9EFB62132FC8EF00D0E046 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		3A9EFB64132FC8EF00D0E046 /* syck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = syck.h; sourceTree = "<group>"; };
+		3A9EFB66132FC8EF00D0E046 /* syck_st.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = syck_st.h; sourceTree = "<group>"; };
 		3AA35BA5113CECEB00A89E31 /* TouchJSONDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchJSONDeserializer.h; sourceTree = "<group>"; };
 		3AA35BA6113CECEB00A89E31 /* TouchJSONDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchJSONDeserializer.m; sourceTree = "<group>"; };
 		3AA35BDF113CEEB300A89E31 /* CDataScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner.h; sourceTree = "<group>"; };
@@ -685,9 +688,20 @@
 			path = SOAP;
 			sourceTree = "<group>";
 		};
+		3A9EFB61132FC8EF00D0E046 /* syck */ = {
+			isa = PBXGroup;
+			children = (
+				3A9EFB62132FC8EF00D0E046 /* config.h */,
+				3A9EFB64132FC8EF00D0E046 /* syck.h */,
+				3A9EFB66132FC8EF00D0E046 /* syck_st.h */,
+			);
+			path = syck;
+			sourceTree = "<group>";
+		};
 		3AA35BB9113CEEB300A89E31 /* Externals */ = {
 			isa = PBXGroup;
 			children = (
+				3A9EFB61132FC8EF00D0E046 /* syck */,
 				3AD3514B114A5C8F00F7A14D /* StreamingXMLParser */,
 				3AB9AC261149429B009A5CC2 /* ProtocolBuffers */,
 				3A0932011148FB68008EEBBE /* InAppSettingsKit */,
