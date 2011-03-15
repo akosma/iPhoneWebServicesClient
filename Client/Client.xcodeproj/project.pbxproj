@@ -1289,7 +1289,8 @@
 				OTHER_CFLAGS = "-I/usr/include/libxml2";
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = Client;
-				RUN_CLANG_STATIC_ANALYZER = YES;
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -1313,6 +1314,7 @@
 				OTHER_CFLAGS = "-I/usr/include/libxml2";
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = Client;
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};
@@ -1352,6 +1354,7 @@
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = Client;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos;
 			};
 			name = DistributionAdHoc;
 		};
