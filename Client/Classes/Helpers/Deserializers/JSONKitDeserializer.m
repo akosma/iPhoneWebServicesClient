@@ -1,9 +1,9 @@
 //
-//  DataFormat.h
+//  JSONKitDeserializer.m
 //  Client
 //
-//  Created by Adrian on 3/1/10.
-//  Copyright (c) 2010, akosma software / Adrian Kosmaczewski
+//  Created by Adrian on 3/15/11.
+//  Copyright (c) 2011, akosma software / Adrian Kosmaczewski
 //  All rights reserved.
 //
 //  Redistribution and use in source and binary forms, with or without
@@ -32,28 +32,20 @@
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#import <Foundation/Foundation.h>
+#import "JSONKitDeserializer.h"
+#import "JSONKit.h"
 
-typedef enum {
-    DeserializerTypeNone = 0,
-    DeserializerTypeTouchJSON = 1,
-    DeserializerTypeSBJSON = 2,
-    DeserializerTypeJSONKit = 3,
-    DeserializerTypeYAML = 4,
-    DeserializerTypeBinaryPlist = 5,
-    DeserializerTypeXMLPlist = 6,
-    DeserializerTypeXMLFormattedPlist = 7,
-    DeserializerTypeNSXMLParser = 8,
-    DeserializerTypeTouchXML = 9,
-    DeserializerTypeLibXMLDOM = 10,
-    DeserializerTypeLibXMLSAX = 11,
-    DeserializerTypeCSV = 12,
-    DeserializerTypeTBXML = 13,
-    DeserializerTypeKissXML = 14,
-    DeserializerTypeTinyXML = 15,
-    DeserializerTypeGoogleXML = 16,
-    DeserializerTypeAPXML = 17,
-    DeserializerTypeProtocolBuffer = 18,
-    DeserializerTypeAQXMLParser = 19,
-    DeserializerTypeSOAP = 20
-} DeserializerType;
+@implementation JSONKitDeserializer
+
+- (NSArray *)performDeserialization:(id)data
+{
+    NSArray *array = [data objectFromJSONData];
+    return array;
+}
+
+- (NSString *)formatIdentifier
+{
+    return @"json";
+}
+
+@end

@@ -63,6 +63,8 @@
 		3A9A084C113BB756003E62D4 /* USGlobals.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9A0844113BB756003E62D4 /* USGlobals.m */; };
 		3A9A084D113BB756003E62D4 /* xsd.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9A0846113BB756003E62D4 /* xsd.m */; };
 		3A9A084F113BB75F003E62D4 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A9A084E113BB75F003E62D4 /* CFNetwork.framework */; };
+		3A9EFBBF132FCECF00D0E046 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9EFBBE132FCECF00D0E046 /* JSONKit.m */; };
+		3A9EFBC2132FCEF700D0E046 /* JSONKitDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9EFBC1132FCEF700D0E046 /* JSONKitDeserializer.m */; };
 		3AA35BA7113CECEB00A89E31 /* TouchJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA35BA6113CECEB00A89E31 /* TouchJSONDeserializer.m */; };
 		3AA35C2B113CEEB300A89E31 /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA35BE0113CEEB300A89E31 /* CDataScanner.m */; };
 		3AA35C2C113CEEB300A89E31 /* CDataScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA35BE3113CEEB300A89E31 /* CDataScanner_Extensions.m */; };
@@ -279,6 +281,10 @@
 		3A9EFB62132FC8EF00D0E046 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
 		3A9EFB64132FC8EF00D0E046 /* syck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = syck.h; sourceTree = "<group>"; };
 		3A9EFB66132FC8EF00D0E046 /* syck_st.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = syck_st.h; sourceTree = "<group>"; };
+		3A9EFBBD132FCECF00D0E046 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		3A9EFBBE132FCECF00D0E046 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		3A9EFBC0132FCEF700D0E046 /* JSONKitDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKitDeserializer.h; sourceTree = "<group>"; };
+		3A9EFBC1132FCEF700D0E046 /* JSONKitDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKitDeserializer.m; sourceTree = "<group>"; };
 		3AA35BA5113CECEB00A89E31 /* TouchJSONDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchJSONDeserializer.h; sourceTree = "<group>"; };
 		3AA35BA6113CECEB00A89E31 /* TouchJSONDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchJSONDeserializer.m; sourceTree = "<group>"; };
 		3AA35BDF113CEEB300A89E31 /* CDataScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner.h; sourceTree = "<group>"; };
@@ -698,9 +704,19 @@
 			path = syck;
 			sourceTree = "<group>";
 		};
+		3A9EFBBC132FCECF00D0E046 /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				3A9EFBBD132FCECF00D0E046 /* JSONKit.h */,
+				3A9EFBBE132FCECF00D0E046 /* JSONKit.m */,
+			);
+			path = JSONKit;
+			sourceTree = "<group>";
+		};
 		3AA35BB9113CEEB300A89E31 /* Externals */ = {
 			isa = PBXGroup;
 			children = (
+				3A9EFBBC132FCECF00D0E046 /* JSONKit */,
 				3A9EFB61132FC8EF00D0E046 /* syck */,
 				3AD3514B114A5C8F00F7A14D /* StreamingXMLParser */,
 				3AB9AC261149429B009A5CC2 /* ProtocolBuffers */,
@@ -859,6 +875,8 @@
 				3AA35BA6113CECEB00A89E31 /* TouchJSONDeserializer.m */,
 				3AA35D54113CFDEA00A89E31 /* SBJSONDeserializer.h */,
 				3AA35D55113CFDEA00A89E31 /* SBJSONDeserializer.m */,
+				3A9EFBC0132FCEF700D0E046 /* JSONKitDeserializer.h */,
+				3A9EFBC1132FCEF700D0E046 /* JSONKitDeserializer.m */,
 				3A33FA04113D03BB006A3962 /* YAMLDeserializer.h */,
 				3A33FA05113D03BB006A3962 /* YAMLDeserializer.m */,
 				3A976C63113FD26B00D200EE /* CSVDeserializer.h */,
@@ -1267,6 +1285,8 @@
 				3AD35152114A5C8F00F7A14D /* AQXMLParserDelegate.m in Sources */,
 				3AD35158114A5D1D00F7A14D /* AQXMLParserDeserializer.m in Sources */,
 				3A0FC275124E111C00B003DC /* ASIDownloadCache.m in Sources */,
+				3A9EFBBF132FCECF00D0E046 /* JSONKit.m in Sources */,
+				3A9EFBC2132FCEF700D0E046 /* JSONKitDeserializer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

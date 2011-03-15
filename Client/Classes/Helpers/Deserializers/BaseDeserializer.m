@@ -52,6 +52,7 @@
 #import "APXMLDeserializer.h"
 #import "ProtocolBufferDeserializer.h"
 #import "AQXMLParserDeserializer.h"
+#import "JSONKitDeserializer.h"
 
 @implementation BaseDeserializer
 
@@ -73,6 +74,12 @@
         case DeserializerTypeSBJSON:
         {
             deserializer = [SBJSONDeserializer deserializer];
+            break;
+        }
+
+        case DeserializerTypeJSONKit:
+        {
+            deserializer = [JSONKitDeserializer deserializer];
             break;
         }
             
@@ -192,7 +199,8 @@
 
 - (id)init
 {
-    if (self = [super init])
+    self = [super init];
+    if (self)
     {
         self.isAsynchronous = NO;
     }
