@@ -77,7 +77,8 @@
 
 - (id)init
 {
-    if (self = [super initWithNibName:@"BenchmarkController" bundle:nil])
+    self = [super initWithNibName:@"BenchmarkController" bundle:nil];
+    if (self)
     {
         _navigationController = [[UINavigationController alloc] initWithRootViewController:self];
         self.navigationController.toolbarHidden = NO;
