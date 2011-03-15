@@ -89,7 +89,7 @@
     switch (self.formatControl.selectedSegmentIndex) 
     {
         case 0:
-            self.currentDataFormat = DeserializerTypeSBJSON;
+            self.currentDataFormat = DeserializerTypeJSONKit;
             break;
             
         case 1:
