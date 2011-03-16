@@ -53,6 +53,7 @@
 #import "ProtocolBufferDeserializer.h"
 #import "AQXMLParserDeserializer.h"
 #import "JSONKitDeserializer.h"
+#import "YAJLDeserializer.h"
 
 @implementation BaseDeserializer
 
@@ -80,6 +81,12 @@
         case DeserializerTypeJSONKit:
         {
             deserializer = [JSONKitDeserializer deserializer];
+            break;
+        }
+        
+        case DeserializerTypeYAJL:
+        {
+            deserializer = [YAJLDeserializer deserializer];
             break;
         }
             

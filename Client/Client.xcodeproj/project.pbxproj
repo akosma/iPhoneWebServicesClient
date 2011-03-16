@@ -122,6 +122,8 @@
 		3AC8A7551142785500ADB270 /* APXMLDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8A7541142785500ADB270 /* APXMLDeserializer.m */; };
 		3AC8A76911427AC600ADB270 /* BaseXMLDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8A76811427AC600ADB270 /* BaseXMLDeserializer.m */; };
 		3AC8A7801142801800ADB270 /* NSArray+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8A77F1142801800ADB270 /* NSArray+Extensions.m */; };
+		3AD151101330CBB70064ECC0 /* YAJLiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD1510F1330CBB70064ECC0 /* YAJLiOS.framework */; };
+		3AD151131330CC4C0064ECC0 /* YAJLDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD151121330CC4C0064ECC0 /* YAJLDeserializer.m */; };
 		3AD27253113D7BCB004B310D /* NSXMLParserDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD27252113D7BCB004B310D /* NSXMLParserDeserializer.m */; };
 		3AD2726C113D7C29004B310D /* TouchXMLDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD2726B113D7C29004B310D /* TouchXMLDeserializer.m */; };
 		3AD2728D113D7CE2004B310D /* CXMLDocument_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD27276113D7CE2004B310D /* CXMLDocument_CreationExtensions.m */; };
@@ -403,6 +405,9 @@
 		3AC8A76811427AC600ADB270 /* BaseXMLDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseXMLDeserializer.m; sourceTree = "<group>"; };
 		3AC8A77E1142801800ADB270 /* NSArray+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Extensions.h"; sourceTree = "<group>"; };
 		3AC8A77F1142801800ADB270 /* NSArray+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Extensions.m"; sourceTree = "<group>"; };
+		3AD1510F1330CBB70064ECC0 /* YAJLiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YAJLiOS.framework; path = Externals/YAJLiOS/YAJLiOS.framework; sourceTree = "<group>"; };
+		3AD151111330CC4C0064ECC0 /* YAJLDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAJLDeserializer.h; sourceTree = "<group>"; };
+		3AD151121330CC4C0064ECC0 /* YAJLDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAJLDeserializer.m; sourceTree = "<group>"; };
 		3AD27251113D7BCB004B310D /* NSXMLParserDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSXMLParserDeserializer.h; sourceTree = "<group>"; };
 		3AD27252113D7BCB004B310D /* NSXMLParserDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSXMLParserDeserializer.m; sourceTree = "<group>"; };
 		3AD2726A113D7C29004B310D /* TouchXMLDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchXMLDeserializer.h; sourceTree = "<group>"; };
@@ -461,6 +466,7 @@
 				3A976CA1113FDA1400D200EE /* MessageUI.framework in Frameworks */,
 				3A976DD31140061B00D200EE /* libsyck.a in Frameworks */,
 				3A0FC28D124E11D800B003DC /* MobileCoreServices.framework in Frameworks */,
+				3AD151101330CBB70064ECC0 /* YAJLiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,6 +506,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3AD1510F1330CBB70064ECC0 /* YAJLiOS.framework */,
 				3A0FC28C124E11D800B003DC /* MobileCoreServices.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
@@ -877,6 +884,8 @@
 				3AA35D55113CFDEA00A89E31 /* SBJSONDeserializer.m */,
 				3A9EFBC0132FCEF700D0E046 /* JSONKitDeserializer.h */,
 				3A9EFBC1132FCEF700D0E046 /* JSONKitDeserializer.m */,
+				3AD151111330CC4C0064ECC0 /* YAJLDeserializer.h */,
+				3AD151121330CC4C0064ECC0 /* YAJLDeserializer.m */,
 				3A33FA04113D03BB006A3962 /* YAMLDeserializer.h */,
 				3A33FA05113D03BB006A3962 /* YAMLDeserializer.m */,
 				3A976C63113FD26B00D200EE /* CSVDeserializer.h */,
@@ -1287,6 +1296,7 @@
 				3A0FC275124E111C00B003DC /* ASIDownloadCache.m in Sources */,
 				3A9EFBBF132FCECF00D0E046 /* JSONKit.m in Sources */,
 				3A9EFBC2132FCEF700D0E046 /* JSONKitDeserializer.m in Sources */,
+				3AD151131330CC4C0064ECC0 /* YAJLDeserializer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1307,7 +1317,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = "";
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Externals/YAJLiOS\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1321,7 +1334,11 @@
 					"\"$(SRCROOT)/Externals/ProtocolBuffers/build/Release-iphoneos\"",
 				);
 				OTHER_CFLAGS = "-I/usr/include/libxml2";
-				OTHER_LDFLAGS = "-lxml2";
+				OTHER_LDFLAGS = (
+					"-lxml2",
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = Client;
 				RUN_CLANG_STATIC_ANALYZER = NO;
 				SDKROOT = iphoneos;
@@ -1334,7 +1351,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = "";
 				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Externals/YAJLiOS\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Client_Prefix.pch;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
@@ -1346,7 +1366,11 @@
 					"\"$(SRCROOT)/Externals/ProtocolBuffers/build/Release-iphoneos\"",
 				);
 				OTHER_CFLAGS = "-I/usr/include/libxml2";
-				OTHER_LDFLAGS = "-lxml2";
+				OTHER_LDFLAGS = (
+					"-lxml2",
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = Client;
 				SDKROOT = iphoneos;
 			};
@@ -1373,7 +1397,10 @@
 				CODE_SIGN_ENTITLEMENTS = Resources/Entitlements.plist;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Externals/YAJLiOS\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Client_Prefix.pch;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
@@ -1385,7 +1412,11 @@
 					"\"$(SRCROOT)/Externals/ProtocolBuffers/build/Release-iphoneos\"",
 				);
 				OTHER_CFLAGS = "-I/usr/include/libxml2";
-				OTHER_LDFLAGS = "-lxml2";
+				OTHER_LDFLAGS = (
+					"-lxml2",
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = Client;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;

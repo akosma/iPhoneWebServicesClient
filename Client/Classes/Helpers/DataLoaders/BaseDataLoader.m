@@ -85,7 +85,8 @@
 
 - (id)init
 {
-    if (self = [super init])
+    self = [super init];
+    if (self)
     {
         self.limit = 300;
         NSString *baseURL = [NSUserDefaults standardUserDefaults].serverURL;

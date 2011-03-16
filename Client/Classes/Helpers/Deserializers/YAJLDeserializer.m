@@ -1,9 +1,9 @@
 //
-//  DataFormat.h
+//  YAJLDeserializer.m
 //  Client
 //
-//  Created by Adrian on 3/1/10.
-//  Copyright (c) 2010, akosma software / Adrian Kosmaczewski
+//  Created by Adrian on 3/16/11.
+//  Copyright (c) 2011, akosma software / Adrian Kosmaczewski
 //  All rights reserved.
 //
 //  Redistribution and use in source and binary forms, with or without
@@ -32,29 +32,20 @@
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#import <Foundation/Foundation.h>
+#import "YAJLDeserializer.h"
+#import <YAJLiOS/YAJL.h>
 
-typedef enum {
-    DeserializerTypeNone = 0,
-    DeserializerTypeTouchJSON = 1,
-    DeserializerTypeSBJSON = 2,
-    DeserializerTypeJSONKit = 3,
-    DeserializerTypeYAJL = 4,
-    DeserializerTypeYAML = 5,
-    DeserializerTypeBinaryPlist = 6,
-    DeserializerTypeXMLPlist = 7,
-    DeserializerTypeXMLFormattedPlist = 8,
-    DeserializerTypeNSXMLParser = 9,
-    DeserializerTypeTouchXML = 10,
-    DeserializerTypeLibXMLDOM = 11,
-    DeserializerTypeLibXMLSAX = 12,
-    DeserializerTypeCSV = 13,
-    DeserializerTypeTBXML = 14,
-    DeserializerTypeKissXML = 15,
-    DeserializerTypeTinyXML = 16,
-    DeserializerTypeGoogleXML = 17,
-    DeserializerTypeAPXML = 18,
-    DeserializerTypeProtocolBuffer = 19,
-    DeserializerTypeAQXMLParser = 20,
-    DeserializerTypeSOAP = 21
-} DeserializerType;
+@implementation YAJLDeserializer
+
+- (NSArray *)performDeserialization:(id)data
+{
+    NSArray *array = [data yajl_JSON];
+    return array;
+}
+
+- (NSString *)formatIdentifier
+{
+    return @"json";
+}
+
+@end
