@@ -46,6 +46,7 @@ For the iPhone client:
 * "json-framework":http://code.google.com/p/json-framework/ - A strict JSON parser/generator for Objective-C.
 * "JSONKit":https://github.com/johnezang/JSONKit - A Very High Performance Objective-C JSON Library.
 * "YAJL-objc":https://github.com/gabriel/yajl-objc - Objective-C bindings for the "YAJL parser":http://lloyd.github.com/yajl/.
+* "BSJSON":https://github.com/blakeseely/bsjsonadditions/ - A simple JSON parser in Objective-C.
 * "touchcode":http://code.google.com/p/touchcode/ - Repository of iPhone and iPod Touch source code.
 * "cCSVParse":http://michael.stapelberg.de/cCSVParse - A CSV parsing library in Objective-C.
 * "TBXML V1.3":http://www.tbxml.co.uk/ - XML Parser by Tom Bradley.

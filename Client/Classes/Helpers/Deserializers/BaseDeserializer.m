@@ -54,6 +54,7 @@
 #import "AQXMLParserDeserializer.h"
 #import "JSONKitDeserializer.h"
 #import "YAJLDeserializer.h"
+#import "BSJSONDeserializer.h"
 
 @implementation BaseDeserializer
 
@@ -87,6 +88,12 @@
         case DeserializerTypeYAJL:
         {
             deserializer = [YAJLDeserializer deserializer];
+            break;
+        }
+            
+        case DeserializerTypeBSJSON:
+        {
+            deserializer = [BSJSONDeserializer deserializer];
             break;
         }
             

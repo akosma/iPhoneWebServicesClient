@@ -1,9 +1,9 @@
 //
-//  DataFormat.h
+//  BSJSONDeserializer.m
 //  Client
 //
-//  Created by Adrian on 3/1/10.
-//  Copyright (c) 2010, akosma software / Adrian Kosmaczewski
+//  Created by Adrian on 3/17/11.
+//  Copyright (c) 2011, akosma software / Adrian Kosmaczewski
 //  All rights reserved.
 //
 //  Redistribution and use in source and binary forms, with or without
@@ -32,30 +32,17 @@
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#import <Foundation/Foundation.h>
+#import "BSJSONDeserializer.h"
+#import "NSArray+BSJSONAdditions.h"
 
-typedef enum {
-    DeserializerTypeNone = 0,
-    DeserializerTypeTouchJSON = 1,
-    DeserializerTypeSBJSON = 2,
-    DeserializerTypeJSONKit = 3,
-    DeserializerTypeYAJL = 4,
-    DeserializerTypeBSJSON = 5,
-    DeserializerTypeYAML = 6,
-    DeserializerTypeBinaryPlist = 7,
-    DeserializerTypeXMLPlist = 8,
-    DeserializerTypeXMLFormattedPlist = 9,
-    DeserializerTypeNSXMLParser = 10,
-    DeserializerTypeTouchXML = 11,
-    DeserializerTypeLibXMLDOM = 12,
-    DeserializerTypeLibXMLSAX = 13,
-    DeserializerTypeCSV = 14,
-    DeserializerTypeTBXML = 15,
-    DeserializerTypeKissXML = 16,
-    DeserializerTypeTinyXML = 17,
-    DeserializerTypeGoogleXML = 18,
-    DeserializerTypeAPXML = 19,
-    DeserializerTypeProtocolBuffer = 20,
-    DeserializerTypeAQXMLParser = 21,
-    DeserializerTypeSOAP = 22
-} DeserializerType;
+@implementation BSJSONDeserializer
+
+- (NSArray *)performDeserialization:(id)data
+{
+    NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSArray *array = [NSArray arrayWithJSONString:jsonString];
+    [jsonString release];
+    return array;
+}
+
+@end
