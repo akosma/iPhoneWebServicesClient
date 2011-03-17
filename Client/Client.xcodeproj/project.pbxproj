@@ -40,6 +40,7 @@
 		3A0A8354113D328500E23EDC /* SOAPDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0A8353113D328500E23EDC /* SOAPDeserializer.m */; };
 		3A0FC275124E111C00B003DC /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0FC274124E111C00B003DC /* ASIDownloadCache.m */; };
 		3A0FC28D124E11D800B003DC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0FC28C124E11D800B003DC /* MobileCoreServices.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		3A212627133232A30037C6F6 /* BaseJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A212626133232A30037C6F6 /* BaseJSONDeserializer.m */; };
 		3A33F9B8113D013B006A3962 /* GSNSDataExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A33F9B2113D013B006A3962 /* GSNSDataExtensions.m */; };
 		3A33F9B9113D013B006A3962 /* YAMLCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A33F9B5113D013B006A3962 /* YAMLCategories.m */; };
 		3A33F9BA113D013B006A3962 /* YAMLCocoaCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A33F9B7113D013B006A3962 /* YAMLCocoaCategories.m */; };
@@ -237,6 +238,8 @@
 		3A0FC274124E111C00B003DC /* ASIDownloadCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDownloadCache.m; sourceTree = "<group>"; };
 		3A0FC27D124E116C00B003DC /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		3A0FC28C124E11D800B003DC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		3A212625133232A30037C6F6 /* BaseJSONDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseJSONDeserializer.h; sourceTree = "<group>"; };
+		3A212626133232A30037C6F6 /* BaseJSONDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseJSONDeserializer.m; sourceTree = "<group>"; };
 		3A2BECB8113D88940035B083 /* DeserializerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeserializerDelegate.h; sourceTree = "<group>"; };
 		3A33F9B1113D013B006A3962 /* GSNSDataExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSNSDataExtensions.h; sourceTree = "<group>"; };
 		3A33F9B2113D013B006A3962 /* GSNSDataExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSNSDataExtensions.m; sourceTree = "<group>"; };
@@ -878,6 +881,8 @@
 				3A2BECB8113D88940035B083 /* DeserializerDelegate.h */,
 				3ABF6E2D113C4CFE00EEE0D4 /* BaseDeserializer.h */,
 				3ABF6E2E113C4CFE00EEE0D4 /* BaseDeserializer.m */,
+				3A212625133232A30037C6F6 /* BaseJSONDeserializer.h */,
+				3A212626133232A30037C6F6 /* BaseJSONDeserializer.m */,
 				3AA35BA5113CECEB00A89E31 /* TouchJSONDeserializer.h */,
 				3AA35BA6113CECEB00A89E31 /* TouchJSONDeserializer.m */,
 				3AA35D54113CFDEA00A89E31 /* SBJSONDeserializer.h */,
@@ -1297,6 +1302,7 @@
 				3A9EFBBF132FCECF00D0E046 /* JSONKit.m in Sources */,
 				3A9EFBC2132FCEF700D0E046 /* JSONKitDeserializer.m in Sources */,
 				3AD151131330CC4C0064ECC0 /* YAJLDeserializer.m in Sources */,
+				3A212627133232A30037C6F6 /* BaseJSONDeserializer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

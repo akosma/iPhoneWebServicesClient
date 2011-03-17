@@ -45,9 +45,4 @@
     return array;
 }
 
-- (NSString *)formatIdentifier
-{
-    return @"json";
-}
-
 @end

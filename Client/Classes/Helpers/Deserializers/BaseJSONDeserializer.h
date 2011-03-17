@@ -1,8 +1,8 @@
 //
-//  YAJLDeserializer.m
+//  BaseJSONDeserializer.h
 //  Client
 //
-//  Created by Adrian on 3/16/11.
+//  Created by Adrian on 3/17/11.
 //  Copyright (c) 2011, akosma software / Adrian Kosmaczewski
 //  All rights reserved.
 //
@@ -32,15 +32,9 @@
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#import "YAJLDeserializer.h"
-#import <YAJLiOS/YAJL.h>
+#import "BaseDeserializer.h"
 
-@implementation YAJLDeserializer
 
-- (NSArray *)performDeserialization:(id)data
-{
-    NSArray *array = [data yajl_JSON];
-    return array;
-}
+@interface BaseJSONDeserializer : BaseDeserializer 
 
 @end

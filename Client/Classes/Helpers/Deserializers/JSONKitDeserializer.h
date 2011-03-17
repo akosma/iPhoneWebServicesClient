@@ -32,9 +32,9 @@
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#import "BaseDeserializer.h"
+#import "BaseJSONDeserializer.h"
 
 
-@interface JSONKitDeserializer : BaseDeserializer 
+@interface JSONKitDeserializer : BaseJSONDeserializer 
 
 @end

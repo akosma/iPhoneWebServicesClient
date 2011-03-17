@@ -32,7 +32,8 @@
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#import "BaseDeserializer.h"
+#import "BaseJSONDeserializer.h"
 
-@interface YAJLDeserializer : BaseDeserializer 
+@interface YAJLDeserializer : BaseJSONDeserializer
+
 @end
