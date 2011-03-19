@@ -1451,11 +1451,13 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/Externals/YAJLiOS\"",
 				);
+				GCC_OPTIMIZATION_LEVEL = 2;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Client_Prefix.pch;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				HEADER_SEARCH_PATHS = "/sw/include/**";
 				INFOPLIST_FILE = "Client-Info.plist";
+				INFOPLIST_OTHER_PREPROCESSOR_FLAGS = "-DNS_BLOCK_ASSERTIONS";
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(SRCROOT)/../Libraries/libsyck\"",
 					"\"$(SRCROOT)/Externals/ProtocolBuffers/build/Debug\"",
