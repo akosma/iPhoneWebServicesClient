@@ -40,6 +40,7 @@
 #define KEY_LOADER_TIME @"loaderTime"
 #define KEY_DESERIALIZER_TIME @"deserializerTime"
 #define KEY_DATA_LENGTH @"dataLength"
+#define KEY_FORMAT @"format"
 
 @interface NSArray (Extensions)
 

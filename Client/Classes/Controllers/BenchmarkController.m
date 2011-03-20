@@ -232,6 +232,7 @@
     [statistics setObject:[NSNumber numberWithInt:loader.limit] forKey:KEY_LIMIT];
     [statistics setObject:[NSNumber numberWithDouble:loader.interval] forKey:KEY_LOADER_TIME];
     [statistics setObject:[NSNumber numberWithDouble:loader.deserializer.interval] forKey:KEY_DESERIALIZER_TIME];
+    [statistics setObject:[loader.deserializer formatIdentifier] forKey:KEY_FORMAT];
     
     NSUInteger size = [loader.data length];
     [statistics setObject:[NSNumber numberWithUnsignedInt:size] forKey:KEY_DATA_LENGTH];
