@@ -41,7 +41,7 @@ if (!$limit)
 {
     $limit = 5000;
 }
-$query = "SELECT * FROM data LIMIT " . $limit;
+$query = "SELECT * FROM data ORDER BY RAND() LIMIT " . $limit;
 $data = execute($query);
 
 // Depending the "format" parameter in the query string, 
