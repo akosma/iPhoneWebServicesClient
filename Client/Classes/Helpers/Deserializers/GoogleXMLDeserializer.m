@@ -55,6 +55,7 @@
         [array addObject:dict];
         [dict release];
     }
+    [doc release];
     
     return array;
 }

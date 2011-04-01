@@ -187,6 +187,7 @@ defaultAttributeCount:(int)defaultAttributeCount attributes:(xmlSAX2Attributes *
         [self.currentItem setObject:field forKey:self.currentElement];
     }
     [field appendString:string];
+    [string release];
 }
 
 - (void)endElement:(const xmlChar *)localname prefix:(const xmlChar *)prefix uri:(const xmlChar *)URI

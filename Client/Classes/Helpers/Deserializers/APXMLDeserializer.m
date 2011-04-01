@@ -56,6 +56,8 @@
         [array addObject:dict];
         [dict release];
     }
+    [xmlString release];
+    [doc release];
     
     return array;
 }

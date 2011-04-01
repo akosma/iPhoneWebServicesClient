@@ -46,7 +46,7 @@
     NSString *fileName = [basePath stringByAppendingPathComponent:FILE_NAME];
     [data writeToFile:fileName atomically:YES];
     
-    CSVParser *parser = [CSVParser new];
+    CSVParser *parser = [[CSVParser alloc] init];
     [parser openFile:fileName];
     NSArray *csvContents = [parser parseFile];
     NSMutableArray *result = [NSMutableArray arrayWithCapacity:[csvContents count]];
@@ -70,6 +70,7 @@
         [result addObject:dict];
     }
     [parser closeFile];
+    [parser release];
     return result;
 }
 
