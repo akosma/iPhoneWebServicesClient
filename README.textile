@@ -60,13 +60,15 @@ For the iPhone client:
 
 h3. YAML in Cocoa
 
-For parsing YAML in Cocoa, the code in "this page":http://will.thimbleby.net/yaml.html was adapted, removing dependencies on the Cocoa AppKit framework (not available on the iPhone). This code also requires to have the YAML::Syck library installed using Fink:
+For parsing YAML in Cocoa, the code in "this page":http://will.thimbleby.net/yaml.html was adapted, removing dependencies on the Cocoa AppKit framework (not available on the iPhone). 
+
+If you want to compile the YAML::Syck library with Fink, follow these steps:
 
 # Install Fink on Mac OS X 10.6 from source "following these instructions":http://www.finkproject.org/download/srcdist.php (there is no binary installer available for Snow Leopard at the time of this writing).
 # Type "/sw/bin/fink install syck" to install syck.
 # The Xcode project should now compile without problems.
 
-Alternatively, this package includes a version of libsyck.a in "fat binary" format for both ARM (iPhone OS) and Intel (Simulator) processors.
+To avoid these steps above, this project includes a version of libsyck.a already compiled as a "fat binary" format for both ARM (iPhone OS) and Intel (Simulator) processors.
 
 h3. SOAP in Cocoa
 
@@ -81,7 +83,7 @@ h2. Installation
 ## Change the settings in the "Server/data/database.php" file to access the database (server, username, password).
 # Set up the client:
 ## Open the "Client/Client.xcodeproj" project in Xcode.
-## Compile the project (read the discussion about YAML in Cocoa above to install the Syck library in your system!).
+## Compile the project.
 ## Execute the client, which will connect to your server and retrieve data.
 ## If required, change the URL of the remote data tapping the "Settings" button in the interface.
 
@@ -113,3 +115,4 @@ The application icon and splash screen have been adapted from "this picture":htt
 h2. License
 
 This project is released with a liberal BSD license. See the LICENSE file for details.
+
