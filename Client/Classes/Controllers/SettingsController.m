@@ -43,7 +43,8 @@
 
 - (id)init
 {
-    if (self = [super initWithNibName:@"IASKAppSettingsView" bundle:nil]) 
+    self = [super initWithNibName:@"IASKAppSettingsView" bundle:nil];
+    if (self) 
     {
         self.delegate = self;
         _navigationController = [[UINavigationController alloc] initWithRootViewController:self];
