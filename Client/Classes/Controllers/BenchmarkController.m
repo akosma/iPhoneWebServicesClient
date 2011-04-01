@@ -38,6 +38,7 @@
 #import "Reachability.h"
 #import "NSArray+Extensions.h"
 #import "NSUserDefaults+Extensions.h"
+#import "UIDeviceHardware.h"
 
 @interface BenchmarkController ()
 @property (nonatomic, readonly) UITableView *tableView;
@@ -193,9 +194,17 @@
             connection = @"(unknown)";
             break;
     }
-    NSString *body = [NSString stringWithFormat:@"Results after connecting to %@ using a %@ connection.", baseURL, connection];
+    NSString *device = [UIDeviceHardware platformString];
+    NSString *template = @"<h3>Benchmark Results</h3>"
+    @"<p>Test parameters:</p>"
+    @"<ul>"
+    @"<li>URL: <strong>%@</strong></li>"
+    @"<li>Device: <strong>%@</strong></li>"
+    @"<li>Connection: <strong>%@</strong></li>"
+    @"</ul>";
+    NSString *body = [NSString stringWithFormat:template, baseURL, device, connection];
     [composer setMessageBody:body
-                      isHTML:NO];
+                      isHTML:YES];
     
     [composer setSubject:@"iPhoneWebServicesClient Benchmark Results"];
     [composer addAttachmentData:[NSData dataWithContentsOfFile:self.csvFilePath]
