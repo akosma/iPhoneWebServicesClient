@@ -36,17 +36,17 @@ require_once('data/database.php');
 require_once('formatters/formatterfactory.php');
 
 // Get all the data from the database
-$limit = $_GET["limit"];
+$limit = mysql_real_escape_string($_GET["limit"]);
 if (!$limit)
 {
-    $limit = 5000;
+    $limit = "5000";
 }
 $query = "SELECT * FROM data ORDER BY RAND() LIMIT " . $limit;
 $data = execute($query);
 
 // Depending the "format" parameter in the query string, 
 // output the data in different formats
-$format = $_GET["format"];
+$format = mysql_real_escape_string($_GET["format"]);
 $formatter = FormatterFactory::createFormatter($format);
 $formatter->setData($data);
 header('Content-type: ' . $formatter->getContentType());
