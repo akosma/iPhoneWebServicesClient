@@ -43,34 +43,39 @@
 
 @interface RootViewController ()
 
-@property (nonatomic, retain) UIView *headerView;
-@property (nonatomic, retain) UISlider *slider;
-@property (nonatomic, retain) UILabel *sliderLabel;
-@property (nonatomic, retain) UISegmentedControl *formatControl;
-@property (nonatomic, retain) UIActivityIndicatorView *spinningWheel;
-
-@property (nonatomic) DeserializerType currentDataFormat;
-@property (nonatomic, retain) BaseDataLoader *dataLoader;
-@property (nonatomic, retain) NSArray *data;
 - (void)updateTitle;
+
 @end
 
 
 @implementation RootViewController
 
+@synthesize headerView = _headerView;
+@synthesize slider = _slider;
+@synthesize sliderLabel = _sliderLabel;
+@synthesize formatControl = _formatControl;
+@synthesize spinningWheel = _spinningWheel;
+@synthesize currentDataFormat = _currentDataFormat;
 @synthesize dataLoader = _dataLoader;
 @synthesize data = _data;
-@synthesize currentDataFormat = _currentDataFormat;
-@synthesize spinningWheel = _spinningWheel;
-@synthesize formatControl = _formatControl;
-@synthesize sliderLabel = _sliderLabel;
-@synthesize slider = _slider;
-@synthesize headerView = _headerView;
 
 - (void)dealloc
 {
-    self.data = nil;
-    self.dataLoader = nil;
+    [_headerView release];
+    _headerView = nil;
+    [_slider release];
+    _slider = nil;
+    [_sliderLabel release];
+    _sliderLabel = nil;
+    [_formatControl release];
+    _formatControl = nil;
+    [_spinningWheel release];
+    _spinningWheel = nil;
+    [_dataLoader release];
+    _dataLoader = nil;
+    [_data release];
+    _data = nil;
+    
     [super dealloc];
 }
 
@@ -98,7 +103,7 @@
             break;
             
         case 1:
-            self.currentDataFormat = DeserializerTypeNSXMLParser;
+            self.currentDataFormat = DeserializerTypeTBXML;
             break;
             
         case 2:
@@ -175,12 +180,23 @@
     self.slider.value = log2f(limit);
     self.sliderLabel.text = [NSString stringWithFormat:@"%d", limit];
 
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:_spinningWheel];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:self.spinningWheel];
     self.navigationItem.rightBarButtonItem = item;
     [item release];
 
     self.currentDataFormat = DeserializerTypeTouchJSON;
     [self refresh:nil];
+}
+
+- (void) viewDidUnload
+{
+    self.headerView = nil;
+    self.slider = nil;
+    self.sliderLabel = nil;
+    self.formatControl = nil;
+    self.spinningWheel = nil;
+    
+    [super viewDidUnload];
 }
 
 - (void)didReceiveMemoryWarning 
@@ -237,12 +253,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSDictionary *dict = [self.data objectAtIndex:indexPath.row];
-    ABPersonViewController *personController = [[ABPersonViewController alloc] init];
+    ABPersonViewController *personController = [[[ABPersonViewController alloc] init] autorelease];
     ABRecordRef person = dict.person;
     personController.displayedPerson = person;
     [self.navigationController pushViewController:personController animated:YES];
-    [personController release];
-    
 }
 
 #pragma mark -

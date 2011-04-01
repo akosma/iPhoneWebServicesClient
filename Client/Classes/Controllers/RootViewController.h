@@ -39,16 +39,25 @@
 @interface RootViewController : UITableViewController <DataLoaderDelegate>
 {
 @private
-    IBOutlet UIView *_headerView;
-    IBOutlet UISlider *_slider;
-    IBOutlet UILabel *_sliderLabel;
-    IBOutlet UISegmentedControl *_formatControl;
-    IBOutlet UIActivityIndicatorView *_spinningWheel;
+    UIView *_headerView;
+    UISlider *_slider;
+    UILabel *_sliderLabel;
+    UISegmentedControl *_formatControl;
+    UIActivityIndicatorView *_spinningWheel;
     
     DeserializerType _currentDataFormat;
     id<DataLoader> _dataLoader;
     NSArray *_data;
 }
+
+@property (nonatomic, retain) IBOutlet UIView *headerView;
+@property (nonatomic, retain) IBOutlet UISlider *slider;
+@property (nonatomic, retain) IBOutlet UILabel *sliderLabel;
+@property (nonatomic, retain) IBOutlet UISegmentedControl *formatControl;
+@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *spinningWheel;
+@property (nonatomic) DeserializerType currentDataFormat;
+@property (nonatomic, retain) id<DataLoader> dataLoader;
+@property (nonatomic, copy) NSArray *data;
 
 - (IBAction)sliderChanged:(id)sender;
 - (IBAction)formatChanged:(id)sender;
