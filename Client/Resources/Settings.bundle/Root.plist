@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>StringsTable</key>
-	<string>Root</string>
 	<key>PreferenceSpecifiers</key>
 	<array>
 		<dict>
@@ -13,22 +11,22 @@
 			<string>PSGroupSpecifier</string>
 		</dict>
 		<dict>
-			<key>Type</key>
-			<string>PSTextFieldSpecifier</string>
-			<key>Title</key>
-			<string>Server URL</string>
-			<key>Key</key>
-			<string>server_url</string>
-			<key>DefaultValue</key>
-			<string>http://localhost:8888</string>
-			<key>IsSecure</key>
-			<false/>
-			<key>KeyboardType</key>
-			<string>Alphabet</string>
 			<key>AutocapitalizationType</key>
 			<string>None</string>
 			<key>AutocorrectionType</key>
 			<string>No</string>
+			<key>DefaultValue</key>
+			<string>http://localhost:8888</string>
+			<key>IsSecure</key>
+			<false/>
+			<key>Key</key>
+			<string>server_url</string>
+			<key>KeyboardType</key>
+			<string>Alphabet</string>
+			<key>Title</key>
+			<string>Server URL</string>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
 		</dict>
 		<dict>
 			<key>Title</key>
@@ -37,40 +35,40 @@
 			<string>PSGroupSpecifier</string>
 		</dict>
 		<dict>
-			<key>Type</key>
-			<string>PSTextFieldSpecifier</string>
-			<key>Title</key>
-			<string>Maximum</string>
-			<key>Key</key>
-			<string>benchmark_maximum</string>
+			<key>AutocapitalizationType</key>
+			<string>None</string>
+			<key>AutocorrectionType</key>
+			<string>No</string>
 			<key>DefaultValue</key>
 			<integer>200</integer>
 			<key>IsSecure</key>
 			<false/>
+			<key>Key</key>
+			<string>benchmark_maximum</string>
 			<key>KeyboardType</key>
 			<string>Alphabet</string>
+			<key>Title</key>
+			<string>Maximum</string>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+		</dict>
+		<dict>
 			<key>AutocapitalizationType</key>
 			<string>None</string>
 			<key>AutocorrectionType</key>
 			<string>No</string>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSTextFieldSpecifier</string>
-			<key>Title</key>
-			<string>Increment</string>
-			<key>Key</key>
-			<string>benchmark_increment</string>
 			<key>DefaultValue</key>
 			<integer>50</integer>
 			<key>IsSecure</key>
 			<false/>
+			<key>Key</key>
+			<string>benchmark_increment</string>
 			<key>KeyboardType</key>
 			<string>Alphabet</string>
-			<key>AutocapitalizationType</key>
-			<string>None</string>
-			<key>AutocorrectionType</key>
-			<string>No</string>
+			<key>Title</key>
+			<string>Increment</string>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
 		</dict>
 		<dict>
 			<key>Title</key>
@@ -79,25 +77,27 @@
 			<string>PSGroupSpecifier</string>
 		</dict>
 		<dict>
-			<key>Type</key>
-			<string>PSTitleValueSpecifier</string>
-			<key>Title</key>
-			<string>Version</string>
+			<key>DefaultValue</key>
+			<string>1.0.3</string>
 			<key>Key</key>
 			<string>version</string>
-			<key>DefaultValue</key>
-			<string>1.0.2</string>
-		</dict>
-		<dict>
+			<key>Title</key>
+			<string>Version</string>
 			<key>Type</key>
 			<string>PSTitleValueSpecifier</string>
-			<key>Title</key>
-			<string>Copyright</string>
+		</dict>
+		<dict>
 			<key>DefaultValue</key>
-			<string>2010 akosma software</string>
+			<string>2011 akosma software</string>
 			<key>Key</key>
 			<string>copyright</string>
+			<key>Title</key>
+			<string>Copyright</string>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
 		</dict>
 	</array>
+	<key>StringsTable</key>
+	<string>Root</string>
 </dict>
 </plist>
