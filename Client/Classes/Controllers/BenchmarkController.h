@@ -40,10 +40,10 @@
                                                    MFMailComposeViewControllerDelegate>
 {
 @private
-    IBOutlet UIBarButtonItem *_doneButton;
-    IBOutlet UIBarButtonItem *_startButton;
-    IBOutlet UIBarButtonItem *_mailButton;
-    IBOutlet UITableView *_tableView;
+    UIBarButtonItem *_doneButton;
+    UIBarButtonItem *_startButton;
+    UIBarButtonItem *_mailButton;
+    UITableView *_tableView;
     NSMutableArray *_testResults;
     NSMutableArray *_loaders;
     NSInteger _currentLimit;
