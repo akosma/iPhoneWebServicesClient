@@ -36,13 +36,18 @@ require_once('data/database.php');
 require_once('formatters/formatterfactory.php');
 
 // Get all the data from the database
-$limit = mysql_real_escape_string($_GET["limit"]);
+$limit = $_GET["limit"];
 if (!$limit)
 {
     $limit = "5000";
 }
-$query = "SELECT * FROM data ORDER BY RAND() LIMIT " . $limit;
-$data = execute($query);
+
+// Before calling mysql_real_escape_string() you have to connect to the DB...!
+$conn = new Connection;
+$conn->open();
+$query = "SELECT * FROM data ORDER BY RAND() LIMIT " . mysql_real_escape_string($limit);
+$data = $conn->execute($query);
+$conn->close();
 
 // Depending the "format" parameter in the query string, 
 // output the data in different formats
@@ -52,3 +57,4 @@ $formatter->setData($data);
 header('Content-type: ' . $formatter->getContentType());
 $output = $formatter->formatData();
 echo($output);
+
