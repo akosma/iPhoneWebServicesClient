@@ -107,6 +107,7 @@
 		3AB9AC5611494442009A5CC2 /* ProtocolBufferDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB9AC5511494442009A5CC2 /* ProtocolBufferDeserializer.m */; };
 		3ABF6E2F113C4CFE00EEE0D4 /* BaseDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ABF6E2E113C4CFE00EEE0D4 /* BaseDeserializer.m */; };
 		3ABF6E89113C534700EEE0D4 /* BaseDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ABF6E88113C534700EEE0D4 /* BaseDataLoader.m */; };
+		3AC53C3A1345EF0A00A805DC /* UIDeviceHardware.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC53C391345EF0A00A805DC /* UIDeviceHardware.m */; };
 		3AC8A62011425BBE00ADB270 /* TBXMLDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8A61F11425BBE00ADB270 /* TBXMLDeserializer.m */; };
 		3AC8A62A11425D5300ADB270 /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8A62711425D5300ADB270 /* NSDataAdditions.m */; };
 		3AC8A62B11425D5300ADB270 /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8A62911425D5300ADB270 /* TBXML.m */; };
@@ -381,6 +382,8 @@
 		3ABF6E88113C534700EEE0D4 /* BaseDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseDataLoader.m; sourceTree = "<group>"; };
 		3ABF6EBA113C563F00EEE0D4 /* DataLoaderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataLoaderDelegate.h; sourceTree = "<group>"; };
 		3ABF6EDC113C581900EEE0D4 /* LoaderMechanism.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoaderMechanism.h; sourceTree = "<group>"; };
+		3AC53C381345EF0A00A805DC /* UIDeviceHardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDeviceHardware.h; sourceTree = "<group>"; };
+		3AC53C391345EF0A00A805DC /* UIDeviceHardware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIDeviceHardware.m; sourceTree = "<group>"; };
 		3AC8A61E11425BBE00ADB270 /* TBXMLDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBXMLDeserializer.h; sourceTree = "<group>"; };
 		3AC8A61F11425BBE00ADB270 /* TBXMLDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBXMLDeserializer.m; sourceTree = "<group>"; };
 		3AC8A62611425D5300ADB270 /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
@@ -677,6 +680,8 @@
 		3A50C57911204B4A0027974D /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				3AC53C381345EF0A00A805DC /* UIDeviceHardware.h */,
+				3AC53C391345EF0A00A805DC /* UIDeviceHardware.m */,
 				3ABF6EDC113C581900EEE0D4 /* LoaderMechanism.h */,
 				3ABF6E71113C51A500EEE0D4 /* DeserializerType.h */,
 				3AB15C5A113ECCEB00B132E6 /* Categories */,
@@ -1347,6 +1352,7 @@
 				3A2126381332340C0037C6F6 /* NSScanner+BSJSONAdditions.m in Sources */,
 				3A2126391332340C0037C6F6 /* NSString+BSJSONAdditions.m in Sources */,
 				3A21263C133234500037C6F6 /* BSJSONDeserializer.m in Sources */,
+				3AC53C3A1345EF0A00A805DC /* UIDeviceHardware.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1378,6 +1384,7 @@
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				HEADER_SEARCH_PATHS = "/sw/include/**";
 				INFOPLIST_FILE = "Client-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(SRCROOT)/../Libraries/libsyck\"",
 					"\"$(SRCROOT)/Externals/ProtocolBuffers/build/Debug\"",
@@ -1410,6 +1417,7 @@
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				HEADER_SEARCH_PATHS = "/sw/include/**";
 				INFOPLIST_FILE = "Client-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(SRCROOT)/../Libraries/libsyck\"",
 					"\"$(SRCROOT)/Externals/ProtocolBuffers/build/Debug\"",
@@ -1458,6 +1466,7 @@
 				HEADER_SEARCH_PATHS = "/sw/include/**";
 				INFOPLIST_FILE = "Client-Info.plist";
 				INFOPLIST_OTHER_PREPROCESSOR_FLAGS = "-DNS_BLOCK_ASSERTIONS";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(SRCROOT)/../Libraries/libsyck\"",
 					"\"$(SRCROOT)/Externals/ProtocolBuffers/build/Debug\"",
