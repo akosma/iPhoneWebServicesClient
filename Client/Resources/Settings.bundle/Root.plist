@@ -11,8 +11,6 @@
 			<string>PSGroupSpecifier</string>
 		</dict>
 		<dict>
-			<key>AutocapitalizationType</key>
-			<string>None</string>
 			<key>AutocorrectionType</key>
 			<string>No</string>
 			<key>DefaultValue</key>
@@ -22,7 +20,7 @@
 			<key>Key</key>
 			<string>server_url</string>
 			<key>KeyboardType</key>
-			<string>Alphabet</string>
+			<string>URL</string>
 			<key>Title</key>
 			<string>Server URL</string>
 			<key>Type</key>
