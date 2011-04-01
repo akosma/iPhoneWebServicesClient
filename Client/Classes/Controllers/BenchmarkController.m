@@ -41,21 +41,14 @@
 #import "UIDeviceHardware.h"
 
 @interface BenchmarkController ()
-@property (nonatomic, readonly) UITableView *tableView;
-@property (nonatomic, retain) NSMutableArray *loaders;
-@property (nonatomic, retain) NSMutableArray *testResults;
-@property (nonatomic) NSInteger currentLimit;
-@property (nonatomic) NSInteger currentLoaderIndex;
-@property (nonatomic) NSInteger benchmarkMaximum;
-@property (nonatomic) NSInteger benchmarkIncrement;
-@property (nonatomic) BOOL benchmarkFinished;
-@property (nonatomic) BOOL running;
-@property (nonatomic, readonly) UIBarButtonItem *mailButton;
-@property (nonatomic, readonly) UIBarButtonItem *startButton;
-@property (nonatomic, readonly) UIBarButtonItem *doneButton;
+
 @property (nonatomic, readonly) NSString *csvFilePath;
+@property (nonatomic, readonly) NSString *connectionString;
+@property (nonatomic, readonly) NSString *dateString;
+@property (nonatomic, readonly) NSString *filename;
 
 - (void)performNextBenchmark;
+
 @end
 
 
@@ -74,7 +67,11 @@
 @synthesize doneButton = _doneButton;
 @synthesize benchmarkMaximum = _benchmarkMaximum;
 @synthesize benchmarkIncrement = _benchmarkIncrement;
+@synthesize benchmarkDate = _benchmarkDate;
 @dynamic csvFilePath;
+@dynamic connectionString;
+@dynamic dateString;
+@dynamic filename;
 
 - (id)init
 {
@@ -82,17 +79,18 @@
     if (self)
     {
         _navigationController = [[UINavigationController alloc] initWithRootViewController:self];
-        self.navigationController.toolbarHidden = NO;
-        self.currentLimit = 0;
-        self.benchmarkFinished = NO;
-        self.running = NO;
-        self.currentLoaderIndex = 0;
-        self.testResults = [NSMutableArray arrayWithCapacity:100];
-        self.loaders = [NSMutableArray arrayWithCapacity:21];
+        _navigationController.toolbarHidden = NO;
+        _currentLimit = 0;
+        _benchmarkFinished = NO;
+        _running = NO;
+        _currentLoaderIndex = 0;
+        _benchmarkDate = [[NSDate alloc] init];
+        _testResults = [[NSMutableArray alloc] initWithCapacity:100];
+        _loaders = [[NSMutableArray alloc] initWithCapacity:21];
         
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        self.benchmarkMaximum = defaults.benchmarkMaximum;
-        self.benchmarkIncrement = defaults.benchmarkIncrement;
+        _benchmarkMaximum = defaults.benchmarkMaximum;
+        _benchmarkIncrement = defaults.benchmarkIncrement;
 
         id<DataLoader> loader = nil;
         for (LoaderMechanism lm = 1; lm < LoaderMechanismSOAP; ++lm)
@@ -113,11 +111,25 @@
     return self;
 }
 
-- (void)dealloc 
+- (void)dealloc
 {
-    self.loaders = nil;
-    self.testResults = nil;
-    self.navigationController = nil;
+    [_doneButton release];
+    _doneButton = nil;
+    [_startButton release];
+    _startButton = nil;
+    [_mailButton release];
+    _mailButton = nil;
+    [_tableView release];
+    _tableView = nil;
+    [_testResults release];
+    _testResults = nil;
+    [_loaders release];
+    _loaders = nil;
+    [_navigationController release];
+    _navigationController = nil;
+    [_benchmarkDate release];
+    _benchmarkDate = nil;
+    
     [super dealloc];
 }
 
@@ -129,6 +141,17 @@
     self.mailButton.enabled = [[NSFileManager defaultManager] fileExistsAtPath:self.csvFilePath];
     self.toolbarItems = [NSArray arrayWithObject:self.mailButton];
     self.title = @"Benchmark";
+}
+
+- (void)viewDidUnload
+{
+    self.doneButton = nil;
+    self.startButton = nil;
+    self.mailButton = nil;
+    self.tableView = nil;
+    self.navigationController = nil;
+    
+    [super viewDidUnload];
 }
 
 - (void)didReceiveMemoryWarning 
@@ -154,6 +177,7 @@
     }
     else 
     {
+        self.benchmarkDate = [NSDate date];
         [self.testResults removeAllObjects];
         [self.tableView reloadData];
         self.currentLimit = 0;
@@ -173,43 +197,24 @@
     composer.mailComposeDelegate = self;
     
     NSString *baseURL = [NSUserDefaults standardUserDefaults].serverURL;
-    NSURL *url = [NSURL URLWithString:baseURL];
-    Reachability *reachability = [Reachability reachabilityWithHostName:url.host];
-    NSString *connection = nil;
-    switch ([reachability currentReachabilityStatus]) 
-    {
-        case ReachableViaWiFi:
-            connection = @"wifi";
-            break;
-            
-        case NotReachable:
-            connection = @"(none!)";
-            break;
-            
-        case ReachableViaWWAN:
-            connection = @"telephony";
-            break;
-
-        default:
-            connection = @"(unknown)";
-            break;
-    }
+    NSString *connectionString = self.connectionString;
     NSString *device = [UIDeviceHardware platformString];
     NSString *template = @"<h3>Benchmark Results</h3>"
     @"<p>Test parameters:</p>"
     @"<ul>"
+    @"<li>Date: <strong>%@</strong></li>"
     @"<li>URL: <strong>%@</strong></li>"
     @"<li>Device: <strong>%@</strong></li>"
     @"<li>Connection: <strong>%@</strong></li>"
     @"</ul>";
-    NSString *body = [NSString stringWithFormat:template, baseURL, device, connection];
+    NSString *body = [NSString stringWithFormat:template, baseURL, device, connectionString];
     [composer setMessageBody:body
                       isHTML:YES];
     
     [composer setSubject:@"iPhoneWebServicesClient Benchmark Results"];
     [composer addAttachmentData:[NSData dataWithContentsOfFile:self.csvFilePath]
                        mimeType:@"text/csv" 
-                       fileName:@"results.csv"];
+                       fileName:self.filename];
     
     [self.navigationController presentModalViewController:composer 
                                                  animated:YES];
@@ -355,7 +360,52 @@
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
-    NSString *fileName = [basePath stringByAppendingPathComponent:@"testResults.csv"];
+    return [basePath stringByAppendingPathComponent:self.filename];
+}
+
+- (NSString *)connectionString
+{
+    NSString *baseURL = [NSUserDefaults standardUserDefaults].serverURL;
+    NSURL *url = [NSURL URLWithString:baseURL];
+    Reachability *reachability = [Reachability reachabilityWithHostName:url.host];
+    NSString *connectionString = nil;
+    switch ([reachability currentReachabilityStatus]) 
+    {
+        case ReachableViaWiFi:
+            connectionString = @"wifi";
+            break;
+            
+        case NotReachable:
+            connectionString = @"(none!)";
+            break;
+            
+        case ReachableViaWWAN:
+            connectionString = @"telephony";
+            break;
+            
+        default:
+            connectionString = @"(unknown)";
+            break;
+    }
+    return connectionString;
+}
+
+- (NSString *)dateString
+{
+    NSDateFormatter *formatter = [[[NSDateFormatter alloc] init] autorelease];
+    [formatter setDateFormat:@"yyyyMMdd_HHmm"];
+    return [formatter stringFromDate:self.benchmarkDate];
+}
+
+- (NSString *)filename
+{
+    NSMutableString *fileName = [NSMutableString stringWithString:@"result_"];
+    [fileName appendString:self.dateString];
+    [fileName appendString:@"_"];
+    [fileName appendString:[UIDeviceHardware platformString]];
+    [fileName appendString:@"_"];
+    [fileName appendString:self.connectionString];
+    [fileName appendString:@".csv"];
     return fileName;
 }
 

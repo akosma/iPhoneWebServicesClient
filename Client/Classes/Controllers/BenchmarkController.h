@@ -53,9 +53,23 @@
     UINavigationController *_navigationController;
     BOOL _benchmarkFinished;
     BOOL _running;
+    NSDate *_benchmarkDate;
 }
 
-@property (nonatomic, retain) UINavigationController *navigationController;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *doneButton;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *startButton;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *mailButton;
+@property (nonatomic, retain) IBOutlet UITableView *tableView;
+@property (nonatomic, copy) NSMutableArray *testResults;
+@property (nonatomic, copy) NSMutableArray *loaders;
+@property (nonatomic) NSInteger currentLimit;
+@property (nonatomic) NSInteger currentLoaderIndex;
+@property (nonatomic) NSInteger benchmarkMaximum;
+@property (nonatomic) NSInteger benchmarkIncrement;
+@property (nonatomic, retain) IBOutlet UINavigationController *navigationController;
+@property (nonatomic, getter=isBenchmarkFinished) BOOL benchmarkFinished;
+@property (nonatomic, getter=isRunning) BOOL running;
+@property (nonatomic, copy) NSDate *benchmarkDate;
 
 - (IBAction)done:(id)sender;
 - (IBAction)start:(id)sender;
