@@ -79,7 +79,12 @@
 
 - (IBAction)sliderChanged:(id)sender
 {
-    NSInteger limit = (NSInteger)_slider.value;
+    float value = exp2f(self.slider.value);
+    NSInteger limit = floorf(value);
+    if (limit > 5000)
+    {
+        limit = 5000;
+    }
     [NSUserDefaults standardUserDefaults].sliderValue = limit;
     self.sliderLabel.text = [NSString stringWithFormat:@"%d", limit];
 }
@@ -137,7 +142,7 @@
     }
     self.dataLoader.delegate = self;
     self.dataLoader.deserializer = [BaseDeserializer deserializerForFormat:self.currentDataFormat];
-    self.dataLoader.limit = (NSInteger)_slider.value;
+    self.dataLoader.limit = [NSUserDefaults standardUserDefaults].sliderValue;
     [self.dataLoader loadData];
 
     [self updateTitle];
@@ -167,7 +172,7 @@
     [super viewDidLoad];
     self.tableView.tableHeaderView = self.headerView;
     NSInteger limit = [NSUserDefaults standardUserDefaults].sliderValue;
-    self.slider.value = limit;
+    self.slider.value = log2f(limit);
     self.sliderLabel.text = [NSString stringWithFormat:@"%d", limit];
 
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:_spinningWheel];
@@ -245,7 +250,7 @@
 
 - (void)updateTitle
 {
-    NSInteger limit = (NSInteger)self.slider.value;
+    NSInteger limit = [NSUserDefaults standardUserDefaults].sliderValue;
     self.title = [NSString stringWithFormat:@"%d + %@", limit, [self.dataLoader.deserializer formatIdentifier]];
 }
 
