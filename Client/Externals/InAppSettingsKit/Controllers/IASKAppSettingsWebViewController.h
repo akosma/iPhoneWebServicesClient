@@ -1,8 +1,8 @@
 //
-//  IASKPSTitleValueSpecifierViewCell.h
+//  IASKAppSettingsWebViewController.h
 //  http://www.inappsettingskit.com
 //
-//  Copyright (c) 2010:
+//  Copyright (c) 2009:
 //  Luc Vandal, Edovia Inc., http://www.edovia.com
 //  Ortwin Gentz, FutureTap GmbH, http://www.futuretap.com
 //  All rights reserved.
@@ -15,8 +15,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 
+@interface IASKAppSettingsWebViewController : UIViewController <UIWebViewDelegate, MFMailComposeViewControllerDelegate> {
+  UIWebView *webView;
+  NSURL *url;
+}
 
-@interface IASKPSTitleValueSpecifierViewCell : UITableViewCell
+- (id)initWithFile:(NSString*)htmlFileName key:(NSString*)key;
+
+@property (nonatomic, retain) IBOutlet UIWebView *webView;
+@property (nonatomic, retain) NSURL *url;
 
 @end

@@ -1,10 +1,11 @@
 //
-//  IASKPSTitleValueSpecifierViewCell.h
+//  IASKSettingsStoreFile.h
 //  http://www.inappsettingskit.com
 //
 //  Copyright (c) 2010:
 //  Luc Vandal, Edovia Inc., http://www.edovia.com
 //  Ortwin Gentz, FutureTap GmbH, http://www.futuretap.com
+//  Marc-Etienne M.Léveillé, Edovia Inc., http://www.edovia.com
 //  All rights reserved.
 // 
 //  It is appreciated but not required that you give credit to Luc Vandal and Ortwin Gentz, 
@@ -14,9 +15,14 @@
 //  This code is licensed under the BSD license that is available at: http://www.opensource.org/licenses/bsd-license.php
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "IASKSettingsStore.h"
 
+@interface IASKSettingsStoreFile : IASKAbstractSettingsStore {
+    NSString * _filePath;
+    NSMutableDictionary * _dict;
+}
 
-@interface IASKPSTitleValueSpecifierViewCell : UITableViewCell
+- (id)initWithPath:(NSString*)path;
 
 @end
