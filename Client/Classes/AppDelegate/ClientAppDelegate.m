@@ -36,12 +36,6 @@
 #import "RootViewController.h"
 #import "NSUserDefaults+Extensions.h"
 
-@interface ClientAppDelegate ()
-@property (nonatomic, retain) UIWindow *window;
-@property (nonatomic, retain) UINavigationController *navigationController;
-@end
-
-
 @implementation ClientAppDelegate
 
 @synthesize window = _window;
@@ -63,9 +57,15 @@
 {
 }
 
-- (void)dealloc 
+
+- (void)dealloc
 {
-	[super dealloc];
+    [_window release];
+    _window = nil;
+    [_navigationController release];
+    _navigationController = nil;
+    
+    [super dealloc];
 }
 
 @end
