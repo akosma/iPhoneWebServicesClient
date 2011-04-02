@@ -74,6 +74,7 @@
 - (void)setServerURL:(NSString *)urlString
 {
     [self setObject:urlString forKey:SERVER_URL_KEY];
+    [self synchronize];
 }
 
 - (NSInteger)benchmarkMaximum
@@ -84,6 +85,7 @@
 - (void)setBenchmarkMaximum:(NSInteger)value
 {
     [self setInteger:value forKey:BENCHMARK_MAXIMUM_KEY];
+    [self synchronize];
 }
 
 - (NSInteger)benchmarkIncrement
@@ -94,6 +96,7 @@
 - (void)setBenchmarkIncrement:(NSInteger)value
 {
     [self setInteger:value forKey:BENCHMARK_INCREMENT_KEY];
+    [self synchronize];
 }
 
 - (NSInteger)sliderValue
@@ -104,6 +107,7 @@
 - (void)setSliderValue:(NSInteger)value
 {
     [self setInteger:value forKey:SLIDER_VALUE_KEY];
+    [self synchronize];
 }
 
 @end
