@@ -41,6 +41,8 @@
 		3A61543C1148E1F700D447BD /* LibXMLSAXDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A61543B1148E1F700D447BD /* LibXMLSAXDeserializer.m */; };
 		3A72D690113E9C2C0055AF36 /* BenchmarkController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A72D68E113E9C2C0055AF36 /* BenchmarkController.m */; };
 		3A72D693113E9C740055AF36 /* BenchmarkController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A72D692113E9C740055AF36 /* BenchmarkController.xib */; };
+		3A926E4213471DAE00B86F77 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A926E3F13471DAE00B86F77 /* ASIDataCompressor.m */; };
+		3A926E4313471DAE00B86F77 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A926E4113471DAE00B86F77 /* ASIDataDecompressor.m */; };
 		3A976C56113FD1E700D200EE /* parseCSV.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A976C55113FD1E700D200EE /* parseCSV.m */; };
 		3A976C65113FD26B00D200EE /* CSVDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A976C64113FD26B00D200EE /* CSVDeserializer.m */; };
 		3A976CA1113FDA1400D200EE /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A976CA0113FDA1400D200EE /* MessageUI.framework */; };
@@ -250,6 +252,10 @@
 		3A72D68D113E9C2C0055AF36 /* BenchmarkController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BenchmarkController.h; sourceTree = "<group>"; };
 		3A72D68E113E9C2C0055AF36 /* BenchmarkController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BenchmarkController.m; sourceTree = "<group>"; };
 		3A72D692113E9C740055AF36 /* BenchmarkController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BenchmarkController.xib; sourceTree = "<group>"; };
+		3A926E3E13471DAE00B86F77 /* ASIDataCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDataCompressor.h; sourceTree = "<group>"; };
+		3A926E3F13471DAE00B86F77 /* ASIDataCompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDataCompressor.m; sourceTree = "<group>"; };
+		3A926E4013471DAE00B86F77 /* ASIDataDecompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDataDecompressor.h; sourceTree = "<group>"; };
+		3A926E4113471DAE00B86F77 /* ASIDataDecompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDataDecompressor.m; sourceTree = "<group>"; };
 		3A976C54113FD1E700D200EE /* parseCSV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = parseCSV.h; sourceTree = "<group>"; };
 		3A976C55113FD1E700D200EE /* parseCSV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = parseCSV.m; sourceTree = "<group>"; };
 		3A976C63113FD26B00D200EE /* CSVDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSVDeserializer.h; sourceTree = "<group>"; };
@@ -1122,6 +1128,10 @@
 		3AF9B8B0134657DE0052EB99 /* ASIHTTPRequest */ = {
 			isa = PBXGroup;
 			children = (
+				3A926E3E13471DAE00B86F77 /* ASIDataCompressor.h */,
+				3A926E3F13471DAE00B86F77 /* ASIDataCompressor.m */,
+				3A926E4013471DAE00B86F77 /* ASIDataDecompressor.h */,
+				3A926E4113471DAE00B86F77 /* ASIDataDecompressor.m */,
 				3AF9B8B1134657DE0052EB99 /* ASIAuthenticationDialog.h */,
 				3AF9B8B2134657DE0052EB99 /* ASIAuthenticationDialog.m */,
 				3AF9B8B3134657DE0052EB99 /* ASICacheDelegate.h */,
@@ -1363,6 +1373,8 @@
 				3AF9B8BB134657DE0052EB99 /* ASIAuthenticationDialog.m in Sources */,
 				3AF9B8BC134657DE0052EB99 /* ASIHTTPRequest.m in Sources */,
 				3AF9B8BD134657DE0052EB99 /* ASIInputStream.m in Sources */,
+				3A926E4213471DAE00B86F77 /* ASIDataCompressor.m in Sources */,
+				3A926E4313471DAE00B86F77 /* ASIDataDecompressor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1422,11 +1434,13 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/Externals/YAJLiOS\"",
 				);
+				GCC_OPTIMIZATION_LEVEL = 2;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Client_Prefix.pch;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				HEADER_SEARCH_PATHS = "/sw/include/**";
 				INFOPLIST_FILE = "Client-Info.plist";
+				INFOPLIST_OTHER_PREPROCESSOR_FLAGS = "-DNS_BLOCK_ASSERTIONS";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(SRCROOT)/../Libraries/libsyck\"",
