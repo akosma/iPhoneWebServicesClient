@@ -16,10 +16,10 @@
 
 @interface PBConcreteExtensionField()
 @property PBExtensionType type;
-@property Class extendedClass;
+@property (retain) Class extendedClass;
 @property int32_t fieldNumber;
 @property (retain) id defaultValue;
-@property Class messageOrGroupClass;
+@property (retain) Class messageOrGroupClass;
 @property BOOL isRepeated;
 @property BOOL isPacked;
 @property BOOL isMessageSetWireFormat;
@@ -149,6 +149,8 @@ int32_t typeSize(PBExtensionType type) {
     case PBExtensionTypeSFixed64:
     case PBExtensionTypeDouble:
       return 8;
+      default:
+          break;
   }
 
   @throw [NSException exceptionWithName:@"InternalError" reason:@"" userInfo:nil];
@@ -490,14 +492,14 @@ int32_t typeSize(PBExtensionType type) {
     case PBExtensionTypeEnum:     return [NSNumber numberWithInt:[input readEnum]];
     case PBExtensionTypeGroup:
     {
-      id<PBMessage_Builder> builder = [messageOrGroupClass builder];
+      id<PBMessage_Builder> builder = (id<PBMessage_Builder>)[messageOrGroupClass builder];
       [input readGroup:fieldNumber builder:builder extensionRegistry:extensionRegistry];
       return [builder build];
     }
 
     case PBExtensionTypeMessage:
     {
-      id<PBMessage_Builder> builder = [messageOrGroupClass builder];
+      id<PBMessage_Builder> builder = (id<PBMessage_Builder>)[messageOrGroupClass builder];
       [input readMessage:builder extensionRegistry:extensionRegistry];
       return [builder build];
     }

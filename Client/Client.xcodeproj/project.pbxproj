@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 45;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -41,6 +41,7 @@
 		3A61543C1148E1F700D447BD /* LibXMLSAXDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A61543B1148E1F700D447BD /* LibXMLSAXDeserializer.m */; };
 		3A72D690113E9C2C0055AF36 /* BenchmarkController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A72D68E113E9C2C0055AF36 /* BenchmarkController.m */; };
 		3A72D693113E9C740055AF36 /* BenchmarkController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A72D692113E9C740055AF36 /* BenchmarkController.xib */; };
+		3A75CA2B14627905000824D8 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A75CA2A14627905000824D8 /* libz.dylib */; };
 		3A926E4213471DAE00B86F77 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A926E3F13471DAE00B86F77 /* ASIDataCompressor.m */; };
 		3A926E4313471DAE00B86F77 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A926E4113471DAE00B86F77 /* ASIDataDecompressor.m */; };
 		3A976C56113FD1E700D200EE /* parseCSV.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A976C55113FD1E700D200EE /* parseCSV.m */; };
@@ -76,7 +77,6 @@
 		3AA35C62113CEF0500A89E31 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA35C5C113CEF0500A89E31 /* SBJsonWriter.m */; };
 		3AA35C7B113CF19500A89E31 /* ASIHTTPRequestDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA35C7A113CF19500A89E31 /* ASIHTTPRequestDataLoader.m */; };
 		3AA35CA6113CF25C00A89E31 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AA35CA5113CF25C00A89E31 /* SystemConfiguration.framework */; };
-		3AA35CA8113CF25C00A89E31 /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AA35CA7113CF25C00A89E31 /* libz.1.2.3.dylib */; };
 		3AA35CBA113CF27400A89E31 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA35CB9113CF27400A89E31 /* Reachability.m */; };
 		3AA35D56113CFDEA00A89E31 /* SBJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA35D55113CFDEA00A89E31 /* SBJSONDeserializer.m */; };
 		3AB15C5E113ECCF800B132E6 /* NSDictionary+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB15C5D113ECCF800B132E6 /* NSDictionary+Extensions.m */; };
@@ -252,6 +252,7 @@
 		3A72D68D113E9C2C0055AF36 /* BenchmarkController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BenchmarkController.h; sourceTree = "<group>"; };
 		3A72D68E113E9C2C0055AF36 /* BenchmarkController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BenchmarkController.m; sourceTree = "<group>"; };
 		3A72D692113E9C740055AF36 /* BenchmarkController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BenchmarkController.xib; sourceTree = "<group>"; };
+		3A75CA2A14627905000824D8 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		3A926E3E13471DAE00B86F77 /* ASIDataCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDataCompressor.h; sourceTree = "<group>"; };
 		3A926E3F13471DAE00B86F77 /* ASIDataCompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDataCompressor.m; sourceTree = "<group>"; };
 		3A926E4013471DAE00B86F77 /* ASIDataDecompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDataDecompressor.h; sourceTree = "<group>"; };
@@ -489,13 +490,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A75CA2B14627905000824D8 /* libz.dylib in Frameworks */,
 				3AB9AC4C114943EA009A5CC2 /* libProtocolBuffers.a in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
 				3A9A084F113BB75F003E62D4 /* CFNetwork.framework in Frameworks */,
 				3AA35CA6113CF25C00A89E31 /* SystemConfiguration.framework in Frameworks */,
-				3AA35CA8113CF25C00A89E31 /* libz.1.2.3.dylib in Frameworks */,
 				3AB15C65113ECDC000B132E6 /* AddressBook.framework in Frameworks */,
 				3AB15C67113ECDC000B132E6 /* AddressBookUI.framework in Frameworks */,
 				3A976CA1113FDA1400D200EE /* MessageUI.framework in Frameworks */,
@@ -519,6 +520,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				3A75CA2A14627905000824D8 /* libz.dylib */,
 				3AA35BB9113CEEB300A89E31 /* Externals */,
 				3A50C57211204B4A0027974D /* Classes */,
 				3A50C57C11204B560027974D /* Resources */,
@@ -1173,10 +1175,11 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = "akosma software";
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Client" */;
-			compatibilityVersion = "Xcode 3.1";
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
@@ -1403,7 +1406,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Client_Prefix.pch;
-				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				HEADER_SEARCH_PATHS = "/sw/include/**";
 				INFOPLIST_FILE = "Client-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
@@ -1437,7 +1440,7 @@
 				GCC_OPTIMIZATION_LEVEL = 2;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Client_Prefix.pch;
-				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				HEADER_SEARCH_PATHS = "/sw/include/**";
 				INFOPLIST_FILE = "Client-Info.plist";
 				INFOPLIST_OTHER_PREPROCESSOR_FLAGS = "-DNS_BLOCK_ASSERTIONS";
@@ -1467,8 +1470,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/Externals/ProtocolBuffers/build\"/**";
-				PREBINDING = NO;
-				SDKROOT = iphoneos4.1;
+				SDKROOT = iphoneos;
 			};
 			name = DistributionAdHoc;
 		};
@@ -1486,7 +1488,7 @@
 				GCC_OPTIMIZATION_LEVEL = 2;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Client_Prefix.pch;
-				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				HEADER_SEARCH_PATHS = "/sw/include/**";
 				INFOPLIST_FILE = "Client-Info.plist";
 				INFOPLIST_OTHER_PREPROCESSOR_FLAGS = "-DNS_BLOCK_ASSERTIONS";
@@ -1517,8 +1519,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/Externals/ProtocolBuffers/build\"/**";
-				PREBINDING = NO;
-				SDKROOT = iphoneos4.1;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -1531,8 +1532,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/Externals/ProtocolBuffers/build\"/**";
-				PREBINDING = NO;
-				SDKROOT = iphoneos4.1;
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};

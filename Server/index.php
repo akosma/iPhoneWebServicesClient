@@ -39,7 +39,7 @@ require_once('formatters/formatterfactory.php');
 $limit = $_GET["limit"];
 if (!$limit)
 {
-    $limit = "5000";
+    $limit = "50";
 }
 
 // Before calling mysql_real_escape_string() you have to connect to the DB...!
