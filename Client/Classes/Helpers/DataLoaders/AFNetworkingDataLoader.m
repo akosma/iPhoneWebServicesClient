@@ -1,9 +1,9 @@
 //
-//  LoaderMechanism.h
+//  AFNetworkingDataLoader.m
 //  Client
 //
-//  Created by Adrian on 3/1/10.
-//  Copyright (c) 2010, akosma software / Adrian Kosmaczewski
+//  Created by Adrian Kosmaczewski on 11/8/11.
+//  Copyright (c) 2011, akosma software / Adrian Kosmaczewski
 //  All rights reserved.
 //
 //  Redistribution and use in source and binary forms, with or without
@@ -32,12 +32,27 @@
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#import <Foundation/Foundation.h>
+#import "AFNetworkingDataLoader.h"
+#import "AFHTTPRequestOperation.h"
 
-typedef enum {
-    LoaderMechanismNone = 0,
-    LoaderMechanismNSURLConnection = 1,
-    LoaderMechanismASIHTTPRequest = 2,
-    LoaderMechanismAFNetworking = 3,
-    LoaderMechanismSOAP = 4
-} LoaderMechanism;
+@implementation AFNetworkingDataLoader
+
+- (void)performAsynchronousLoading
+{
+    void (^success)(id object) = ^(id object) {
+        self.data = object;
+        [self ready];
+    };
+    
+    void (^failure)(NSHTTPURLResponse *response, NSError *error) = ^(NSHTTPURLResponse *response, NSError *error) {
+        self.data = nil;
+    };
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:self.url];
+    AFHTTPRequestOperation *operation = [AFHTTPRequestOperation  HTTPRequestOperationWithRequest:request 
+                                                                                         success:success
+                                                                                         failure:failure];
+    [operation start];
+}
+
+@end

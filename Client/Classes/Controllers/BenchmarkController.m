@@ -193,32 +193,35 @@
 
 - (IBAction)sendResultsViaEmail:(id)sender
 {
-    MFMailComposeViewController *composer = [[MFMailComposeViewController alloc] init];
-    composer.mailComposeDelegate = self;
-    
-    NSString *baseURL = [NSUserDefaults standardUserDefaults].serverURL;
-    NSString *connectionString = self.connectionString;
-    NSString *device = [UIDeviceHardware platformString];
-    NSString *template = @"<h3>Benchmark Results</h3>"
-    @"<p>Test parameters:</p>"
-    @"<ul>"
-    @"<li>Date: <strong>%@</strong></li>"
-    @"<li>URL: <strong>%@</strong></li>"
-    @"<li>Device: <strong>%@</strong></li>"
-    @"<li>Connection: <strong>%@</strong></li>"
-    @"</ul>";
-    NSString *body = [NSString stringWithFormat:template, baseURL, device, connectionString];
-    [composer setMessageBody:body
-                      isHTML:YES];
-    
-    [composer setSubject:@"iPhoneWebServicesClient Benchmark Results"];
-    [composer addAttachmentData:[NSData dataWithContentsOfFile:self.csvFilePath]
-                       mimeType:@"text/csv" 
-                       fileName:self.filename];
-    
-    [self.navigationController presentModalViewController:composer 
-                                                 animated:YES];
-    [composer release];
+    if ([MFMailComposeViewController canSendMail])
+    {
+        MFMailComposeViewController *composer = [[MFMailComposeViewController alloc] init];
+        composer.mailComposeDelegate = self;
+        
+        NSString *baseURL = [NSUserDefaults standardUserDefaults].serverURL;
+        NSString *connectionString = self.connectionString;
+        NSString *device = [UIDeviceHardware platformString];
+        NSString *template = @"<h3>Benchmark Results</h3>"
+        @"<p>Test parameters:</p>"
+        @"<ul>"
+        @"<li>Date: <strong>%@</strong></li>"
+        @"<li>URL: <strong>%@</strong></li>"
+        @"<li>Device: <strong>%@</strong></li>"
+        @"<li>Connection: <strong>%@</strong></li>"
+        @"</ul>";
+        NSString *body = [NSString stringWithFormat:template, baseURL, device, connectionString];
+        [composer setMessageBody:body
+                          isHTML:YES];
+        
+        [composer setSubject:@"iPhoneWebServicesClient Benchmark Results"];
+        [composer addAttachmentData:[NSData dataWithContentsOfFile:self.csvFilePath]
+                           mimeType:@"text/csv" 
+                           fileName:self.filename];
+        
+        [self.navigationController presentModalViewController:composer 
+                                                     animated:YES];
+        [composer release];
+    }
 }
 
 #pragma mark -

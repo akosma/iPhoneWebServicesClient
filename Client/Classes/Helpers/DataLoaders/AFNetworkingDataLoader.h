@@ -1,9 +1,9 @@
 //
-//  LoaderMechanism.h
+//  AFNetworkingDataLoader.h
 //  Client
 //
-//  Created by Adrian on 3/1/10.
-//  Copyright (c) 2010, akosma software / Adrian Kosmaczewski
+//  Created by Adrian Kosmaczewski on 11/8/11.
+//  Copyright (c) 2011, akosma software / Adrian Kosmaczewski
 //  All rights reserved.
 //
 //  Redistribution and use in source and binary forms, with or without
@@ -32,12 +32,8 @@
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#import <Foundation/Foundation.h>
+#import "BaseDataLoader.h"
 
-typedef enum {
-    LoaderMechanismNone = 0,
-    LoaderMechanismNSURLConnection = 1,
-    LoaderMechanismASIHTTPRequest = 2,
-    LoaderMechanismAFNetworking = 3,
-    LoaderMechanismSOAP = 4
-} LoaderMechanism;
+@interface AFNetworkingDataLoader : BaseDataLoader
+
+@end

@@ -37,6 +37,7 @@
 #import "NSURLConnectionDataLoader.h"
 #import "SOAPDataLoader.h"
 #import "NSUserDefaults+Extensions.h"
+#import "AFNetworkingDataLoader.h"
 
 @implementation BaseDataLoader
 
@@ -63,6 +64,12 @@
         case LoaderMechanismASIHTTPRequest:
         {
             loader = [ASIHTTPRequestDataLoader loader];
+            break;
+        }
+            
+        case LoaderMechanismAFNetworking:
+        {
+            loader = [AFNetworkingDataLoader loader];
             break;
         }
             
