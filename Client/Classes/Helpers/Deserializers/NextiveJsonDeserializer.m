@@ -1,9 +1,9 @@
 //
-//  DataFormat.h
+//  NextiveJsonDeserializer.m
 //  Client
 //
-//  Created by Adrian on 3/1/10.
-//  Copyright (c) 2010, akosma software / Adrian Kosmaczewski
+//  Created by Adrian Kosmaczewski on 11/8/11.
+//  Copyright (c) 2011, akosma software / Adrian Kosmaczewski
 //  All rights reserved.
 //
 //  Redistribution and use in source and binary forms, with or without
@@ -32,31 +32,17 @@
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#import <Foundation/Foundation.h>
+#import "NextiveJsonDeserializer.h"
+#import "NXJsonParser.h"
 
-typedef enum {
-    DeserializerTypeNone = 0,
-    DeserializerTypeTouchJSON = 1,
-    DeserializerTypeSBJSON = 2,
-    DeserializerTypeJSONKit = 3,
-    DeserializerTypeYAJL = 4,
-    DeserializerTypeBSJSON = 5,
-    DeserializerTypeNextiveJson = 6,
-    DeserializerTypeYAML = 7,
-    DeserializerTypeBinaryPlist = 8,
-    DeserializerTypeXMLPlist = 9,
-    DeserializerTypeXMLFormattedPlist = 10,
-    DeserializerTypeNSXMLParser = 11,
-    DeserializerTypeTouchXML = 12,
-    DeserializerTypeLibXMLDOM = 13,
-    DeserializerTypeLibXMLSAX = 14,
-    DeserializerTypeCSV = 15,
-    DeserializerTypeTBXML = 16,
-    DeserializerTypeKissXML = 17,
-    DeserializerTypeTinyXML = 18,
-    DeserializerTypeGoogleXML = 19,
-    DeserializerTypeAPXML = 20,
-    DeserializerTypeProtocolBuffer = 21,
-    DeserializerTypeAQXMLParser = 22,
-    DeserializerTypeSOAP = 23
-} DeserializerType;
+@implementation NextiveJsonDeserializer
+
+- (NSArray *)performDeserialization:(id)data
+{
+	NXJsonParser* parser = [[NXJsonParser alloc] initWithData:data];
+	NSArray *array = [parser parse:nil ignoreNulls:NO];
+    [parser release];
+    return array;
+}
+
+@end

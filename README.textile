@@ -42,6 +42,7 @@ For the server:
 
 For the iPhone client:
 
+* "NextiveJSON":https://github.com/nextive/NextiveJson - a very fast JSON parsing library
 * "ASIHTTPRequest":http://allseeing-i.com/ASIHTTPRequest - wrapper around the CFNetwork API.
 * "json-framework":http://code.google.com/p/json-framework/ - A strict JSON parser/generator for Objective-C.
 * "JSONKit":https://github.com/johnezang/JSONKit - A Very High Performance Objective-C JSON Library.
