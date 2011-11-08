@@ -42,8 +42,9 @@ For the server:
 
 For the iPhone client:
 
+* "AFNetworking":https://github.com/gowalla/AFNetworking - a very fast, NSOperation-based networking library
 * "NextiveJSON":https://github.com/nextive/NextiveJson - a very fast JSON parsing library
-* "ASIHTTPRequest":http://allseeing-i.com/ASIHTTPRequest - wrapper around the CFNetwork API.
+* "ASIHTTPRequest":http://allseeing-i.com/ASIHTTPRequest - wrapper around the CFNetwork API, no longer maintained
 * "json-framework":http://code.google.com/p/json-framework/ - A strict JSON parser/generator for Objective-C.
 * "JSONKit":https://github.com/johnezang/JSONKit - A Very High Performance Objective-C JSON Library.
 * "YAJL-objc":https://github.com/gabriel/yajl-objc - Objective-C bindings for the "YAJL parser":http://lloyd.github.com/yajl/.
