@@ -49,6 +49,7 @@
 		3A92750014697BAE00B096B6 /* NXDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9274F914697BAE00B096B6 /* NXDebug.m */; };
 		3A92750114697BAE00B096B6 /* NXJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9274FB14697BAE00B096B6 /* NXJsonParser.m */; };
 		3A92750214697BAE00B096B6 /* NXJsonSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9274FD14697BAE00B096B6 /* NXJsonSerializer.m */; };
+		3A92750514697E8C00B096B6 /* NSJSONSerializationDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A92750414697E8C00B096B6 /* NSJSONSerializationDeserializer.m */; };
 		3A976C56113FD1E700D200EE /* parseCSV.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A976C55113FD1E700D200EE /* parseCSV.m */; };
 		3A976C65113FD26B00D200EE /* CSVDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A976C64113FD26B00D200EE /* CSVDeserializer.m */; };
 		3A976CA1113FDA1400D200EE /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A976CA0113FDA1400D200EE /* MessageUI.framework */; };
@@ -273,6 +274,8 @@
 		3A9274FC14697BAE00B096B6 /* NXJsonSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXJsonSerializer.h; sourceTree = "<group>"; };
 		3A9274FD14697BAE00B096B6 /* NXJsonSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXJsonSerializer.m; sourceTree = "<group>"; };
 		3A9274FE14697BAE00B096B6 /* NXSerializable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXSerializable.h; sourceTree = "<group>"; };
+		3A92750314697E8C00B096B6 /* NSJSONSerializationDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSJSONSerializationDeserializer.h; sourceTree = "<group>"; };
+		3A92750414697E8C00B096B6 /* NSJSONSerializationDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSJSONSerializationDeserializer.m; sourceTree = "<group>"; };
 		3A976C54113FD1E700D200EE /* parseCSV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = parseCSV.h; sourceTree = "<group>"; };
 		3A976C55113FD1E700D200EE /* parseCSV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = parseCSV.m; sourceTree = "<group>"; };
 		3A976C63113FD26B00D200EE /* CSVDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSVDeserializer.h; sourceTree = "<group>"; };
@@ -933,6 +936,8 @@
 				3AB9AC5511494442009A5CC2 /* ProtocolBufferDeserializer.m */,
 				3A9274F214697B7400B096B6 /* NextiveJsonDeserializer.h */,
 				3A9274F314697B7400B096B6 /* NextiveJsonDeserializer.m */,
+				3A92750314697E8C00B096B6 /* NSJSONSerializationDeserializer.h */,
+				3A92750414697E8C00B096B6 /* NSJSONSerializationDeserializer.m */,
 			);
 			path = Deserializers;
 			sourceTree = "<group>";
@@ -1418,6 +1423,7 @@
 				3A92750014697BAE00B096B6 /* NXDebug.m in Sources */,
 				3A92750114697BAE00B096B6 /* NXJsonParser.m in Sources */,
 				3A92750214697BAE00B096B6 /* NXJsonSerializer.m in Sources */,
+				3A92750514697E8C00B096B6 /* NSJSONSerializationDeserializer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

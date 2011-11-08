@@ -1,9 +1,9 @@
 //
-//  DataFormat.h
+//  NSJSONSerializationDeserializer.m
 //  Client
 //
-//  Created by Adrian on 3/1/10.
-//  Copyright (c) 2010, akosma software / Adrian Kosmaczewski
+//  Created by Adrian Kosmaczewski on 11/8/11.
+//  Copyright (c) 2011, akosma software / Adrian Kosmaczewski
 //  All rights reserved.
 //
 //  Redistribution and use in source and binary forms, with or without
@@ -32,32 +32,21 @@
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#import <Foundation/Foundation.h>
+#import "NSJSONSerializationDeserializer.h"
 
-typedef enum {
-    DeserializerTypeNone = 0,
-    DeserializerTypeTouchJSON = 1,
-    DeserializerTypeSBJSON = 2,
-    DeserializerTypeJSONKit = 3,
-    DeserializerTypeYAJL = 4,
-    DeserializerTypeBSJSON = 5,
-    DeserializerTypeNextiveJson = 6,
-    DeserializerTypeNSJSONSerialization = 7,
-    DeserializerTypeYAML = 8,
-    DeserializerTypeBinaryPlist = 9,
-    DeserializerTypeXMLPlist = 10,
-    DeserializerTypeXMLFormattedPlist = 11,
-    DeserializerTypeNSXMLParser = 12,
-    DeserializerTypeTouchXML = 13,
-    DeserializerTypeLibXMLDOM = 14,
-    DeserializerTypeLibXMLSAX = 15,
-    DeserializerTypeCSV = 16,
-    DeserializerTypeTBXML = 17,
-    DeserializerTypeKissXML = 18,
-    DeserializerTypeTinyXML = 19,
-    DeserializerTypeGoogleXML = 20,
-    DeserializerTypeAPXML = 21,
-    DeserializerTypeProtocolBuffer = 22,
-    DeserializerTypeAQXMLParser = 23,
-    DeserializerTypeSOAP = 24
-} DeserializerType;
+@implementation NSJSONSerializationDeserializer
+
+- (NSArray *)performDeserialization:(id)data
+{
+    NSArray *array = nil;
+    
+    // Just to make sure that this doesn't crash in iOS 4.x
+    Class klass = NSClassFromString(@"NSJSONSerialization");
+    if (nil != klass)
+    {
+        array = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+    }
+    return array;
+}
+
+@end

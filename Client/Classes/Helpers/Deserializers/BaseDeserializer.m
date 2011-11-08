@@ -56,6 +56,7 @@
 #import "YAJLDeserializer.h"
 #import "BSJSONDeserializer.h"
 #import "NextiveJsonDeserializer.h"
+#import "NSJSONSerializationDeserializer.h"
 
 @implementation BaseDeserializer
 
@@ -101,6 +102,12 @@
         case DeserializerTypeNextiveJson:
         {
             deserializer = [NextiveJsonDeserializer deserializer];
+            break;
+        }
+            
+        case DeserializerTypeNSJSONSerialization:
+        {
+            deserializer = [NSJSONSerializationDeserializer deserializer];
             break;
         }
             
