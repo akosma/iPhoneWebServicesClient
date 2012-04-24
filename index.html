@@ -1,0 +1,305 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>iPhone Web Services Client by akosma</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+
+      <header>
+        <h1>iPhone Web Services Client</h1>
+        <p>This project showcases different transport formats and libraries to consume web services from an iOS application.</p>
+      </header>
+
+      <div id="banner">
+        <span id="logo"></span>
+
+        <a href="https://github.com/akosma/iPhoneWebServicesClient" class="button fork"><strong>Fork On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://github.com/akosma/iPhoneWebServicesClient/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/akosma/iPhoneWebServicesClient/tarball/master" class="button">TAR</a></li>
+          </ul>
+        </div>
+
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <h1>iPhone Web Services Consumption Comparison</h1>
+
+<h2>Introduction</h2>
+
+<p>This project showcases different transport formats and libraries to
+consume web services from an iPhone application. It features a server
+application, a command-line script that saves the output of the server
+application in different formats, and an iPhone client application
+(compatible with iPhone OS 3.0 and higher).</p>
+
+<p>The server application (written in PHP) reads a MySQL database
+(Server/data/schema.sql) and outputs data in the following formats:</p>
+
+<ul>
+<li>  HTML</li>
+<li>  JSON</li>
+<li>  YAML</li>
+<li>  XML (arbitrary format)</li>
+<li>  SOAP</li>
+<li>
+<p>Property list</p>
+
+<ul>
+<li>  Binary property list</li>
+<li>  XML property list</li>
+</ul>
+</li>
+<li><p>CSV</p></li>
+<li><p>Protocol Buffer (Google)</p></li>
+</ul><p>For each output format, there is a single “Formatter” subclass in the
+Server/formatters folder. A static method in the FormatterFactory class
+returns the formatter that corresponds to the requested output format.</p>
+
+<h2>Future Extensions</h2>
+
+<p>In future versions of this project, the following formats and libraries
+could be integrated:</p>
+
+<ul>
+<li>  <a href="http://msgpack.org/">MessagePack</a>
+</li>
+<li>  <a href="http://incubator.apache.org/thrift/">Apache Thrift</a> (<a href="http://stackoverflow.com/questions/3620888/thrift-framework-for-iphone">StackOverflow
+article</a>
+about how to integrate with the iPhone)</li>
+<li>  <a href="http://bert-rpc.org/">BERT</a>
+</li>
+<li>  <a href="http://avro.apache.org/">Apache Avro</a>
+</li>
+<li>  <a href="http://en.wikipedia.org/wiki/Open_Network_Computing_Remote_Procedure_Call">Open Network Computing Remote Procedure Call (ONC RPC) aka Sun
+RPC</a>
+</li>
+</ul><h2>Libraries Used</h2>
+
+<p>The project uses several different libraries:</p>
+
+<p>For the server:</p>
+
+<ul>
+<li>  <a href="http://code.google.com/p/cfpropertylist/">cfpropertylist</a> - A PHP
+Implementation Of Apple’s plist (PropertyList).</li>
+<li>  <a href="http://sourceforge.net/projects/nusoap/">NuSOAP</a> - SOAP Toolkit for
+PHP.</li>
+<li>  <a href="http://code.google.com/p/spyc/">spyc</a> - A simple YAML loader/dumper
+class for PHP.</li>
+<li>  <a href="http://code.google.com/p/pb4php/">pb4php</a> - Protocol Buffer for PHP</li>
+</ul><p>For the iPhone client:</p>
+
+<ul>
+<li>  <a href="https://github.com/gowalla/AFNetworking">AFNetworking</a> - a very
+fast, NSOperation-based networking library</li>
+<li>  <a href="https://github.com/nextive/NextiveJson">NextiveJSON</a> - a very fast
+JSON parsing library</li>
+<li>  <a href="http://allseeing-i.com/ASIHTTPRequest">ASIHTTPRequest</a> - wrapper
+around the CFNetwork API, no longer maintained</li>
+<li>  <a href="http://code.google.com/p/json-framework/">json-framework</a> - A
+strict JSON parser/generator for Objective-C.</li>
+<li>  <a href="https://github.com/johnezang/JSONKit">JSONKit</a> - A Very High
+Performance Objective-C JSON Library.</li>
+<li>  <a href="https://github.com/gabriel/yajl-objc">YAJL-objc</a> - Objective-C
+bindings for the <a href="http://lloyd.github.com/yajl/">YAJL parser</a>.</li>
+<li>  <a href="https://github.com/blakeseely/bsjsonadditions/">BSJSON</a> - A simple
+JSON parser in Objective-C.</li>
+<li>  <a href="http://code.google.com/p/touchcode/">touchcode</a> - Repository of
+iPhone and iPod Touch source code.</li>
+<li>  <a href="http://michael.stapelberg.de/cCSVParse">cCSVParse</a> - A CSV parsing
+library in Objective-C.</li>
+<li>  <a href="http://www.tbxml.co.uk/">TBXML V1.3</a> - XML Parser by Tom Bradley.</li>
+<li>  <a href="http://code.google.com/p/kissxml/">KissXML</a> - KissXML is a
+replacement for Cocoa’s NSXML cluster of classes. It is based on
+libxml.</li>
+<li>  <a href="http://www.grinninglizard.com/tinyxml/">TinyXML</a> - TinyXML is a
+simple, small, C++ XML parser that can be easily integrating into
+other programs.</li>
+<li>  <a href="http://code.google.com/p/gdata-objectivec-client/source/browse/trunk/Source/XMLSupport/">gdata-objectivec-client</a>
+
+<ul>
+<li>XML support classes included in the Google Data APIs Objective-C
+Client Library.</li>
+</ul>
+</li>
+<li>  <a href="http://arashpayan.com/blog/index.php/2009/01/14/apxml-nsxmldocument-substitute-for-iphoneipod-touch/">APXML</a>
+
+<ul>
+<li>NSXMLDocument ’substitute’ for iPhone/iPod Touch.</li>
+</ul>
+</li>
+<li>  <a href="http://code.google.com/p/metasyntactic/wiki/ProtocolBuffers">ProtocolBuffers</a>
+
+<ul>
+<li>Objective-C Protocol Buffers for OSX and the iPhone.</li>
+</ul>
+</li>
+<li>  <a href="http://github.com/AlanQuatermain/aqtoolkit">AQXMLParser</a> - Another
+parser for XML in Objective-C.</li>
+<li>  <a href="http://www.inappsettingskit.com/">InAppSettingsKit</a> - Library
+allowing to access the current setting bundle from the application.</li>
+</ul><h3>YAML in Cocoa</h3>
+
+<p>For parsing YAML in Cocoa, the code in <a href="http://will.thimbleby.net/yaml.html">this
+page</a> was adapted, removing
+dependencies on the Cocoa AppKit framework (not available on the
+iPhone).</p>
+
+<p>If you want to compile the YAML::Syck library with Fink, follow these
+steps:</p>
+
+<ol>
+<li> Install Fink on Mac OS X 10.6 from source <a href="http://www.finkproject.org/download/srcdist.php">following these
+instructions</a>
+(there is no binary installer available for Snow Leopard at the time
+of this writing).</li>
+<li> Type “/sw/bin/fink install syck” to install syck.</li>
+<li> The Xcode project should now compile without problems.</li>
+</ol><p>To avoid these steps above, this project includes a version of libsyck.a
+already compiled as a “fat binary” format for both ARM (iPhone OS) and
+Intel (Simulator) processors.</p>
+
+<h3>SOAP in Cocoa</h3>
+
+<p>The <a href="http://code.google.com/p/wsdl2objc/">wsdl2objc</a> tool was used to
+generate Objective-C (Cocoa) code from the server’s WSDL. This code was
+later adapted to parse the array returned by the server.</p>
+
+<h2>Installation</h2>
+
+<ol>
+<li>
+<p>Set up the server:</p>
+
+<ol>
+<li> Upload the “Server” folder contents via FTP or other means.</li>
+<li> Create a MySQL database.</li>
+<li> Import the “Server/data/schema.sql” file into the database. This
+will create a “data” table in the database.</li>
+<li> Change the settings in the “Server/data/database.php” file to
+access the database (server, username, password).</li>
+</ol>
+</li>
+<li>
+<p>Set up the client:</p>
+
+<ol>
+<li> Open the “Client/Client.xcodeproj” project in Xcode.</li>
+<li> Compile the project.</li>
+<li> Execute the client, which will connect to your server and
+retrieve data.</li>
+<li> If required, change the URL of the remote data tapping the
+“Settings” button in the interface.</li>
+</ol>
+</li>
+</ol><h2>Other Links</h2>
+
+<ul>
+<li>  The sample data generated in this example comes from
+<a href="http://www.generatedata.com/">http://www.generatedata.com/</a>.</li>
+<li>  <a href="http://rubyforge.org/projects/cfpropertylist/">cfpropertylist in
+Ruby</a> - Read,
+manipulate and write both binary and XML property lists as defined
+by Apple.</li>
+<li>  <a href="http://pyyaml.org/">PyYAML</a> - PyYAML.org - the home of various YAML
+implementations for Python.</li>
+<li>  <a href="http://docs.python.org/dev/library/plistlib.html">plistlib</a> -
+Generate and parse Mac OS X .plist files from Python.</li>
+<li>  <a href="http://www.cocoadev.com/index.pl?ReadWriteCSVAndTSV">Discussion about CSV parsing in
+Objective-C</a>
+</li>
+<li>  <a href="http://www.soapui.org/">soapUI</a> - Cross-platform tool for testing
+SOAP web services.</li>
+<li>  <a href="http://www.raywenderlich.com/553/how-to-chose-the-best-xml-parser-for-your-iphone-project">How To Choose The Best XML Parser for Your iPhone
+Project</a>
+
+<ul>
+<li>by Ray Wenderlich, iPhone Developer and Gamer.</li>
+</ul>
+</li>
+<li>  <a href="http://latenitesoft.blogspot.com/2008/10/iphone-programming-tips-building-unix.html">iPhone Programming Tips: building Unix
+software</a>
+
+<ul>
+<li>The bundled libsyck.a static library (fat binary for both ARM and
+Intel) was created using the information in this page.</li>
+</ul>
+</li>
+<li>  <a href="http://dotnot.org/blog/archives/2008/02/23/xml-benchmarks-libxml2-sax/">XML Benchmarks - libxml2
+sax</a>
+</li>
+<li>  <a href="http://www.jamesh.id.au/articles/libxml-sax/libxml-sax.html">Using the SAX Interface of
+LibXML</a>
+</li>
+<li>  <a href="http://bill.dudney.net/roller/objc/entry/libxml2_push_parsing">libxml2 Push
+Parsing</a>
+</li>
+<li>  <a href="http://samsoff.es/posts/web-services-with-cocoa-surprise">web services with cocoa
+surprise</a>
+</li>
+<li>  <a href="http://samsoff.es/posts/iphone-plist-tutorial">iphone plist
+tutorial</a>
+</li>
+<li>  <a href="http://en.wikipedia.org/wiki/Comparison_of_data_serialization_formats">Comparison of data serialization
+formats</a>
+</li>
+<li>  <a href="http://en.wikipedia.org/wiki/Property_list">Property list</a> -
+Wikipedia page.</li>
+<li>  <a href="http://en.wikipedia.org/wiki/Protocol_Buffers">Protocol Buffers</a> -
+Wikipedia page.</li>
+<li>  <a href="http://code.google.com/apis/protocolbuffers/docs/overview.html">Protocol Buffers Developer
+Guide</a>
+</li>
+<li>  <a href="http://iphone.trac.wordpress.org/browser/trunk/Classes/XMLRPC">XMLRPC
+framework</a>
+used by the WordPress iPhone application.</li>
+<li>  <a href="http://quatermain.tumblr.com/post/93651539/aqxmlparser-big-memory-win">AQXMLParser == Big Memory
+Win</a>
+
+<ul>
+<li>Article about the AQXMLParser library.</li>
+</ul>
+</li>
+<li>  <a href="http://www.servicestack.net/benchmarks/NorthwindDatabaseRowsSerialization.1000000-times.2010-02-06.html">Results of Northwind database rows serialization benchmarks run at
+06/02/2010</a>
+
+<ul>
+<li>Interesting analysis of serialization performance using .NET
+libraries.</li>
+</ul>
+</li>
+</ul><p>The application icon and splash screen have been adapted from <a href="http://www.eee.bham.ac.uk/com_test/imgdsnlinternet15jan06.png">this
+picture</a>.</p>
+
+<h2>License</h2>
+
+<p>This project is released with a liberal BSD license. See the LICENSE
+file for details.</p>
+      </section>
+      <footer>
+        <p>Project maintained by <a href="https://github.com/akosma">akosma</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+    
+  </body>
+</html>
